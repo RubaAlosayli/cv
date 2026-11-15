@@ -618,7 +618,7 @@
             ['مكتبة قطر الرقمية','Qatar Digital Library','مخطوطات ووثائق عن تاريخ الخليج','Manuscripts and records on Gulf history','https://www.qdl.qa','qdl.qa'],
             ['المكتبة الرقمية السعودية','Saudi Digital Library','مصادر أكاديمية وبحثية','Academic and research resources','https://sdl.edu.sa','sdl.edu.sa'],
             ['أرشيف الإنترنت','Internet Archive','نسخ ممسوحة لكتب قديمة، منها العربية','Scans of old books, Arabic among them','https://archive.org','archive.org']];
-  $('libGrid').innerHTML=LIBS.map(function(l,k){return '<div class="ix"><span class="no">0'+(k+1)+'</span><a class="dom" href="'+l[4]+'" target="_blank" rel="noopener">'+bi(l[0],l[1])+'</a><p>'+bi(l[2],l[3])+'</p><a class="go" href="'+l[4]+'" target="_blank" rel="noopener">'+bi('زيارة الموقع','Visit the site')+' <span aria-hidden="true">↗</span></a></div>'}).join('');
+  $('libGrid').innerHTML=LIBS.map(function(l,k){return '<div class="ix"><span class="no">0'+(k+1)+'</span><a class="dom" href="'+l[4]+'" target="_blank" rel="noopener">'+bi(l[0],l[1])+'</a><p>'+bi(l[2],l[3])+'</p><a class="go" href="'+l[4]+'" target="_blank" rel="noopener">'+bi('زيارة الموقع','Visit the site')+' <span aria-hidden="true">↗︎</span></a></div>'}).join('');
 
   /* ---------- questions ---------- */
   var QA=[['كيف أبدأ بقراءة كتب التراث؟','How do I start reading heritage books?','ابدأ بنص سردي قصير مثل كليلة ودمنة، واختر طبعة محققة بشرح','Start with a short narrative like Kalila wa Dimna, and pick an annotated critical edition'],
