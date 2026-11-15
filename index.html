@@ -24,6 +24,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Reem+Kufi:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
 <style>
+
+  /* Thmanyah Serif — local copy of the files from ~/Downloads (Display for Display styles, Text for Text styles) */
+  @font-face { font-family: 'Thmanyah Serif Display'; src: url('fonts/thmanyah-serif/thmanyah-serif-display-bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Thmanyah Serif Text'; src: url('fonts/thmanyah-serif/thmanyah-serif-text-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Thmanyah Serif Text'; src: url('fonts/thmanyah-serif/thmanyah-serif-text-medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Thmanyah Serif Text'; src: url('fonts/thmanyah-serif/thmanyah-serif-text-bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
   /* ─────────── DIRIYAH FLAT COLOR PALETTE (final, no gradients/images/overlays) ─────────── */
   :root {
     /* Five locked colors — Light Mode */
@@ -31,8 +37,8 @@
     --sand:      #C4AD8C;   /* gate surface — slightly deeper clay */
     --sand-card: #E4D2B4;   /* card surface — lifted clay, slightly above the site ground */
     --ink:       #2A1F15;   /* primary ink — Najdi dark brown */
-    --muted:     #6B5A45;   /* secondary ink / UI lines */
-    --accent:    #8C6A3F;   /* accent — DECORATIVE only (italic words in large headings) */
+    --muted:     #5C4B37;   /* secondary ink / UI lines — darkened from #6B5A45 so small text on clay reaches 4.5:1 */
+    --accent:    #846238;   /* accent — DECORATIVE only (italic words in large headings) — darkened from #8C6A3F to reach 3:1 on clay */
     --accent-strong: #5F4624; /* accent — FUNCTIONAL small text (kickers, tags, nums)
                                  darker variant of --accent that meets WCAG AA against
                                  light backgrounds (clay 5.11, sand-card 5.94) */
@@ -170,7 +176,7 @@
     background: #E4D2B4;
     transform: translateX(-50%);
     z-index: 3;
-    transition: transform 1900ms linear, opacity 1900ms linear;
+    transition: transform 700ms cubic-bezier(0.45, 0, 0.25, 1), opacity 700ms cubic-bezier(0.45, 0, 0.25, 1);
   }
   /* Top half: viewport top down to the keyhole's TOP edge.
      Keyhole mount is 72px tall (36px radius), so top edge sits at 50vh - 36px.
@@ -202,7 +208,7 @@
     background: #2A1F15;
     z-index: 2;
     overflow: hidden;     /* clips each panel's half of the keyhole */
-    transition: transform 1400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 1050ms cubic-bezier(0.65, 0, 0.25, 1);
   }
   .gw-shoji--left  { left: 0; }
   .gw-shoji--right { right: 0; }
@@ -260,8 +266,8 @@
   .gateway.act-2 .gw-shoji--right { transform: translateX(100%); }
   /* Side rails travel with their respective panels — handled by sitting at the same
      viewport coordinates the panels carry; but since rails are independent, animate them. */
-  .gateway.act-2 .gw-rail--left  { transform: translateX(-100vw); transition: transform 1400ms cubic-bezier(0.4, 0, 0.2, 1); }
-  .gateway.act-2 .gw-rail--right { transform: translateX(100vw);  transition: transform 1400ms cubic-bezier(0.4, 0, 0.2, 1); }
+  .gateway.act-2 .gw-rail--left  { transform: translateX(-100vw); transition: transform 1050ms cubic-bezier(0.65, 0, 0.25, 1); }
+  .gateway.act-2 .gw-rail--right { transform: translateX(100vw);  transition: transform 1050ms cubic-bezier(0.65, 0, 0.25, 1); }
 
   /* ── Mobile ── */
   @media (max-width: 760px) {
@@ -1411,18 +1417,11 @@
   body.ambient .work-card {
     transition:
       opacity 700ms ease-out,
-      transform 900ms cubic-bezier(0.25, 1, 0.5, 1),
-      box-shadow 900ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+      transform 420ms cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 420ms cubic-bezier(0.25, 1, 0.5, 1) !important;
   }
-  /* Entrance stagger per row position — applies within each .work-row */
-  body.ambient .work-row .work-card:nth-child(1) { transition-delay: 0ms !important; }
-  body.ambient .work-row .work-card:nth-child(2) { transition-delay: 120ms !important; }
-  body.ambient .work-row .work-card:nth-child(3) { transition-delay: 240ms !important; }
-  body.ambient .work-row .work-card:nth-child(4) { transition-delay: 360ms !important; }
-  body.ambient .work-row:nth-child(2) .work-card:nth-child(1) { transition-delay: 480ms !important; }
-  body.ambient .work-row:nth-child(2) .work-card:nth-child(2) { transition-delay: 600ms !important; }
-  body.ambient .work-row:nth-child(2) .work-card:nth-child(3) { transition-delay: 720ms !important; }
-  body.ambient .work-row:nth-child(2) .work-card:nth-child(4) { transition-delay: 840ms !important; }
+  /* No per-card transition delay: the old entrance stagger also delayed every
+     hover by up to 360ms, which made the folders feel slow to respond. */
 
   /* ═══════════════════════════════════════════════════════════════════════ */
   /*  UX MODE — MICRO-INTERACTIONS                                           */
@@ -1697,9 +1696,9 @@
     --tab-slope: 10px;
     padding-top: var(--tab-height);
     transition:
-      transform 900ms cubic-bezier(0.25, 1, 0.5, 1),
-      box-shadow 900ms cubic-bezier(0.25, 1, 0.5, 1),
-      z-index 0ms 450ms;
+      transform 420ms cubic-bezier(0.25, 1, 0.5, 1),
+      box-shadow 420ms cubic-bezier(0.25, 1, 0.5, 1),
+      z-index 0ms 200ms;
     box-shadow:
       0 4px 12px -6px color-mix(in oklab, var(--ink) 22%, transparent);
     clip-path: polygon(
@@ -1793,7 +1792,7 @@
   .card-overlay {
     margin-top: 16px;
     opacity: 0;
-    transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1) 500ms;
+    transition: opacity 160ms ease-out 60ms;
     pointer-events: none;
   }
   .card-desc {
@@ -1989,7 +1988,7 @@
     padding: 16px 24px;
     display: flex; justify-content: flex-end; align-items: center;
     opacity: 0;
-    transition: opacity 450ms cubic-bezier(0.25, 1, 0.5, 1) 500ms;
+    transition: opacity 160ms ease-out 80ms;
   }
   .work-card .meta .ext {
     font-size: 10px; color: var(--ink);
@@ -2844,7 +2843,7 @@
     line-height: 1.3;
   }
   .exp-phase-date {
-    margin-left: auto;
+    margin-left: 4px;
     font-size: 10.5px;
     color: var(--ink-dim);
     letter-spacing: 0.12em;
@@ -3472,8 +3471,8 @@
       width: 360px;             /* shorter on mobile to match narrower viewport */
     }
     .snake-field {
-      aspect-ratio: 1 / 1.1;
-      min-height: 320px;
+      aspect-ratio: 1 / 1.3;
+      min-height: 400px;
     }
     .snake-skill {
       font-size: 10.5px;
@@ -4178,7 +4177,7 @@
     right: -10px;
     width: 20px;
     height: 20px;
-    background: #2d8a4a;
+    background: #1f7a3d;
     color: #ffffff;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 13px;
@@ -4266,7 +4265,9 @@
     grid-template-columns: auto 1fr;
     gap: 12px;
     align-items: start;
-    pointer-events: auto;
+    /* Toasts are feedback only. They must never catch a tap meant for the next
+       flaw underneath (they used to, so fast tapping silently missed flaws). */
+    pointer-events: none;
     clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
     box-shadow:
       0 4px 0 color-mix(in oklab, var(--ink) 20%, transparent),
@@ -4289,7 +4290,7 @@
   .ux-hunt-toast-icon {
     width: 22px;
     height: 22px;
-    background: #2d8a4a;
+    background: #1f7a3d;
     color: #ffffff;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 13px;
@@ -4570,99 +4571,664 @@
     font-weight: 600 !important;
   }
 
-  /* ─────────────────────────────────────────────────────────────────────── */
-  /*  DESKTOP-ONLY EXPERIENCE OVERLAY                                        */
-  /*  Shown when viewport width is below 1024px (phones + portrait tablets). */
-  /*  Hides everything else and shows a polite invitation to view on a       */
-  /*  desktop. Uses the warm Daylight palette regardless of saved theme,     */
-  /*  since this is a first-impression screen — must be welcoming.           */
-  /* ─────────────────────────────────────────────────────────────────────── */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  MOBILE BUILD — phones + portrait tablets (< 1024px)                    */
+  /*  Appended last so it wins over the desktop rules above. Desktop is      */
+  /*  untouched: everything here lives inside the media query.               */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  @media (max-width: 1023px) {
+    html { -webkit-text-size-adjust: 100%; }
+    html, body { max-width: 100%; overflow-x: clip; }
+    .container { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
 
-  /* Default state: hidden on desktop. */
-  .desktop-only-overlay {
-    display: none;
+    /* Mouse-only tooltips never make sense on touch */
+    .mode-tip { display: none !important; }
+
+    /* ── NAV ── */
+    nav.top {
+      top: max(8px, env(safe-area-inset-top));
+      left: 8px; right: 8px;
+      padding: 6px 6px 6px 10px;
+      gap: 8px;
+    }
+    .nav-right { gap: 6px; min-width: 0; }
+    .ux-mode-seg { padding: 11px 11px; font-size: 9px; letter-spacing: 0.1em; }
+    nav.top .cta { min-height: 40px; }
+
+
+    /* Nightmare "flaws" keep their point on a small screen without pushing
+       content off the edge: same violations, scaled to fit. */
+    body:not(.ambient) [data-flaw="board-column-misaligned"] { transform: translateX(14px); }
+    body:not(.ambient) [data-flaw="about-head-misaligned"]   { transform: translateX(12px); }
+    body:not(.ambient) [data-flaw="bio-tiny-text"]           { font-size: 11px !important; line-height: 1.3 !important; }
+
+
+    /* One hint at a time: the Daylight nudge replaces the touch hint */
+    body.midpage-hint--visible .cursor-hint:not(.cursor-hint--midpage) { opacity: 0 !important; }
+
+    /* Section titles scale to the phone, not the desktop clamp */
+    .section-head h2 { font-size: clamp(30px, 9.4vw, 42px); }
+
+    /* Footer clears the floating game button */
+    footer#contact { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+    body:not(.ambient) [data-flaw="footer-bad-padding"] a { padding: 7px 0 !important; }
+
+
+    /* ── HUNT GAME HUD: one clean bar above the launcher ── */
+    body.is-hunting .cursor-hint { display: none; }
+    .ux-hunt-hud {
+      width: calc(100vw - 24px);
+      max-width: 420px;
+      bottom: calc(72px + env(safe-area-inset-bottom));
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      white-space: nowrap;
+    }
+    .ux-hunt-hud-text { font-size: 12px; }
+    .ux-hunt-hud-give-up, .ux-hunt-hud-done { min-height: 40px; padding: 4px 6px; font-size: 10.5px; letter-spacing: 0.08em; }
+
+
+    /* Supporting blocks stack on tablets too, so the skills field gets the full width */
+    .sup-block { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+
+
+
+    /* ── GAME TOASTS: compact, under the nav, full width, never block taps ── */
+    .ux-hunt-toasts {
+      top: calc(max(8px, env(safe-area-inset-top)) + 62px);
+      left: 12px; right: 12px;
+      max-width: none;
+      gap: 6px;
+    }
+    .ux-hunt-toast { padding: 9px 12px 9px 11px; gap: 10px; }
+    .ux-hunt-toast-principle { font-size: 9.5px; margin-bottom: 2px; }
+    .ux-hunt-toast-text { font-size: 12.5px; line-height: 1.35; }
+
+
+    /* "Found" tick sits inside the corner so full-width flaws don't push it off-screen */
+    body.is-hunting [data-flaw].is-found::after,
+    body.is-hunting [data-flaw-text].is-found::after { top: -9px; right: 2px; }
+
+    /* ── FINGER TORCH (Nightmare on touch) ── */
+    body.touch-torch .cursor-shade {
+      display: block;
+      transition: opacity 700ms ease-out;
+      background:
+        radial-gradient(circle 150px at var(--cx) var(--cy),
+          rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.45) 80%, rgba(0,0,0,0.72) 100%),
+        radial-gradient(circle 520px at var(--cx) var(--cy),
+          rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.62) 70%, rgba(0,0,0,0.82) 100%);
+    }
+    body.touch-torch.cl-active .cursor-shade { transition-duration: 90ms; }
+    body.touch-torch .cursor-light { display: block; }
+
+    /* ── HINTS: bottom-centre, clear of the content and the game button ── */
+    .cursor-hint {
+      top: auto;
+      bottom: calc(86px + env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      max-width: calc(100vw - 32px);
+      width: max-content;
+      padding: 12px 18px;
+      font-size: 13px;
+      line-height: 1.4;
+      animation: cursor-hint-pulse-m 2.4s ease-in-out infinite;
+    }
+    @keyframes cursor-hint-pulse-m {
+      0%, 100% { transform: translateX(-50%) scale(1); }
+      50%      { transform: translateX(-50%) scale(1.02); }
+    }
+    @media (prefers-reduced-motion: reduce) { .cursor-hint { animation: none; } }
+
+    /* ── GAME LAUNCHER: 44px target, safe-area aware, no sticky-hover label ── */
+    #game-launcher {
+      bottom: max(16px, env(safe-area-inset-bottom));
+      right: 16px;
+      min-width: 44px; min-height: 44px;
+      justify-content: center;
+    }
   }
 
-  @media (max-width: 1023px) {
-    /* Show the overlay, hide everything else on the page. */
-    .desktop-only-overlay {
-      display: flex !important;
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: #D6C3A5;   /* clay — Daylight base */
-      color: #2A1F15;        /* ink */
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      box-sizing: border-box;
-      overflow-y: auto;
-    }
-    /* Hide everything else — including gate, nav, hero, sections, footer,
-       cursor effects, game UI, and background atmosphere. */
-    body > *:not(.desktop-only-overlay) {
-      display: none !important;
-    }
-    body {
-      background: #D6C3A5 !important;
-      overflow: hidden;
-      cursor: default;
-    }
 
-    .dro-card {
-      max-width: 480px;
+  @media (max-width: 720px) {
+    /* Fixed-height snake field: aspect-ratio + min-height was forcing the
+       field wider than a 320px screen. */
+    .snake-field { aspect-ratio: auto; min-height: 0; height: clamp(380px, 118vw, 470px); }
+    .snake-game, .skills-body, .sup-block { min-width: 0; max-width: 100%; }
+    .snake-hud { flex-wrap: wrap; row-gap: 4px; }
+    body.ambient .title-stroke.title-stroke--hero { max-width: 100%; }
+  }
+
+
+  /* iPad landscape / small laptops: the About heading's 48px misalignment flaw
+     pushed the page 24px wider than a 1024px screen. Same flaw, smaller shift. */
+  @media (max-width: 1180px) {
+    body:not(.ambient) [data-flaw="about-head-misaligned"] { transform: translateX(12px); }
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  WORK — vertical folder stack                                           */
+  /*  Used on every screen that can't hover: phones and tablets (< 1024px)   */
+  /*  AND touch devices of any width (iPad landscape, touch laptops), since  */
+  /*  the desktop file box needs hover to bring a folder forward.            */
+  /*  Each folder is sticky one tab-step lower than the one before it, so as */
+  /*  you scroll the next folder slides up OVER the previous and only its    */
+  /*  tab stays visible, like folders in a drawer.                           */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  @media (max-width: 1023px), (hover: none) and (pointer: coarse) {
+    .work-grid { max-width: none; margin: 28px 0 24px; padding: 0; }
+    .work-row { display: block; min-height: 0; }
+    .work-card {
+      --tab-height: 36px;
+      --tab-width: 46%;
+      --tab-left: 6%;
+      /* The strip each folder leaves visible shrinks on short screens
+         (landscape phones) so the whole stack always fits. */
+      --step: clamp(26px, calc((100svh - 330px) / 7), 42px);
+      --i: 0;
+      position: sticky;
+      top: calc(max(8px, env(safe-area-inset-top)) + 62px + var(--i) * var(--step));
       width: 100%;
-      text-align: center;
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
-    .dro-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 28px;
-      color: #8C6A3F;
-    }
-    .dro-icon svg {
-      width: 100%;
-      height: 100%;
-    }
-    .dro-kicker {
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #8C6A3F;
-      margin: 0 0 14px;
-      font-weight: 500;
-    }
-    .dro-title {
-      font-family: 'IBM Plex Serif', serif;
-      font-weight: 500;
-      font-size: clamp(28px, 7vw, 38px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: #2A1F15;
-      margin: 0 0 24px;
-    }
-    .dro-it {
-      font-family: 'Cormorant Garamond', 'IBM Plex Serif', serif;
-      font-style: italic;
-      font-weight: 400;
-      color: #8C6A3F;
-    }
-    .dro-body {
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 14px;
-      line-height: 1.65;
-      color: #6B5A45;
+      /* Equal heights: when the stack leaves the screen the folders close up
+         into one clean shape instead of landing at different heights. */
+      height: 340px;
+      min-height: 0;
       margin: 0 0 28px;
+      flex: none;
+      transform: none;
+      box-shadow: 0 -10px 24px -14px color-mix(in oklab, var(--ink) 55%, transparent);
     }
-    .dro-sign {
-      font-family: 'Cormorant Garamond', 'IBM Plex Serif', serif;
-      font-style: italic;
-      font-size: 18px;
-      color: #6B5A45;
-      margin: 0;
+    .work-row .work-card:last-child { margin-bottom: 0; }
+    .work-row .work-card:nth-child(even) { --tab-left: 40%; }
+    .work-row .work-card:nth-child(3n) { --tab-left: 22%; }
+    .work-row .work-card:nth-child(1) { --i: 0; z-index: 1; }
+    .work-row .work-card:nth-child(2) { --i: 1; z-index: 2; }
+    .work-row .work-card:nth-child(3) { --i: 2; z-index: 3; }
+    .work-row .work-card:nth-child(4) { --i: 3; z-index: 4; }
+    .work-row .work-card:nth-child(5) { --i: 4; z-index: 5; }
+    .work-row .work-card:nth-child(6) { --i: 5; z-index: 6; }
+    .work-row .work-card:nth-child(7) { --i: 6; z-index: 7; }
+    .work-row .work-card:nth-child(8) { --i: 7; z-index: 8; }
+    /* Title clears the strip that the next folder's tab leaves uncovered */
+    .work-card .cover { padding: calc(var(--step) + 6px) 22px 22px; }
+    .card-overlay, .work-card .meta { opacity: 1; }
+    .work-card .meta { padding: 0 22px 20px; }
+    /* No hover lift or sibling dimming on touch */
+    body.ambient .work-card:hover,
+    body:not(.ambient) .work-card:hover {
+      transform: none;
+      /* The desktop hover lifts a folder to z-index 100, which on touch (where
+         a tap leaves :hover stuck) put one folder on top of the next folder's
+         tab. In the stack every folder keeps its own place. */
+      z-index: calc(var(--i) + 1);
+      box-shadow: 0 -10px 24px -14px color-mix(in oklab, var(--ink) 55%, transparent);
     }
+    .work-grid.has-hover .work-card { opacity: 1; }
+
+    /* Nightmare: dark folders share the page colour, so in a stack they vanish.
+       A small tonal lift keeps each folder's edge readable. */
+    html[data-theme="dark"] .work-card[data-tone="dark"],
+    html[data-theme="dark"] .work-card[data-tone="dark"] .cover {
+      background: color-mix(in oklab, var(--bg) 90%, var(--ink) 10%);
+    }
+  }
+  @media (max-width: 1023px) and (max-height: 520px), (hover: none) and (pointer: coarse) and (max-height: 520px) {
+    .work-card { height: 300px; }
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  CONTRAST FIXES (work folders)                                          */
+  /*  Deliberate Nightmare flaws (data-flaw) are left alone.                 */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /* Daylight: the Behance/Figma label is drawn by a ::before in --ink, which
+     is invisible (1:1) on dark and mid-brown folders. */
+  body.ambient .work-card[data-tone="dark"] .meta .ext .word-unstable::before,
+  body.ambient .work-card[data-tone="muted"] .meta .ext .word-unstable::before {
+    color: var(--sand-card);
+  }
+  /* Daylight: tab numbers on mid-brown folders */
+  body.ambient .work-card[data-tone="muted"] .card-tab-num {
+    color: color-mix(in oklab, var(--accent) 8%, var(--sand-card) 92%);
+  }
+  body.ambient .work-card[data-tone="dark"] .card-tab-num {
+    color: color-mix(in oklab, var(--accent) 50%, var(--sand-card) 50%);
+  }
+  /* Daylight: "Let's talk." on the light folder */
+  .work-card--private .cover-sub { color: var(--accent-strong); }
+  /* Nightmare: dark folders use --sand-card (dark brown there) for their text,
+     which is dark-on-dark. Use the light ink instead. */
+  /* Nightmare: tab numbers were 1.8–2.6:1 on the dark-brown and mid folders */
+  html[data-theme="dark"] .work-card:not([data-tone]) .card-tab-num,
+  html[data-theme="dark"] .work-card[data-tone="dark"] .card-tab-num {
+    color: color-mix(in oklab, var(--accent) 60%, var(--ink) 40%);
+  }
+  html[data-theme="dark"] .work-card[data-tone="muted"] .card-tab-num {
+    color: color-mix(in oklab, var(--sand-card) 70%, var(--bg) 30%);
+  }
+  html[data-theme="dark"] .work-card[data-tone="dark"] .card-desc,
+  html[data-theme="dark"] .work-card[data-tone="dark"] .cover-top,
+  html[data-theme="dark"] .work-card[data-tone="dark"] .card-tab-divider,
+  html[data-theme="dark"] .work-card[data-tone="dark"] .card-tab-type {
+    color: var(--ink);
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  GAME CONTRAST: toast label and score bar                               */
+  /*  In Nightmare the toast and score bar are light cream (--ink), so the   */
+  /*  gold accent text on them was only 1.6:1. Use the deep accent brown.    */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  html[data-theme="dark"] .ux-hunt-toast-principle,
+  html[data-theme="dark"] .ux-hunt-hud-text strong,
+  html[data-theme="dark"] .ux-hunt-hud-done {
+    color: #5F4624;
+  }
+  :root:not([data-theme="dark"]) .ux-hunt-toast-principle,
+  :root:not([data-theme="dark"]) .ux-hunt-hud-text strong,
+  :root:not([data-theme="dark"]) .ux-hunt-hud-done {
+    color: color-mix(in oklab, var(--accent) 35%, var(--sand-card) 65%);
+  }
+
+
+  /* Hover/pressed link text: the decorative accent is only ~3:1 on clay, and on
+     touch a tap leaves :hover stuck, so use the AA accent for small link text. */
+  body.ambient .about-contact a:hover,
+  body.ambient .footer-r a:hover,
+  body.ambient .sup-cta:hover,
+  body.ambient .footer-r a:hover .arr,
+  body.ambient .cert-row:hover .cert-num {
+    color: var(--accent-strong);
+    border-bottom-color: var(--accent-strong);
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  METHOD BOARD CONTRAST                                                  */
+  /*  The board is a dark panel in Daylight and a cream panel in Nightmare,  */
+  /*  so the gold accent marks need a light tint on dark and a deep tint on  */
+  /*  cream (they were 2.9:1 and 1.6:1).                                     */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  :root:not([data-theme="dark"]) .method-block .bc-right,
+  :root:not([data-theme="dark"]) .method-block .bp-mark--check,
+  :root:not([data-theme="dark"]) .method-block .bcl-arrow,
+  :root:not([data-theme="dark"]) .method-block .bcl-period {
+    color: color-mix(in oklab, var(--accent) 45%, var(--sand-card) 55%);
+  }
+  html[data-theme="dark"] .method-block .bc-right,
+  html[data-theme="dark"] .method-block .bp-mark--check,
+  html[data-theme="dark"] .method-block .bcl-arrow,
+  html[data-theme="dark"] .method-block .bcl-period {
+    color: #5F4624;
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  DAYLIGHT CONTRAST — remaining small text that used the decorative      */
+  /*  accent or a see-through muted tint (2.3–3.2:1 on clay).                */
+  /*  In Nightmare --accent-strong equals --accent, so nothing changes there. */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  .sup-cta .arr,
+  .skills-intro-dash,
+  .snake-hud-score [data-snake-score] {
+    color: var(--accent-strong);
+  }
+  body.ambient .sup-heading-sub {
+    color: var(--muted);
+  }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  IDEAS & SAMPLES — three card styles + full-screen sample overlay       */
+  /*  1 Browser window · 2 Phone frame · 3 Showcase mat (light square mat    */
+  /*  with a rounded, slowly scrolling site panel).                          */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  :root { --sample-mat: #EFE4CE; }
+  html[data-theme="dark"] { --sample-mat: #E7D6B8; }
+
+  .samples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 8px;
+  }
+  .sample-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--sand-card);
+    color: var(--ink);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .sc-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 0 18px;
+  }
+  .sc-idea-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+  }
+  /* Expand (resize) icon */
+  .sc-expand {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+    transition: background-color 160ms ease-out, color 160ms ease-out, transform 160ms ease-out;
+  }
+  .sc-expand:hover { background: var(--ink); color: var(--sand-card); }
+  .sc-expand:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .sc-expand svg { transition: transform 200ms ease-out; }
+  .sc-expand:hover svg { transform: scale(1.12); }
+  @media (hover: none), (pointer: coarse) { .sc-expand { width: 44px; height: 44px; } }
+
+  .sc-stage { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 12px 18px 4px; }
+  .sc-foot { padding: 10px 18px 20px; }
+  .sc-title {
+    margin: 0;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .sc-idea {
+    margin: 6px 0 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+  }
+
+  /* Live preview: a real, scaled-down copy of the sample, not clickable */
+  .sc-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #fff;
+  }
+  .sc-frame {
+    position: absolute;
+    top: 0; left: 0;
+    border: 0;
+    transform-origin: 0 0;
+    transform: scale(var(--s, 0.3));
+    pointer-events: none;
+  }
+
+  /* STYLE 1 — browser window */
+  .sc-chrome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    padding: 0 10px;
+    background: var(--ink);
+    color: var(--sand-card);
+  }
+  .sc-dots { display: inline-flex; gap: 5px; }
+  .sc-dots i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: 0.7; }
+  .sc-url {
+    flex: 1;
+    min-width: 0;
+    padding: 3px 10px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sample-card--browser .sc-viewport { border: 1px solid var(--ink); border-top: 0; }
+
+  /* STYLE 2 — phone frame */
+  .sample-card--phone { background: var(--ink); color: var(--sand-card); }
+  .sample-card--phone .sc-idea-label { color: color-mix(in oklab, var(--accent) 50%, var(--sand-card) 50%); }
+  html[data-theme="dark"] .sample-card--phone .sc-idea-label { color: #5F4624; }
+  .sample-card--phone .sc-idea { color: var(--sand-card); }
+  .sample-card--phone .sc-expand:hover { background: var(--sand-card); color: var(--ink); }
+  .sample-card--phone .sc-expand:focus-visible { outline-color: var(--sand-card); }
+  .sc-device {
+    position: relative;
+    width: min(100%, 220px);
+    margin: 0 auto;
+    padding: 9px;
+    border: 2px solid var(--sand-card);
+    border-radius: 30px;
+  }
+  .sc-device .sc-viewport { aspect-ratio: 390 / 844; border-radius: 22px; }
+  .sc-notch {
+    position: absolute;
+    z-index: 2;
+    top: 15px; left: 50%;
+    width: 52px; height: 6px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: var(--ink);
+  }
+
+  /* STYLE 3 — showcase mat (light square, rounded dark-edge panel, slow scroll) */
+  .sample-card--showcase { background: var(--sample-mat); color: #2A1F15; }
+  .sample-card--showcase .sc-idea-label { color: #5F4624; }
+  .sample-card--showcase .sc-idea { color: #5C4B37; }
+  .sample-card--showcase .sc-expand:hover { background: #2A1F15; color: var(--sample-mat); }
+  .sample-card--showcase .sc-expand:focus-visible { outline-color: #2A1F15; }
+  .sample-card--showcase .sc-stage { padding: 8px 18px 0; }
+  .sc-mat {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    padding: 6%;
+  }
+  .sc-panel {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 22px 44px -18px rgba(42, 31, 21, 0.55), 0 2px 6px rgba(42, 31, 21, 0.25);
+  }
+  .sc-panel .sc-viewport { height: 100%; aspect-ratio: auto; }
+  .sc-panel .sc-frame {
+    animation: sc-scroll 18s ease-in-out infinite alternate;
+    animation-play-state: paused;
+  }
+  .sample-card.is-visible .sc-panel .sc-frame { animation-play-state: running; }
+  @keyframes sc-scroll {
+    0%, 8%    { transform: translateY(0) scale(var(--s, 0.3)); }
+    92%, 100% { transform: translateY(calc(var(--dist, 0px) * -1)) scale(var(--s, 0.3)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sc-panel .sc-frame { animation: none; }
+  }
+
+
+  /* Ideas & Samples: poster cards — the live preview fills the card, name on top, opens as its own page */
+  .samples-grid { gap: 20px; }
+  .sample-card { position: relative; aspect-ratio: 4 / 5; overflow: hidden; padding: 0; display: block; cursor: pointer; }
+  .sample-card .sc-stage { position: absolute; inset: 0; padding: 0 !important; display: block; }
+  .sample-card .sc-mat { padding: 0; aspect-ratio: auto; height: 100%; }
+  .sample-card .sc-panel { aspect-ratio: auto; height: 100%; border-radius: 0; box-shadow: none; }
+  .sample-card .sc-head { position: absolute; top: 0; left: 0; right: 0; z-index: 3; padding: 16px; }
+  .sample-card .sc-foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 90px 20px 22px; background: linear-gradient(180deg, transparent, rgba(10, 8, 5, 0.88)); color: #f3e8d2; pointer-events: none; }
+  .sample-card .sc-title, .sample-card .sc-idea { color: #f3e8d2; }
+  .sample-card .sc-idea-label { color: #f3e8d2; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6); }
+  .sample-card .sc-expand { background: rgba(10, 8, 5, 0.55); color: #f3e8d2; backdrop-filter: blur(6px); text-decoration: none; }
+  .sample-card .sc-expand:hover { background: #f3e8d2; color: #0b0906; }
+  .sample-card .sc-frame { pointer-events: none; }
+
+
+  /* poster cards: the site fills the whole card, width and height (no browser chrome, no phone bezel, no mat) */
+  .sample-card .sc-chrome, .sample-card .sc-notch { display: none; }
+  .sample-card .sc-device { position: static; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; }
+  .sample-card .sc-mat, .sample-card .sc-panel { position: static; }
+  .sample-card .sc-viewport, .sample-card .sc-device .sc-viewport, .sample-card--browser .sc-viewport, .sample-card .sc-panel .sc-viewport { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; border: 0; border-radius: 0; }
+
+  /* Ideas & Samples: three pinned prints on the table. Taped, slightly crooked, they straighten and lift when you reach for one */
+  #samples .samples-grid { gap: 56px 36px; align-items: start; padding: 28px 8px 12px; perspective: 1400px; }
+  .cv-card { --rot: -2deg; --lift: 0px; position: relative; display: flex; flex-direction: column; gap: 22px; color: inherit; cursor: pointer; transform: translateY(var(--lift)) rotate(var(--rot)); transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1); }
+  .cv-card:nth-child(1) { --rot: -2.2deg; }
+  .cv-card:nth-child(2) { --rot: 1.6deg; --lift: 44px; }
+  .cv-card:nth-child(3) { --rot: -1.2deg; --lift: 14px; }
+  .cv-card:hover, .cv-card:focus-within { --rot: 0deg; z-index: 2; }
+  .cv-cover { position: relative; display: block; padding: 12px 12px 0; background: #fbf6ea; color: #1b140b; border: 0; border-radius: 0; box-shadow: none; transform-style: preserve-3d; transform: rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); transition: transform 0.25s ease-out; text-decoration: none; }
+  .cv-cover:focus-visible { outline: 3px solid currentColor; outline-offset: 6px; }
+  .cv-shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 0; background: #0b0906; }
+  .cv-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.001); transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .cv-card:hover .cv-shot img { transform: scale(1.06); }
+  .cv-cap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 6px 16px; }
+  .cv-title { font-family: var(--ds-display); font-size: 26px; line-height: 32px; font-weight: 700; letter-spacing: 0; }
+  .cv-go { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 0; background: #1b140b; color: #fbf6ea; transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s; }
+  .cv-card:hover .cv-go { transform: rotate(45deg) scale(1.08); }
+  .cv-tape { position: absolute; top: -16px; left: 50%; width: 96px; height: 30px; margin-left: -48px; background: rgba(236, 205, 120, 0.78); border-left: 2px dashed rgba(255,255,255,.35); border-right: 2px dashed rgba(255,255,255,.35); transform: rotate(-3deg); box-shadow: none; z-index: 2; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .cv-card:nth-child(2) .cv-tape { transform: rotate(4deg); background: rgba(150, 190, 210, 0.78); }
+  .cv-card:nth-child(3) .cv-tape { transform: rotate(-6deg); background: rgba(220, 150, 150, 0.78); }
+  .cv-card:hover .cv-tape { transform: rotate(0deg) translateY(-6px); }
+  .cv-stamp { position: absolute; top: 4px; right: -14px; z-index: 3; display: grid; place-items: center; align-content: center; width: 72px; height: 72px; border-radius: 0; border: 2px solid #b3361f; color: #b3361f; background: rgba(251,246,234,.9); font-family: var(--ds-font); font-size: 11px; line-height: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; transform: rotate(14deg); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .cv-stamp b { font-family: var(--ds-display); font-size: 26px; line-height: 26px; letter-spacing: 0; }
+  .cv-card:hover .cv-stamp { transform: rotate(-8deg) scale(1.12); }
+  .cv-idea { font-family: var(--ds-font); font-size: 14px; line-height: 20px; font-weight: 400; margin: 0 6px; max-width: 44ch; opacity: .85; }
+  @media (max-width: 1023px) { #samples .samples-grid { gap: 48px 28px; } .cv-card:nth-child(2) { --lift: 0px; } }
+  @media (max-width: 640px) { #samples .samples-grid { gap: 52px; padding: 20px 14px 8px; } .cv-card:nth-child(n) { --lift: 0px; } .cv-card:nth-child(1) { --rot: -1.4deg; } .cv-card:nth-child(2) { --rot: 1.2deg; } .cv-card:nth-child(3) { --rot: -.9deg; } .cv-title { font-size: 22px; } .cv-stamp { right: -8px; } }
+  @media (prefers-reduced-motion: reduce) { .cv-card, .cv-cover, .cv-shot img, .cv-go, .cv-tape, .cv-stamp { transition: none; } }
+
+  /* Full-screen sample overlay */
+  .sample-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    background: var(--ink);
+    color: var(--sand-card);
+  }
+  .sample-overlay[hidden] { display: none; }
+  .sample-overlay.is-open { animation: so-in 220ms ease-out; }
+  @keyframes so-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.985); }
+    to   { opacity: 1; transform: none; }
+  }
+  .so-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: max(10px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 10px max(14px, env(safe-area-inset-left));
+  }
+  .so-title {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .so-newtab, .so-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    color: var(--sand-card);
+    background: transparent;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+  }
+  .so-newtab { padding: 0 14px; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .so-close { width: 44px; padding: 0; }
+  .so-newtab:hover, .so-close:hover { background: var(--sand-card); color: var(--ink); }
+  .so-newtab:focus-visible, .so-close:focus-visible { outline: 2px solid var(--sand-card); outline-offset: 2px; }
+  .so-frame { flex: 1; min-height: 0; width: 100%; border: 0; background: #fff; }
+  html.sample-open, html.sample-open body { overflow: hidden; }
+  html.sample-open .cursor-shade, html.sample-open .cursor-light,
+  html.sample-open .cursor-hint, html.sample-open #game-launcher { opacity: 0 !important; pointer-events: none; }
+  @media (max-width: 479px) { .so-newtab { display: none; } }
+
+  @media (max-width: 1023px) {
+    .samples-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sample-card--showcase { grid-column: 1 / -1; width: calc(50% - 10px); justify-self: center; }
+  }
+  @media (max-width: 640px) {
+    .samples-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .sample-card--showcase { width: 100%; }
+  }
+
+
+  /* Four nav links no longer fit beside the brand status on tablets */
+  @media (min-width: 761px) and (max-width: 1180px) {
+    .brand .status { display: none; }
+    .brand, .brand span, nav.top .cta { white-space: nowrap; }
+    .nav-links a, .nav-links a.active { padding: 6px 9px; }
+    nav.top { gap: 8px; }
+  }
+
+
+  .sample-card--showcase .sc-mat { padding: 4.5%; }
+  .sample-card--showcase .sc-panel { border-radius: 8px; }
+
+
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  /*  IDEAS & SAMPLES TYPOGRAPHY — NUZL DS scale in Thmanyah Sans            */
+  /*  Display Lg 48/60 · Md 36/44 · Xs 24/32 — Text Md 16/24 · Sm 14/20 ·    */
+  /*  Xs 12/18. Weights Regular 400 / Medium 500 / Bold 700. Display Md and  */
+  /*  larger carry -2% tracking (Latin only here).                           */
+  /* ═══════════════════════════════════════════════════════════════════════ */
+  #samples, .sample-card, .sample-overlay {
+    --ds-font: 'Thmanyah Serif Text', 'IBM Plex Sans Arabic', 'IBM Plex Sans', serif;
+    --ds-display: 'Thmanyah Serif Display', 'Thmanyah Serif Text', 'IBM Plex Serif', serif;
+    font-family: var(--ds-font);
+  }
+  #samples .kicker {
+    font-family: var(--ds-font);
+    font-size: 12px; line-height: 18px; font-weight: 500;
+    letter-spacing: 0; text-transform: uppercase;
+  }
+  #samples .section-head h2 {
+    font-family: var(--ds-display);
+    font-weight: 700;
+    font-size: 48px; line-height: 60px;
+    letter-spacing: -0.02em;
+  }
+  #samples .section-head h2 .it { font-style: normal; font-weight: 700; color: var(--accent-strong); }
+  #samples .section-head .right {
+    font-family: var(--ds-font);
+    font-size: 16px; line-height: 24px; font-weight: 400;
+    max-width: 38ch;
+  }
+  .sample-card .sc-idea-label { font-family: var(--ds-font); font-size: 12px; line-height: 18px; font-weight: 500; letter-spacing: 0; }
+  .sample-card .sc-title { font-family: var(--ds-display); font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: 0; }
+  .sample-card .sc-idea { font-family: var(--ds-font); font-size: 14px; line-height: 20px; font-weight: 400; }
+  .sample-card .sc-url { font-family: var(--ds-font); font-size: 12px; line-height: 18px; letter-spacing: 0; }
+  .so-title { font-family: var(--ds-font); font-size: 16px; line-height: 24px; font-weight: 500; }
+  .so-newtab { font-family: var(--ds-font); font-size: 12px; line-height: 18px; font-weight: 500; letter-spacing: 0; }
+  @media (max-width: 640px) {
+    #samples .section-head h2 { font-size: 36px; line-height: 44px; }
+  }
+
+  @media (max-width: 479px) {
+    /* Brand collapses to the mark; CTA collapses to an icon */
+    .brand > span:not(.mark) { display: none; }
+    nav.top .cta { font-size: 0; gap: 0; width: 44px; padding: 0; justify-content: center; }
+    nav.top .cta svg { width: 20px; height: 20px; }
   }
 </style>
 <script>
@@ -4686,26 +5252,6 @@
 </head>
 <body>
 
-<!-- ─────── DESKTOP-ONLY EXPERIENCE OVERLAY ───────
-     This site is designed for desktop viewing. On phones and small tablets,
-     show a polite message inviting the visitor to open it on a laptop.
-     Hidden by default on desktop; shown via CSS media query below 1024px. -->
-<div class="desktop-only-overlay" role="dialog" aria-modal="true" aria-labelledby="desktop-only-title">
-  <div class="dro-card">
-    <div class="dro-icon" aria-hidden="true">
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="11" width="44" height="28" rx="2" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M2 44 H54" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M24 39 L24 44 M32 39 L32 44" stroke="currentColor" stroke-width="1.6"/>
-      </svg>
-    </div>
-    <p class="dro-kicker">A note from Ruba</p>
-    <h1 id="desktop-only-title" class="dro-title">Best seen on the <span class="dro-it">desktop</span>.</h1>
-    <p class="dro-body">Thank you for stopping by — please open this page on a laptop when you can. I'd love for you to see it the way it was meant to be seen.</p>
-    <p class="dro-sign">— Ruba</p>
-  </div>
-</div>
-
 <!-- ─────── BACKGROUND ───────
 <!-- A) Site backdrop — submerged photo (blurred + desaturated) with single warm overlay. -->
 <!-- B) Atmosphere — subtle depth around the Gate area, fades after the gate completes. -->
@@ -4722,7 +5268,7 @@
      Reappears when user switches back into Nightmare without having moved. -->
 <div class="cursor-hint" data-cursor-hint aria-hidden="true">
   <span class="cursor-hint-arrow">↖</span>
-  <span class="cursor-hint-text">If you feel lost, move your mouse.</span>
+  <span class="cursor-hint-text" data-touch-text="Lost in the dark? Touch and drag to light the page.">If you feel lost, move your mouse.</span>
 </div>
 
 <!-- Mid-page Daylight nudge — appears in Nightmare when the user scrolls
@@ -4780,6 +5326,7 @@
     </span>
   </div>
   <div class="nav-links" role="navigation">
+    <a href="#samples" data-section="samples">Samples</a>
     <a href="#work" data-section="work">Work</a>
     <a href="#about" data-section="about">About</a>
     <a href="#method" data-section="method">Method</a>
@@ -4794,7 +5341,7 @@
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     </button>
-    <a href="https://api.whatsapp.com/send/?phone=966503567990&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="cta" data-flaw="hero-cta-color" data-principle="consistency">
+    <a href="https://api.whatsapp.com/send/?phone=966503567990&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="cta" aria-label="Get in touch on WhatsApp" data-flaw="hero-cta-color" data-principle="consistency">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M17.5 14.4c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.4.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.9 3.5 13.5 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/>
       </svg>
@@ -4839,6 +5386,48 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- 1b. IDEAS & SAMPLES -->
+  <section class="block" id="samples">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Ideas &amp; Samples</div>
+          <h2>Ideas, <span class="it">in motion.</span></h2>
+        </div>
+        <p class="right">Website samples. Open any card to see the full sample.</p>
+      </div>
+      <div class="samples-grid">
+        <article class="cv-card" data-sample data-sample-src="samples/sample-2/index.html" data-sample-title="The Arabic Book — a reading room">
+          <a class="cv-cover" href="samples/sample-2/index.html" target="_blank" rel="noopener" aria-label="Open the full sample in a new page: The Arabic Book">
+            <span class="cv-tape" aria-hidden="true"></span>
+            <span class="cv-stamp" aria-hidden="true">No.<b>01</b></span>
+            <span class="cv-shot"><img src="samples/covers/arabic-book.jpg" alt="Preview of The Arabic Book" loading="lazy" width="1280" height="800"></span>
+            <span class="cv-cap"><span class="cv-title">The Arabic Book</span><span class="cv-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></span>
+          </a>
+          <p class="cv-idea">Dark and editorial · gold accents · slow, quiet motion</p>
+        </article>
+        <article class="cv-card" data-sample data-sample-src="samples/sample-7/index.html" data-sample-title="Kaaf — a coffee roaster, dialled in">
+          <a class="cv-cover" href="samples/sample-7/index.html" target="_blank" rel="noopener" aria-label="Open the full sample in a new page: Kaaf">
+            <span class="cv-tape" aria-hidden="true"></span>
+            <span class="cv-stamp" aria-hidden="true">No.<b>02</b></span>
+            <span class="cv-shot"><img src="samples/covers/kaaf.jpg" alt="Preview of Kaaf" loading="lazy" width="1280" height="800"></span>
+            <span class="cv-cap"><span class="cv-title">Kaaf</span><span class="cv-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></span>
+          </a>
+          <p class="cv-idea">Playful and retro · flat colour · bouncy characters</p>
+        </article>
+        <article class="cv-card" data-sample data-sample-src="samples/sample-1/index.html" data-sample-title="Diriyah — a heritage story">
+          <a class="cv-cover" href="samples/sample-1/index.html" target="_blank" rel="noopener" aria-label="Open the full sample in a new page: Diriyah">
+            <span class="cv-tape" aria-hidden="true"></span>
+            <span class="cv-stamp" aria-hidden="true">No.<b>03</b></span>
+            <span class="cv-shot"><img src="samples/covers/diriyah.jpg" alt="Preview of Diriyah" loading="lazy" width="1280" height="800"></span>
+            <span class="cv-cap"><span class="cv-title">Diriyah</span><span class="cv-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></span>
+          </a>
+          <p class="cv-idea">Warm and photographic · huge Arabic type · heritage mood</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -5546,7 +6135,7 @@
     if (prefersReducedMotion) {
       // 1100ms hold → single 500ms fade, no choreography
       setTimeout(() => {
-        gateway.style.transition = 'opacity 500ms ease';
+        gateway.style.transition = 'opacity 300ms ease';
         gateway.style.opacity = '0';
         setTimeout(() => {
           gateway.setAttribute('hidden', '');
@@ -5554,8 +6143,8 @@
           body.style.overflow = '';
           body.classList.remove('gw-active');
           body.classList.add('gw-done');
-        }, 550);
-      }, 1100);
+        }, 330);
+      }, 400);
     } else {
       // Timeline (v7.2):
       //   0     – still hold
@@ -5563,15 +6152,15 @@
       //   2900  – center line fully gone
       //   3100  – Act 2: gate opens — shoji panels slide apart, side rails travel with them (1400ms)
       //   4500  – gate fully open, gateway removed
-      setTimeout(() => gateway.classList.add('act-1'), 1000);
-      setTimeout(() => gateway.classList.add('act-2'), 3100);
+      setTimeout(() => gateway.classList.add('act-1'), 250);
+      setTimeout(() => gateway.classList.add('act-2'), 700);
       setTimeout(() => {
         gateway.setAttribute('hidden', '');
         gateway.setAttribute('aria-hidden', 'true');
         body.style.overflow = '';
         body.classList.remove('gw-active');
         body.classList.add('gw-done');
-      }, 4500);
+      }, 1850);
     }
   }
 
@@ -5582,7 +6171,7 @@
   // This works correctly for tall sections (where intersectionRatio breaks)
   // and for the last section (Method) which previously wasn't being observed.
   const navLinks = document.querySelectorAll('.nav-links a');
-  const sectionIds = ['work', 'about', 'method'];
+  const sectionIds = ['samples', 'work', 'about', 'method'];
   const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
@@ -5822,8 +6411,11 @@
        Skills are RENDERED on the 6×3 grid directly. The snake-grid (16×6) is
        used only for collision math: each skill's snake-grid cell is the
        nearest snake-cell to its rendered position. */
-    const SKILL_COLS = 4;
-    const SKILL_ROWS = 3;
+    /* Phones get a tall 2x6 layout so labels never collide on a narrow field;
+       wider screens keep the 4x3 spread. */
+    const NARROW = window.matchMedia('(max-width: 720px)').matches;
+    const SKILL_COLS = NARROW ? 2 : 4;
+    const SKILL_ROWS = NARROW ? 6 : 3;
 
     /* Round counter — used to guarantee position variation across the first
        3 rounds so a first-time visitor who waits for a respawn can catch any
@@ -5895,7 +6487,7 @@
            cell by a random amount, making the layout feel hand-arranged
            rather than perfectly gridded. Re-rolled every round. Bounded so
            adjacent cells' labels can never visually collide. */
-        skill.jitterX = (Math.random() - 0.5) * 2 * 0.28;   /* ±28% of cell width */
+        skill.jitterX = (Math.random() - 0.5) * 2 * (NARROW ? 0.10 : 0.28);   /* ±28% of cell width */
         skill.jitterY = (Math.random() - 0.5) * 2 * 0.32;   /* ±32% of cell height */
         skill.alive = true;
         skill.el.classList.remove('is-eaten', 'is-targeted');
@@ -5916,8 +6508,8 @@
       /* Render on the 4×3 skill grid, with per-skill jitter so the layout
          feels hand-arranged rather than gridded. Each skill's logical cell
          determines a base position; jitter offsets nudge it within bounds. */
-      const xPad = 13;
-      const yPad = 12;
+      const xPad = NARROW ? 8 : 13;
+      const yPad = NARROW ? 7 : 12;
       /* Base position at center of the cell */
       const baseX = xPad + ((skill.skillCol + 0.5) / SKILL_COLS) * (100 - 2 * xPad);
       const baseY = yPad + ((skill.skillRow + 0.5) / SKILL_ROWS) * (100 - 2 * yPad);
@@ -5932,8 +6524,8 @@
 
     function positionSegmentElement(el, col, row) {
       /* Snake moves on the finer 16×6 grid — smooth motion between cells */
-      const xPad = 13;
-      const yPad = 12;
+      const xPad = NARROW ? 8 : 13;
+      const yPad = NARROW ? 7 : 12;
       const x = xPad + ((col + 0.5) / COLS) * (100 - 2 * xPad);
       const y = yPad + ((row + 0.5) / ROWS) * (100 - 2 * yPad);
       el.style.left = x + '%';
@@ -6063,8 +6655,8 @@
       if (!trailEl) return;
       const dot = document.createElement('div');
       dot.className = 'snake-trail-dot';
-      const xPad = 13;
-      const yPad = 12;
+      const xPad = NARROW ? 8 : 13;
+      const yPad = NARROW ? 7 : 12;
       const x = xPad + ((col + 0.5) / COLS) * (100 - 2 * xPad);
       const y = yPad + ((row + 0.5) / ROWS) * (100 - 2 * yPad);
       dot.style.left = x + '%';
@@ -6564,6 +7156,59 @@
     window.addEventListener('blur', deactivate);
   })();
 
+
+  /* ─── Finger torch — the touch version of the cursor light ───
+     On phones the finger is the light source. The page darkens around the
+     touch point while a finger is down, and eases back to full visibility
+     shortly after it lifts, so nothing is ever permanently hidden. The torch
+     sits above the fingertip so the finger never covers what it reveals. */
+  (function fingerTorch() {
+    if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const shade = document.querySelector('.cursor-shade');
+    if (!shade) return;
+
+    document.body.classList.add('touch-torch');
+
+    /* Touch wording for the hint */
+    document.querySelectorAll('[data-touch-text]').forEach(el => { el.textContent = el.getAttribute('data-touch-text'); });
+    document.querySelectorAll('.cursor-hint:not(.cursor-hint--midpage) .cursor-hint-arrow').forEach(el => { el.textContent = '✦'; });
+
+    const OFFSET_Y = 70;           /* torch sits this far above the fingertip */
+    const HOLD_MS  = 1400;         /* keep lit this long after the finger lifts */
+    let tx = innerWidth / 2, ty = innerHeight / 2, cx = tx, cy = ty, raf = null, off = null;
+
+    function paint() {
+      cx += (tx - cx) * 0.28;
+      cy += (ty - cy) * 0.28;
+      shade.style.setProperty('--cx', cx + 'px');
+      shade.style.setProperty('--cy', cy + 'px');
+      raf = (Math.abs(tx - cx) > 0.4 || Math.abs(ty - cy) > 0.4) ? requestAnimationFrame(paint) : null;
+    }
+    function move(e) {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      tx = t.clientX;
+      ty = Math.max(0, t.clientY - OFFSET_Y);
+      if (!raf) raf = requestAnimationFrame(paint);
+    }
+    function down(e) {
+      if (document.body.classList.contains('ambient')) return;
+      if (off) { clearTimeout(off); off = null; }
+      const t = e.touches && e.touches[0];
+      if (t) { tx = cx = t.clientX; ty = cy = Math.max(0, t.clientY - OFFSET_Y); paint(); }
+      document.body.classList.add('cl-active', 'cursor-hint--seen');
+    }
+    function up(e) {
+      if (e.touches && e.touches.length) return;
+      off = setTimeout(() => document.body.classList.remove('cl-active'), HOLD_MS);
+    }
+    window.addEventListener('touchstart', down, { passive: true });
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('touchend', up, { passive: true });
+    window.addEventListener('touchcancel', up, { passive: true });
+  })();
+
   /* ─── Mode toggle — switches between Nightmare (cursor-reveal dark) and Daylight (full ambient) ─── */
   (function uxMode() {
     const input = document.getElementById('uxModeInput');
@@ -6947,6 +7592,10 @@
       toast.appendChild(icon);
       toast.appendChild(body);
       toastsLayer.appendChild(toast);
+      /* On phones keep at most two toasts on screen so they never bury the page */
+      if (window.matchMedia('(max-width: 1023px)').matches) {
+        while (toastsLayer.children.length > 2) toastsLayer.firstElementChild.remove();
+      }
 
       /* Auto-dismiss after 3.5s with an exit animation */
       setTimeout(() => {
@@ -7279,5 +7928,98 @@
 
 </div>
 
+<!-- ────────── FULL SAMPLE OVERLAY ────────── -->
+<div class="sample-overlay" id="sample-overlay" role="dialog" aria-modal="true" aria-label="Full sample" hidden>
+  <div class="so-bar">
+    <p class="so-title" data-so-title>Sample</p>
+    <a class="so-newtab" data-so-newtab href="#" target="_blank" rel="noopener">Open in new tab</a>
+    <button type="button" class="so-close" data-so-close aria-label="Close full sample">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <iframe class="so-frame" data-so-frame title="Full sample" src="about:blank"></iframe>
+</div>
+
+<script>
+/* ─── Ideas & Samples ───
+   Scales each live preview to its card, runs the slow scroll only while a card
+   is on screen, and opens the full sample in a full-screen overlay. */
+(function samples() {
+  const cards = Array.from(document.querySelectorAll('[data-sample]'));
+  const overlay = document.getElementById('sample-overlay');
+  if (!cards.length || !overlay) return;
+  const frame = overlay.querySelector('[data-so-frame]');
+  const titleEl = overlay.querySelector('[data-so-title]');
+  const newTab = overlay.querySelector('[data-so-newtab]');
+  const closeBtn = overlay.querySelector('[data-so-close]');
+  let opener = null;
+
+  function fit(vp) {
+    const vw = +vp.dataset.vw, vh = +vp.dataset.vh;
+    if (!vw || !vp.clientWidth) return;
+    const s = vp.clientWidth / vw;
+    const h = Math.max(vh, vp.clientHeight / s);
+    const fr = vp.querySelector('iframe');
+    if (fr) { fr.style.width = vw + 'px'; fr.style.height = h + 'px'; }
+    vp.style.setProperty('--s', s);
+    vp.style.setProperty('--dist', Math.max(0, h * s - vp.clientHeight) + 'px');
+  }
+  const ro = ('ResizeObserver' in window) ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
+  cards.forEach(c => c.querySelectorAll('.sc-viewport').forEach(vp => { fit(vp); if (ro) ro.observe(vp); }));
+  window.addEventListener('resize', () => cards.forEach(c => c.querySelectorAll('.sc-viewport').forEach(fit)), { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-visible', e.isIntersecting)), { threshold: 0.2 });
+    cards.forEach(c => io.observe(c));
+  } else {
+    cards.forEach(c => c.classList.add('is-visible'));
+  }
+
+  function open(card) {
+    opener = document.activeElement;
+    const src = card.dataset.sampleSrc;
+    titleEl.textContent = card.dataset.sampleTitle || 'Sample';
+    newTab.href = src;
+    frame.src = src;
+    overlay.hidden = false;
+    overlay.classList.add('is-open');
+    document.documentElement.classList.add('sample-open');
+    closeBtn.focus();
+  }
+  function close() {
+    overlay.classList.remove('is-open');
+    overlay.hidden = true;
+    frame.src = 'about:blank';
+    document.documentElement.classList.remove('sample-open');
+    if (opener && opener.focus) opener.focus();
+  }
+  cards.forEach(c => c.addEventListener('click', e => { if (e.target.closest('a')) return; window.open(c.dataset.sampleSrc, '_blank', 'noopener'); }));
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', e => {
+    if (overlay.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+    if (e.key === 'Tab') {
+      const stops = [newTab, closeBtn].filter(el => el.offsetParent !== null);
+      const i = stops.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); stops[stops.length - 1].focus(); }
+      else if (!e.shiftKey && i === stops.length - 1) { e.preventDefault(); stops[0].focus(); }
+    }
+  });
+})();
+/* Ideas & Samples: a gentle 3D tilt that follows the pointer over a print */
+(function sampleTilt() {
+  if (!matchMedia('(hover: hover)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.cv-card').forEach(card => {
+    const cover = card.querySelector('.cv-cover');
+    card.addEventListener('pointermove', e => {
+      const r = cover.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      cover.style.setProperty('--ty', (x * 9).toFixed(2) + 'deg');
+      cover.style.setProperty('--tx', (-y * 7).toFixed(2) + 'deg');
+    });
+    card.addEventListener('pointerleave', () => { cover.style.setProperty('--tx', '0deg'); cover.style.setProperty('--ty', '0deg'); });
+  });
+})();
+</script>
 </body>
 </html>

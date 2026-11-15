@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الكتاب العربي</title>
+<meta name="description" content="The Arabic book: from the paper-sellers of Baghdad to the first printing presses, with a shelf, a reading list and a guide on where to start.">
+<meta name="theme-color" content="#000000">
+<!--
+  Facts used (verify before relying on them):
+  - Paper reached Baghdad in the late 8th century (commonly dated to the 790s under Harun al-Rashid); paper made books cheaper to copy.
+  - Al-Ya'qubi (Kitab al-Buldan) is reported to mention more than 100 stationers' shops in the Rabad Waddah quarter of Baghdad; secondary sources only, check the text itself.
+  - Kitab Salat al-Sawai (1514, Italy; the Fano imprint is disputed) is counted among the earliest Arabic books printed with movable type.
+  - The Bulaq Press: Egypt's first government press under Muhammad Ali; 1820 is the commonest founding date (project from 1815, first publication 1822).
+  - Shelf: Kalila wa Dimna (Ibn al-Muqaffa', 8th c.), al-Jabr (al-Khwarizmi, c. 820), al-Hayawan (al-Jahiz, 9th c.), Canon of Medicine (Ibn Sina, 1025),
+    Book of Optics (Ibn al-Haytham, early 11th c.), al-Muqaddimah (Ibn Khaldun, 1377), Diwan al-Mutanabbi (d. 965), the Mu'allaqat (pre-Islamic odes),
+    Kitab al-Aghani (al-Isfahani, 10th c.), Muruj al-Dhahab (al-Mas'udi, c. 947).
+  - Added (page-confirmed): Al-Fihrist (Ibn al-Nadim, 987), Kitab al-Ayn (8th c., first Arabic dictionary), Sibawayh's al-Kitab (grammar; Sibawayh d. c. 796), al-Tabari's History (completed 915), Hayy ibn Yaqzan (Ibn Tufayl, 12th c.), Risalat al-Ghufran (al-Ma'arri, c. 1033).
+  - Verse: al-Mutanabbi, "wa khayru jalisin fi al-zamani kitabu".
+  - The book trades (warraq, corrector, gilder, binder) are the standard crafts of the manuscript book.
+  - The guide's levels and tips are an editorial suggestion, not a measured reading level.
+  Fonts: Thmanyah Serif Display / Text and Thmanyah Sans, self-hosted from ../../fonts (licence: no redistribution of the files).
+  Look: black ground, one gold light in the first screens, dust in the beam. Only the shelf uses a catalog card; every other section has its own form.
+-->
+<style>
+  @font-face{font-family:'Thmanyah Sans';src:url('../../fonts/thmanyah-sans/thmanyah-sans-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+  @font-face{font-family:'Thmanyah Sans';src:url('../../fonts/thmanyah-sans/thmanyah-sans-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Thmanyah Sans';src:url('../../fonts/thmanyah-sans/thmanyah-sans-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Thmanyah Sans';src:url('../../fonts/thmanyah-sans/thmanyah-sans-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+  @font-face{font-family:'Thmanyah Serif Text';src:url('../../fonts/thmanyah-serif/thmanyah-serif-text-regular.otf') format('opentype');font-weight:400;font-display:swap}
+  @font-face{font-family:'Thmanyah Serif Display';src:url('../../fonts/thmanyah-serif/thmanyah-serif-display-bold.otf') format('opentype');font-weight:700;font-display:swap}
+  :root{--bg:#000;--ink:#f6f1e6;--ink-hi:#fff;--muted:rgba(246,241,230,.72);--muted-2:rgba(246,241,230,.5);--muted-3:rgba(246,241,230,.45);--gold:#f2c261;--gold2:#ffe3a6;--gold-rgb:242,194,97;--line:rgba(242,194,97,.28);
+    --chrome:rgba(0,0,0,.5);--shade:#000;--beam-blend:screen;--tshadow:0 2px 20px #000;--h1-shadow:0 0 60px rgba(242,194,97,.3),0 8px 60px #000;--glow:0 0 28px rgba(242,194,97,.55);--spine-ink:#ffe3a6;
+    --toast-bg:rgba(12,10,6,.94);--toast-ink:#f6f1e6;--toast-sh:0 0 34px -8px rgba(242,194,97,.4),0 18px 40px -16px #000;
+    --f-disp:'Thmanyah Serif Display','Thmanyah Serif Text',serif;--f-lite:'Thmanyah Serif Text','Thmanyah Serif Display',serif;--f-text:'Thmanyah Sans',system-ui,sans-serif}
+  /* NEZL design-system typography: Display steps down by breakpoint (tablet <= 1023, mobile <= 767); Text keeps the component values at every width, as the app does */
+  :root{--d2xl:72px;--d2xl-l:90px;--dxl:60px;--dxl-l:72px;--dlg:48px;--dlg-l:60px;--dmd:36px;--dmd-l:44px;--dsm:30px;--dsm-l:38px;--dxs:24px;--dxs-l:32px;
+    --txl:20px;--txl-l:30px;--tlg:18px;--tlg-l:28px;--tmd:16px;--tmd-l:24px;--tsm:14px;--tsm-l:20px;--txs:12px;--txs-l:18px;--t2xs:10px;--t2xs-l:14px}
+  @media(max-width:1023px){:root{--d2xl:56px;--d2xl-l:72px;--dxl:48px;--dxl-l:64px;--dlg:36px;--dlg-l:48px;--dmd:30px;--dmd-l:40px;--dsm:24px;--dsm-l:32px;--dxs:20px;--dxs-l:28px;}}
+  @media(max-width:767px){:root{--d2xl:48px;--d2xl-l:64px;--dxl:40px;--dxl-l:56px;--dlg:32px;--dlg-l:40px;--dmd:24px;--dmd-l:32px;--dsm:20px;--dsm-l:28px;--dxs:18px;--dxs-l:24px;}}
+  /* light mode: warm paper, ink text, bronze gold; the books stay dark leather with gold foil */
+  html[data-theme="light"]{--bg:#f6f1e6;--ink:#2a2622;--ink-hi:#14110d;--muted:rgba(42,38,34,.74);--muted-2:rgba(42,38,34,.55);--muted-3:rgba(42,38,34,.5);--gold:#b07d16;--gold2:#7a5206;--gold-rgb:176,125,22;--line:rgba(176,125,22,.34);
+    --chrome:rgba(246,241,230,.75);--shade:rgba(80,55,15,.28);--beam-blend:multiply;--tshadow:none;--h1-shadow:none;--glow:none;
+    --toast-bg:var(--bg);--toast-ink:#2a2622;--toast-sh:0 12px 32px -8px rgba(80,55,15,.35),0 4px 8px -2px rgba(80,55,15,.2)}
+  /* theme switch: the new theme spreads from the button like a lamp being lit (View Transitions), with a colour fade as the fallback */
+  ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+  ::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+  html.theming,html.theming *,html.theming *::before,html.theming *::after{transition:background-color .7s ease,color .7s ease,border-color .7s ease,box-shadow .7s ease,fill .7s ease,stroke .7s ease!important}
+  /* no spotlight and no dust in light mode: they belong to the dark room */
+  html[data-theme="light"] .beam,html[data-theme="light"] #dust{display:none}
+  html[data-theme="light"] .pat{filter:brightness(.72) saturate(1.4);opacity:.85}
+  html[data-theme="light"] .grain{mix-blend-mode:multiply;opacity:.05}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--bg);scroll-behavior:smooth}
+  body{position:relative;color:var(--ink);font-family:var(--f-text);font-weight:400;overflow-x:hidden;background:transparent}
+  html[lang="ar"] [lang="en"],html[lang="en"] [lang="ar"]{display:none!important}
+  button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+  a{color:inherit}
+  body.lock{overflow:hidden}
+
+  /* ---- the room: one light in the first screens, dust, grain ---- */
+  .bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bg)}
+  #dust{position:absolute;inset:0}
+  .beam{position:absolute;left:-50%;width:200%;top:-30vh;height:170vh;pointer-events:none;mix-blend-mode:var(--beam-blend);transform-origin:50% 12.94%;filter:blur(12px);
+    background:
+      radial-gradient(circle 260px at 50% 12.94%,rgba(255,244,214,.60),rgba(255,230,180,.20) 40%,transparent 78%),
+      conic-gradient(from 0deg at 50% 12.94%,transparent 0 162.39deg,rgba(255,232,184,0.0018) 162.40deg,rgba(255,232,184,0.0036) 163.66deg,rgba(255,232,184,0.0070) 164.91deg,rgba(255,232,184,0.0127) 166.17deg,rgba(255,232,184,0.0220) 167.43deg,rgba(255,232,184,0.0362) 168.69deg,rgba(255,232,184,0.0564) 169.94deg,rgba(255,232,184,0.0834) 171.20deg,rgba(255,232,184,0.1171) 172.46deg,rgba(255,232,184,0.1561) 173.71deg,rgba(255,232,184,0.1975) 174.97deg,rgba(255,232,184,0.2371) 176.23deg,rgba(255,232,184,0.2702) 177.49deg,rgba(255,232,184,0.2923) 178.74deg,rgba(255,232,184,0.3000) 180.00deg,rgba(255,232,184,0.2923) 181.26deg,rgba(255,232,184,0.2702) 182.51deg,rgba(255,232,184,0.2371) 183.77deg,rgba(255,232,184,0.1975) 185.03deg,rgba(255,232,184,0.1561) 186.29deg,rgba(255,232,184,0.1171) 187.54deg,rgba(255,232,184,0.0834) 188.80deg,rgba(255,232,184,0.0564) 190.06deg,rgba(255,232,184,0.0362) 191.31deg,rgba(255,232,184,0.0220) 192.57deg,rgba(255,232,184,0.0127) 193.83deg,rgba(255,232,184,0.0070) 195.09deg,rgba(255,232,184,0.0036) 196.34deg,rgba(255,232,184,0.0018) 197.60deg,transparent 197.61deg 360deg),
+      conic-gradient(from 0deg at 50% 12.94%,transparent 0 144.79deg,rgba(255,224,170,0.0010) 144.80deg,rgba(255,224,170,0.0021) 147.31deg,rgba(255,224,170,0.0040) 149.83deg,rgba(255,224,170,0.0072) 152.34deg,rgba(255,224,170,0.0125) 154.86deg,rgba(255,224,170,0.0205) 157.37deg,rgba(255,224,170,0.0319) 159.89deg,rgba(255,224,170,0.0473) 162.40deg,rgba(255,224,170,0.0664) 164.91deg,rgba(255,224,170,0.0885) 167.43deg,rgba(255,224,170,0.1119) 169.94deg,rgba(255,224,170,0.1344) 172.46deg,rgba(255,224,170,0.1531) 174.97deg,rgba(255,224,170,0.1656) 177.49deg,rgba(255,224,170,0.1700) 180.00deg,rgba(255,224,170,0.1656) 182.51deg,rgba(255,224,170,0.1531) 185.03deg,rgba(255,224,170,0.1344) 187.54deg,rgba(255,224,170,0.1119) 190.06deg,rgba(255,224,170,0.0885) 192.57deg,rgba(255,224,170,0.0664) 195.09deg,rgba(255,224,170,0.0473) 197.60deg,rgba(255,224,170,0.0319) 200.11deg,rgba(255,224,170,0.0205) 202.63deg,rgba(255,224,170,0.0125) 205.14deg,rgba(255,224,170,0.0072) 207.66deg,rgba(255,224,170,0.0040) 210.17deg,rgba(255,224,170,0.0021) 212.69deg,rgba(255,224,170,0.0010) 215.20deg,transparent 215.21deg 360deg),
+      conic-gradient(from 0deg at 50% 12.94%,transparent 0 109.59deg,rgba(255,214,150,0.0005) 109.60deg,rgba(255,214,150,0.0010) 114.63deg,rgba(255,214,150,0.0020) 119.66deg,rgba(255,214,150,0.0036) 124.69deg,rgba(255,214,150,0.0062) 129.71deg,rgba(255,214,150,0.0102) 134.74deg,rgba(255,214,150,0.0160) 139.77deg,rgba(255,214,150,0.0236) 144.80deg,rgba(255,214,150,0.0332) 149.83deg,rgba(255,214,150,0.0442) 154.86deg,rgba(255,214,150,0.0560) 159.89deg,rgba(255,214,150,0.0672) 164.91deg,rgba(255,214,150,0.0766) 169.94deg,rgba(255,214,150,0.0828) 174.97deg,rgba(255,214,150,0.0850) 180.00deg,rgba(255,214,150,0.0828) 185.03deg,rgba(255,214,150,0.0766) 190.06deg,rgba(255,214,150,0.0672) 195.09deg,rgba(255,214,150,0.0560) 200.11deg,rgba(255,214,150,0.0442) 205.14deg,rgba(255,214,150,0.0332) 210.17deg,rgba(255,214,150,0.0236) 215.20deg,rgba(255,214,150,0.0160) 220.23deg,rgba(255,214,150,0.0102) 225.26deg,rgba(255,214,150,0.0062) 230.29deg,rgba(255,214,150,0.0036) 235.31deg,rgba(255,214,150,0.0020) 240.34deg,rgba(255,214,150,0.0010) 245.37deg,rgba(255,214,150,0.0005) 250.40deg,transparent 250.41deg 360deg);
+    -webkit-mask-image:radial-gradient(circle 210vh at 50% 12.94%,rgba(0,0,0,1.000) 0%,rgba(0,0,0,0.974) 10%,rgba(0,0,0,0.901) 20%,rgba(0,0,0,0.791) 30%,rgba(0,0,0,0.660) 40%,rgba(0,0,0,0.522) 50%,rgba(0,0,0,0.392) 60%,rgba(0,0,0,0.280) 70%,rgba(0,0,0,0.189) 80%,rgba(0,0,0,0.122) 90%,rgba(0,0,0,0.074) 100%),linear-gradient(180deg,transparent calc(30vh),rgba(0,0,0,.25) calc(30vh + 60px),rgba(0,0,0,.7) calc(30vh + 150px),#000 calc(30vh + 260px));-webkit-mask-composite:source-in;
+    mask-image:radial-gradient(circle 210vh at 50% 12.94%,rgba(0,0,0,1.000) 0%,rgba(0,0,0,0.974) 10%,rgba(0,0,0,0.901) 20%,rgba(0,0,0,0.791) 30%,rgba(0,0,0,0.660) 40%,rgba(0,0,0,0.522) 50%,rgba(0,0,0,0.392) 60%,rgba(0,0,0,0.280) 70%,rgba(0,0,0,0.189) 80%,rgba(0,0,0,0.122) 90%,rgba(0,0,0,0.074) 100%),linear-gradient(180deg,transparent calc(30vh),rgba(0,0,0,.25) calc(30vh + 60px),rgba(0,0,0,.7) calc(30vh + 150px),#000 calc(30vh + 260px));mask-composite:intersect}
+  .grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+  main,footer{position:relative;z-index:1}
+
+  /* ---- header, edge tabs (desktop), full menu (mobile) ---- */
+  .top::before{content:'';position:absolute;inset:0 0 -18px;z-index:-1;background:linear-gradient(180deg,var(--bg) 55%,transparent);pointer-events:none}
+  .top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px clamp(18px,3vw,40px);pointer-events:none}
+  .top>*{pointer-events:auto}
+  .brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-disp);font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l);text-decoration:none;text-shadow:var(--tshadow)}
+  .brand i{width:12px;height:22px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+  .tools{display:flex;align-items:center;gap:8px}
+  .ring{min-width:40px;height:40px;padding:0;border-radius:999px;border:1px solid rgba(var(--gold-rgb),.6);background:var(--chrome);backdrop-filter:blur(10px);font-weight:500;font-size:16px;line-height:24px;font-family:var(--f-text);color:var(--gold2);display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:background .3s,color .3s}
+  .ring:hover{background:var(--gold);color:#1a1204}
+  .mnav .ring{padding:0}
+  .mnav .mt{display:flex;gap:8px}
+  .burger{display:none}
+  .burger i{width:18px;height:12px;border-block:1.6px solid currentColor;position:relative}
+  .burger i::after{content:'';position:absolute;left:0;right:0;top:50%;height:1.6px;margin-top:-.8px;background:currentColor}
+  .cnt{display:inline-grid;place-items:center;min-width:18px;height:18px;border-radius:9px;background:var(--gold);color:#1a1204;font-weight:700;font-size:var(--txs);line-height:var(--txs-l);font-family:var(--f-text);padding:0 5px}
+  /* desktop menu: a thin line along the edge with the numbers 01 to 07, the section name shows for the current one */
+  .tabs{position:fixed;inset-inline-end:clamp(14px,2vw,30px);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;align-items:flex-end;border-inline-end:1px solid var(--line);padding-inline-end:16px}
+  .tabs a{position:relative;display:flex;align-items:center;gap:12px;padding:9px 0;text-decoration:none;color:var(--muted-2);font-weight:500;font-size:var(--txs);line-height:var(--txs-l);font-family:var(--f-text);letter-spacing:.14em;transition:color .3s}
+  .tabs .n{direction:ltr;min-width:22px;text-align:center}
+  .tabs .lb{display:inline-flex;align-items:center;gap:8px;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;font-size:var(--tsm);line-height:var(--tsm-l);padding-block:8px;margin-block:-8px;letter-spacing:0;transition:max-width .4s cubic-bezier(.22,1,.36,1),opacity .3s}
+  .tabs a:hover,.tabs a.on{color:var(--gold)}
+  .tabs a:hover .lb,.tabs a.on .lb{max-width:220px;opacity:1}
+  .tabs a.on::after{content:'';position:absolute;inset-inline-end:-17px;top:4px;bottom:4px;width:2px;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+  .tabs .cnt{min-width:16px;height:16px;font-size:var(--t2xs);line-height:1}
+  .cnt[hidden]{display:none}
+  .mnav{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;padding:20px clamp(18px,3vw,40px) 40px;visibility:hidden;opacity:0;transition:opacity .35s,visibility .35s}
+  .mnav.open{visibility:visible;opacity:1}
+  .mnav .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+  .mnav ol{list-style:none;display:flex;flex-direction:column;flex:1;justify-content:center}
+  .mnav li a{display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--f-disp);font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l)}
+  .mnav li a small{font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);letter-spacing:.14em;color:var(--gold);direction:ltr;min-width:26px}
+  .mnav li a:active,.mnav li a:hover{color:var(--gold)}
+  .mnav .cnt{align-self:center}
+  /* NEZL Button, Size=Lg: 40 high, 16 padding, 4 gap, 8 radius, 1px border, Text Md Medium 16/24 at every width */
+  .btn,.bmk,.links a,.path .acts button,.path .acts a{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:40px;padding:0 16px;border:1px solid transparent;border-radius:999px;font-family:var(--f-text);font-weight:500;font-size:16px;line-height:24px;text-decoration:none}
+  .btn{color:#1a1204;background:var(--gold);border-color:var(--gold)}
+  .btn.ghost{color:var(--ink);background:transparent;border-color:rgba(var(--gold-rgb),.5)}
+  .btn.ghost:hover{background:rgba(var(--gold-rgb),.14)}
+  .btn:active{transform:translateY(1px)}
+  .btn:disabled{opacity:.4;cursor:default}
+
+  /* the one catalog card: the shelf's open drawer */
+  .cc{position:relative;border-radius:18px;padding:34px 30px 40px;
+    background:repeating-linear-gradient(transparent 0 35px,rgba(var(--gold-rgb),.11) 35px 36px),rgba(var(--gold-rgb),.06);
+    backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);
+    border:1px solid rgba(var(--gold-rgb),.36);box-shadow:0 4px 8px rgba(77,87,97,.04)}   /* DS Shadows/Small - Down */
+  .rib{position:absolute;top:-10px;inset-inline-end:28px;width:24px;height:72px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+  .cn{font-weight:500;font-size:var(--txs);line-height:var(--txs-l);font-family:var(--f-text);letter-spacing:.22em;color:rgba(var(--gold-rgb),.85);direction:ltr;position:absolute;top:16px;inset-inline-end:68px}
+
+  /* ---- sections ---- */
+  .sec{position:relative;padding:clamp(90px,14vh,150px) clamp(20px,6vw,90px)}
+  .wrap{max-width:1180px;margin:0 auto}
+  h2{font-family:var(--f-lite);font-weight:400;font-size:var(--dxl);line-height:var(--dxl-l);margin-bottom:18px}
+  h2 b{font-family:var(--f-disp);font-weight:700}
+  .sub{max-width:34em;color:var(--muted);font-size:var(--txl);line-height:var(--txl-l);margin-bottom:46px}
+  .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  .rv.on{opacity:1;transform:none}
+
+  /* 1 . hero and the pinned road (plain type, no boxes) */
+  .run{position:relative;height:560vh}
+  .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+  .hero{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;gap:26px;padding:0 24px;will-change:transform,opacity}
+  h1{font-family:var(--f-lite);font-weight:400;font-size:var(--d2xl);line-height:var(--d2xl-l);text-shadow:var(--h1-shadow)}
+  h1 b{font-family:var(--f-disp);font-weight:700;color:var(--ink-hi)}
+  html[lang="en"] h1{letter-spacing:-.02em}
+  .lead{max-width:30em;font-size:var(--txl);line-height:var(--txl-l);color:var(--muted);text-shadow:var(--tshadow)}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .words{position:absolute;inset:0;overflow:hidden}
+  .word{position:absolute;left:50%;top:50%;white-space:nowrap;font-family:var(--f-disp);font-weight:700;font-size:clamp(150px,30vw,470px);line-height:1;padding-block:.22em;background:linear-gradient(180deg,rgba(var(--gold-rgb),.20),rgba(var(--gold-rgb),.02) 80%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;direction:rtl;will-change:transform,opacity}
+  html[lang="en"] .word{direction:ltr;font-size:clamp(120px,22vw,360px)}
+  .road{position:absolute;width:min(430px,86vw);opacity:0;will-change:transform,opacity;padding-inline-start:26px;border-inline-start:2px solid var(--gold)}
+  .road.left{inset-inline-start:7vw}.road.right{inset-inline-end:7vw}
+  .road .k{margin-bottom:10px;font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);letter-spacing:.06em;color:var(--gold)}
+  .road .n{font-family:var(--f-disp);font-weight:700;font-size:var(--d2xl);line-height:var(--d2xl-l);direction:ltr;unicode-bidi:isolate;display:block;margin-bottom:16px;text-shadow:var(--glow)}
+  html[lang="ar"] .road .n{text-align:right}
+  .road p{font-size:var(--txl);line-height:var(--txl-l);text-shadow:var(--tshadow)}
+  .rt{direction:rtl;unicode-bidi:isolate;font-size:var(--dxl);line-height:var(--dxl-l)}
+
+  /* 2 . the shelf */
+  .shelf{display:flex;align-items:flex-end;gap:7px;padding:90px 48px 44px;margin:-90px -48px 0;overflow-x:auto;scroll-snap-type:x proximity;background:linear-gradient(rgba(242,194,97,.55),rgba(242,194,97,.55)) no-repeat left 48px bottom 44px/calc(100% - 96px) 2px;direction:rtl;scrollbar-width:none}
+  .shelf::-webkit-scrollbar{display:none}
+  html[lang="en"] .shelf{direction:ltr}
+  .lean{display:flex;align-items:flex-end;gap:7px;flex:0 0 auto;margin-inline-start:34px;position:relative;z-index:0;--lean:9deg}
+  .lean .spine{transform-origin:right bottom;transform:rotate(var(--lean))}
+  .lean .spine:hover{transform:rotate(var(--lean)) translateY(-14px)}
+  .lean .spine.on{transform:rotate(var(--lean)) translateY(-34px)}
+  .spine{flex:0 0 auto;width:66px;position:relative;z-index:1;min-height:170px;position:relative;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;border-radius:5px 5px 0 0;border:1px solid rgba(var(--gold-rgb),.28);border-bottom:0;
+    background:linear-gradient(90deg,rgba(255,255,255,.07),rgba(255,255,255,0) 35%,rgba(0,0,0,.4)),linear-gradient(180deg,var(--tone),#070604);
+    transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .5s}
+  .spine::before,.spine::after{content:'';position:absolute;left:0;right:0;height:9px;border-block:1px solid rgba(var(--gold-rgb),.55)}
+  .spine::before{top:18px}.spine::after{bottom:18px}
+  .spine span{writing-mode:vertical-rl;font-family:var(--f-disp);font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l);color:var(--spine-ink);letter-spacing:.02em;padding:46px 0;white-space:nowrap}
+  html[lang="ar"] .spine>span{transform:rotate(180deg)}   /* Arabic titles read top to bottom, like the English ones */
+  .spine:hover{transform:translateY(-14px);border-color:rgba(var(--gold-rgb),.7)}
+  .spine.on{transform:translateY(-34px);border-color:var(--gold);box-shadow:0 0 34px rgba(var(--gold-rgb),.45)}
+  /* light mode: cloth-and-leather bindings in warm mid tones, not black */
+  html[data-theme="light"] .spine{background:linear-gradient(90deg,rgba(255,255,255,.16),rgba(255,255,255,0) 35%,rgba(40,24,6,.22)),linear-gradient(180deg,var(--ltone),color-mix(in srgb,var(--ltone) 72%,#2a1a08));border-color:rgba(60,36,8,.35);--spine-ink:#fbf0d4}
+  html[data-theme="light"] .spine::before,html[data-theme="light"] .spine::after{border-color:rgba(251,240,212,.55)}
+  html[data-theme="light"] .spine:hover{border-color:rgba(60,36,8,.6)}
+  html[data-theme="light"] .spine.on{border-color:var(--gold2);box-shadow:0 14px 30px -10px rgba(80,55,15,.55)}
+  .detail{margin-top:46px;display:grid;grid-template-columns:minmax(180px,.7fr) 1.6fr;gap:34px;align-items:center}
+  .detail .yr{font-family:var(--f-disp);font-weight:700;font-size:var(--d2xl);line-height:var(--d2xl-l);text-shadow:var(--glow);direction:ltr;unicode-bidi:isolate}
+  html[lang="ar"] .detail .yr{text-align:right}
+  .detail h3{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);margin:8px 0}
+  .detail .au{color:var(--gold);font-size:var(--tlg);line-height:var(--tlg-l);font-weight:500;margin-bottom:10px}
+  .detail p{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--muted);max-width:32em;margin-bottom:22px}
+  .bmk{color:var(--ink);border-color:rgba(var(--gold-rgb),.5)}
+  .bmk svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}
+  .bmk.on{background:var(--gold);color:#1a1204}
+  .bmk.on svg{fill:currentColor}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .links a{color:var(--ink);border-color:var(--line)}
+  .links a:hover{border-color:var(--gold)}
+  .swap{animation:swap .55s cubic-bezier(.22,1,.36,1)}
+  @keyframes swap{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* 3 . my list: a ledger, not cards */
+  .listbar{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+  .meter{flex:1;min-width:140px;max-width:340px;height:6px;border-radius:6px;background:rgba(var(--gold-rgb),.16);overflow:hidden}
+  .meter i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s cubic-bezier(.22,1,.36,1)}
+  .mt{font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);color:var(--muted)}
+  .ledger{border-top:1px solid var(--gold)}
+  .lh,.lrow{display:grid;grid-template-columns:28px 2.2fr 1.5fr 1.1fr 40px;gap:16px;align-items:center}
+  .lh{padding:12px 0;font-weight:500;font-size:var(--txs);line-height:var(--txs-l);font-family:var(--f-text);letter-spacing:.16em;color:var(--gold);border-bottom:1px solid var(--line)}
+  .lrow{padding:18px 0;border-bottom:1px solid var(--line)}
+  .lrow .mk{width:12px;height:22px;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+  .lrow h4{font-family:var(--f-disp);font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l)}
+  .lrow .a{color:var(--muted);font-size:var(--tmd);line-height:var(--tmd-l)}
+  .st{justify-self:start;display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);padding:0 4px;min-height:40px}
+  .st::before{content:'';width:12px;height:12px;border-radius:50%;border:1.5px solid var(--gold)}
+  .st.reading::before{background:linear-gradient(90deg,var(--gold) 50%,transparent 50%)}
+  .st.done::before{background:var(--gold)}
+  .st:hover{color:var(--gold2)}
+  .lrow .x{font-size:var(--dxs);line-height:var(--dxs-l);color:var(--muted);padding:0;min-width:40px;min-height:40px;display:inline-flex;align-items:center;justify-content:center}
+  .lrow .x:hover{color:var(--ink-hi)}
+  .empty{padding:44px 0;display:grid;gap:18px;color:var(--muted);font-size:var(--txl);line-height:var(--txl-l);border-bottom:1px solid var(--line)}
+  .empty .acts{display:flex;gap:8px;flex-wrap:wrap}
+
+  /* 4 . the guide: questions that change with every answer */
+  .wiz{display:grid;grid-template-columns:minmax(200px,.8fr) 1.5fr;gap:clamp(24px,5vw,80px);min-height:420px}
+  .wiz .q{position:sticky;top:110px;align-self:start}
+  .wiz .qn{font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);color:var(--gold);margin-bottom:12px}
+  .wiz h3{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l)}
+  .wiz .ctx{margin-top:14px;color:var(--muted);font-size:var(--tlg);line-height:var(--tlg-l)}
+  .opts{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .opt{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;min-height:76px;padding:12px 4px;border-bottom:1px solid var(--line);text-align:start;font-weight:400;font-size:var(--dxs);line-height:var(--dxs-l);font-family:var(--f-lite);transition:padding .35s cubic-bezier(.22,1,.36,1),color .3s}
+  .opt::after{content:'←';font-weight:400;font-size:var(--dxs);line-height:var(--dxs-l);font-family:var(--f-text);color:var(--gold)}
+  html[dir="ltr"] .opt::after{content:'→'}
+  .opt:hover{padding-inline-start:18px;color:var(--gold2)}
+  .back{margin-top:22px;font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:2px}
+  .path{list-style:none;position:relative;padding-inline-start:44px}
+  .path::before{content:'';position:absolute;top:8px;bottom:8px;inset-inline-start:11px;width:1px;background:var(--gold)}
+  .path li{position:relative;padding-bottom:40px}
+  .path li::before{content:'';position:absolute;inset-inline-start:-40px;top:10px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--gold)}
+  .path .st1{font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);letter-spacing:.16em;color:var(--gold)}
+  .path h4{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);margin:4px 0}
+  .path .au{color:var(--muted);font-size:var(--tmd);line-height:var(--tmd-l);margin-bottom:10px}
+  .path .md{display:inline-block;font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:3px 14px;margin-bottom:10px}
+  .path p{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--ink);max-width:32em;margin-bottom:14px}
+  .path .acts{display:flex;gap:8px;flex-wrap:wrap}
+  .path .acts button,.path .acts a{color:var(--ink);border-color:var(--line)}
+  .path .acts button:hover,.path .acts a:hover{border-color:var(--gold)}
+  .path .acts button.ok{background:var(--gold);color:#1a1204;border-color:var(--gold)}
+
+  /* 5 . libraries: an index, one line each */
+  .index{border-top:1px solid var(--gold)}
+  .ix{display:grid;grid-template-columns:60px 1.2fr 1.6fr 160px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);transition:background .3s,padding .35s cubic-bezier(.22,1,.36,1)}
+  .ix:hover{background:rgba(var(--gold-rgb),.07);padding-inline:16px}
+  .ix .no{font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);letter-spacing:.14em;color:var(--gold);direction:ltr}
+  .ix .dom{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);color:var(--ink);text-decoration:none;justify-self:start;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+  .ix .dom:hover{color:var(--gold2);border-color:var(--gold)}
+  .ix p{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--muted)}
+  .ix .go{justify-self:end;font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);color:var(--gold2);white-space:nowrap;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+  .ix .go:hover{color:var(--ink-hi)}
+
+  /* 6 . the quote, lit word by word */
+  .quote{position:relative;height:260vh}
+  .quote .in{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-content:center;padding:0 clamp(20px,6vw,90px);text-align:center;gap:34px}
+  .verse{font-family:var(--f-disp);font-weight:700;font-size:var(--dxl);line-height:var(--dxl-l)}
+  .verse .w{opacity:.14;transition:opacity .35s,text-shadow .35s}
+  .verse .w.on{opacity:1;text-shadow:var(--glow)}
+  .verse .ln{display:block}
+  html[lang="ar"] .tr{display:none}
+  .tr{font-size:var(--txl);line-height:var(--txl-l);color:var(--muted);max-width:36em;margin:0 auto}
+  .by{font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text);letter-spacing:.14em;color:var(--gold)}
+
+  /* 7 . the craft: a line with four stops */
+  .proc{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;padding-top:46px}
+  .proc::before{content:'';position:absolute;top:12px;inset-inline:0;height:1px;background:var(--gold)}
+  .stp{position:relative}
+  .stp::before{content:'';position:absolute;top:-41px;inset-inline-start:0;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);transition:background .3s}
+  .stp:hover::before{background:var(--gold)}
+  .stp .no{padding-block:4px;font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);letter-spacing:.16em;color:var(--gold);direction:ltr;text-align:start;margin-bottom:10px}
+  .stp h4{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);margin-bottom:10px}
+  .stp p{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--muted)}
+
+  /* 8 . questions: a plain accordion */
+  .acc{border-top:1px solid var(--gold)}
+  .dr{border-bottom:1px solid var(--line)}
+  .dr>button{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:78px;padding:14px 4px;text-align:start;font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l);font-family:var(--f-disp)}
+  .dr>button::after{content:'+';font-weight:400;font-size:var(--dsm);line-height:var(--dsm-l);font-family:var(--f-text);color:var(--gold);transition:transform .35s}
+  .dr.on>button::after{transform:rotate(45deg)}
+  .dr .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,1,.36,1)}
+  .dr.on .ans{grid-template-rows:1fr}
+  .dr .ans>div{overflow:hidden}
+  .dr .ans p{padding:0 4px 26px;font-size:var(--tlg);line-height:var(--tlg-l);color:var(--muted);max-width:60em}
+
+  /* 9 . places: three columns split by hairlines */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--gold)}
+  .col{padding:34px clamp(16px,2.4vw,36px) 10px;display:flex;flex-direction:column}
+  .col+.col{border-inline-start:1px solid var(--line)}
+  .col:first-child{padding-inline-start:0}
+  .col .ty{font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l);font-family:var(--f-text);letter-spacing:.14em;color:var(--gold);margin-bottom:14px}
+  .col h4{font-family:var(--f-disp);font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);margin-bottom:14px}
+  .col p{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--muted);margin-bottom:20px;flex:1}
+  .col a{align-self:flex-start;font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);color:var(--gold2);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+
+  /* large tone-on-tone facets, in the spirit of the Egypt team pattern; used in a few sections only */
+  .pat{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27520%27%20height%3D%27450%27%20viewBox%3D%270%200%20520%20450%27%3E%3Cpolygon%20points%3D%27-260.0%2C225.0%200.0%2C225.0%20-130.0%2C0.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27-130.0%2C0.0%20130.0%2C0.0%200.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.03%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%270.0%2C225.0%20260.0%2C225.0%20130.0%2C0.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.03%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27130.0%2C0.0%20390.0%2C0.0%20260.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27260.0%2C225.0%20520.0%2C225.0%20390.0%2C0.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27390.0%2C0.0%20650.0%2C0.0%20520.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.03%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27520.0%2C225.0%20780.0%2C225.0%20650.0%2C0.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.03%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27650.0%2C0.0%20910.0%2C0.0%20780.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27780.0%2C225.0%201040.0%2C225.0%20910.0%2C0.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27910.0%2C0.0%201170.0%2C0.0%201040.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.03%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27-130.0%2C450.0%20130.0%2C450.0%200.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.09%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%270.0%2C225.0%20260.0%2C225.0%20130.0%2C450.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27130.0%2C450.0%20390.0%2C450.0%20260.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.06%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27260.0%2C225.0%20520.0%2C225.0%20390.0%2C450.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27390.0%2C450.0%20650.0%2C450.0%20520.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.09%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27520.0%2C225.0%20780.0%2C225.0%20650.0%2C450.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27650.0%2C450.0%20910.0%2C450.0%20780.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.06%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27780.0%2C225.0%201040.0%2C225.0%20910.0%2C450.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%27910.0%2C450.0%201170.0%2C450.0%201040.0%2C225.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.09%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3Cpolygon%20points%3D%271040.0%2C225.0%201300.0%2C225.0%201170.0%2C450.0%27%20fill%3D%27rgb%28242%2C194%2C97%29%27%20fill-opacity%3D%270.13%27%20stroke%3D%27rgb%28242%2C194%2C97%29%27%20stroke-opacity%3D%270.05%27%20stroke-width%3D%271%27%2F%3E%3C%2Fsvg%3E');background-size:520px 450px;background-position:center top}
+  footer{padding:90px clamp(20px,6vw,90px) 40px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,var(--bg) 60%)}
+  footer h2{font-size:var(--dlg);line-height:var(--dlg-l);margin-bottom:30px}
+  footer small{display:block;margin-top:56px;color:var(--muted-3);font-size:var(--tsm);line-height:var(--tsm-l)}
+
+  @media(max-width:980px){
+    .tabs{display:none}.burger{display:inline-flex}#lang{display:none}
+    .wiz{grid-template-columns:1fr}.wiz .q{position:static}
+    .detail{grid-template-columns:1fr;gap:14px}
+    .proc{grid-template-columns:1fr;gap:34px;padding-top:0;padding-inline-start:36px}
+    .proc::before{top:6px;bottom:6px;inset-inline:auto;inset-inline-start:6px;width:1px;height:auto}
+    .stp::before{top:6px;inset-inline-start:-36px}
+    .cols{grid-template-columns:1fr}.col+.col{border-inline-start:0;border-top:1px solid var(--line)}.col:first-child{padding-inline-start:0}.col{padding-inline:0}
+    .ix{grid-template-columns:40px 1fr;gap:6px 14px}.ix .no{grid-row:1/4}.ix p,.ix .go,.ix .dom{grid-column:2}.ix .go{justify-self:start;margin-top:6px}
+    .lh{display:none}.lrow{grid-template-columns:20px 1fr 40px;gap:6px 14px;padding:20px 0}.lrow .a,.lrow .st{grid-column:2}.lrow .x{grid-column:3;grid-row:1}
+  }
+  @media(max-width:700px){.lean{--lean:7deg;margin-inline-start:22px}.shelf{padding-inline:20px;margin-inline:-20px;background-position:left 20px bottom 44px;background-size:calc(100% - 40px) 2px}.pat{background-size:380px 329px}.road.left,.road.right{inset-inline:6vw;margin-inline:0}.spine{width:58px}}
+  /* toast: the NEZL «Notification Toast» structure (accent on the start edge, icon, message, close), dressed in the site's black and gold */
+  .toasts{position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:60;display:grid;gap:8px;width:min(420px,calc(100vw - 32px));pointer-events:none}
+  .toast{position:relative;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;padding-inline:22px 12px;background:var(--toast-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--toast-ink);border:1px solid rgba(var(--gold-rgb),.42);border-radius:12px;box-shadow:var(--toast-sh);overflow:hidden;pointer-events:auto;animation:tin .35s cubic-bezier(.22,1,.36,1)}
+  .toast::before{content:'';position:absolute;inset-block:0;inset-inline-start:0;width:8px;background:var(--tc,var(--gold))}
+  .toast.err{--tc:#ff6b5e;border-color:rgba(255,107,94,.45)}
+  .toast .ic{flex:0 0 32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--ts,rgba(var(--gold-rgb),.16));color:var(--tc,var(--gold))}
+  .toast.err .ic{--ts:rgba(255,107,94,.16)}
+  .toast .ic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .toast .tm{flex:1;font-weight:700;font-size:var(--tmd);line-height:var(--tmd-l);font-family:var(--f-text)}
+  .toast .tx{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-size:var(--txl);line-height:var(--txl-l);line-height:1;color:var(--muted)}
+  .toast .tx:hover{background:rgba(var(--gold-rgb),.14);color:var(--ink-hi)}
+  .toast.out{animation:tout .3s ease forwards}
+  @keyframes tin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+  @keyframes tout{to{opacity:0;transform:translateY(-10px)}}
+  @media (prefers-reduced-motion:reduce){.toast,.toast.out{animation:none}.rv{opacity:1;transform:none;transition:none}.swap{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><canvas id="dust"></canvas><div class="beam"></div><div class="grain"></div></div>
+
+<header class="top">
+  <a class="brand" href="#run"><i></i><span lang="ar">الكتاب العربي</span><span lang="en">The Arabic Book</span></a>
+  <div class="tools">
+    <button class="ring" id="themeBtn" type="button" aria-label="Switch theme"><svg id="themeIc" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg></button>
+    <button class="ring" id="lang" type="button" aria-label="Switch language"><span lang="ar">EN</span><span lang="en">ع</span></button>
+    <button class="ring burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+  </div>
+</header>
+<nav class="tabs" aria-label="Sections" id="tabs"></nav>
+<div class="mnav" id="menu" aria-hidden="true">
+  <div class="mh"><a class="brand" href="#run"><i></i><span lang="ar">الكتاب العربي</span><span lang="en">The Arabic Book</span></a><div class="mt"><button class="ring" id="lang2" type="button" aria-label="Switch language"><span lang="ar">EN</span><span lang="en">ع</span></button><button class="ring" id="menuX" type="button" aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div></div>
+  <ol id="mlist"></ol>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="pat" aria-hidden="true"></div>
+<main>
+<!-- 1 . hero + the pinned road -->
+<section class="run" id="run">
+  <div class="stage" id="stage">
+    <div class="words" aria-hidden="true">
+      <div class="word" data-at=".20"><span lang="ar">الورق</span><span lang="en">Paper</span></div>
+      <div class="word" data-at=".40"><span lang="ar">الوراقون</span><span lang="en">Scribes</span></div>
+      <div class="word" data-at=".60"><span lang="ar">المطبعة</span><span lang="en">Press</span></div>
+      <div class="word" data-at=".80"><span lang="ar">بولاق</span><span lang="en">Bulaq</span></div>
+    </div>
+    <header class="hero" id="hero">
+      <h1><span lang="ar">من الورقة الأولى<br><b>إلى المطبعة</b></span><span lang="en">From the first sheet<br><b>to the printing press</b></span></h1>
+      <p class="lead"><span lang="ar">رحلة الكتاب العربي، من بغداد إلى المطبعة</span><span lang="en">The Arabic book's road, from Baghdad to the press</span></p>
+      <div class="cta"><a class="btn ghost" href="#shelf"><span lang="ar">تصفّح الرفّ</span><span lang="en">Browse the shelf</span></a><a class="btn" href="#guide"><span lang="ar">من أين أبدأ؟</span><span lang="en">Where to start</span></a></div>
+    </header>
+
+    <article class="road left" data-at=".20">
+      <div class="k"><span lang="ar">الورق</span><span lang="en">Paper</span></div>
+      <div class="n"><span lang="ar" class="rt">القرن 8</span><span lang="en">8th c.</span></div>
+      <p><span lang="ar">عُرفت صناعة الورق في بغداد بحلول أواخر القرن الثامن</span><span lang="en">Paper was being made in Baghdad by the late 8th century</span></p></article>
+    <article class="road right" data-at=".40">
+      <div class="k"><span lang="ar">الوراقون</span><span lang="en">The booksellers</span></div>
+      <div class="n">100+</div>
+      <p><span lang="ar">حانوت للوراقين في ربض وضّاح ببغداد، بحسب اليعقوبي</span><span lang="en">stationers’ shops in Baghdad’s Rabad Waddah quarter, per al-Ya‘qubi</span></p></article>
+    <article class="road left" data-at=".60">
+      <div class="k"><span lang="ar">المطبعة الأولى</span><span lang="en">The first press</span></div>
+      <div class="n">1514</div>
+      <p><span lang="ar">طُبع «كتاب صلاة الساعات» في إيطاليا، من أقدم الكتب العربية المعروفة المطبوعة بحروف متحركة</span><span lang="en">Kitab Salat al-Sawai, printed in Italy, among the earliest known Arabic books in movable type</span></p></article>
+    <article class="road right" data-at=".80">
+      <div class="k"><span lang="ar">بولاق</span><span lang="en">Bulaq</span></div>
+      <div class="n">1820</div>
+      <p><span lang="ar">أُنشئت مطبعة بولاق في القاهرة نحو عام 1820، وبدأت إصداراتها سنة 1822</span><span lang="en">The Bulaq Press was set up in Cairo around 1820 and began publishing in 1822</span></p></article>
+  </div>
+</section>
+
+<!-- 4 . guide -->
+<section class="sec" id="guide"><div class="wrap">
+  <h2 class="rv"><span lang="ar">من أين <b>أبدأ القراءة؟</b></span><span lang="en">Where do <b>I start?</b></span></h2>
+  <p class="sub rv"><span lang="ar">أجب عن ثلاثة أسئلة، والباقي علينا</span><span lang="en">Three questions, we'll take it from there</span></p>
+  <div id="wiz" class="rv" aria-live="polite"></div>
+</div></section>
+
+<!-- 2 . the shelf -->
+<section class="sec" id="shelf"><div class="wrap">
+  <h2 class="rv"><span lang="ar">ستة عشر كتابًا <b>من التراث العربي</b></span><span lang="en">Sixteen books <b>from the Arabic heritage</b></span></h2>
+  <p class="sub rv"><span lang="ar">اختر كتابًا</span><span lang="en">Pick a book</span></p>
+  <div class="shelf rv" id="shelfRow" role="tablist"></div>
+  <article class="cc detail rv" id="detail"><span class="rib"></span><span class="cn" id="dcn"></span>
+    <div class="yr" id="dyr"></div>
+    <div><h3 id="dti"></h3><div class="au" id="dau"></div><p id="dtx"></p><button class="bmk" id="dbm" type="button"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg><span id="dbt"></span></button><div class="links" id="dlinks"></div></div>
+  </article>
+</div></section>
+
+<!-- 3 . my list -->
+<section class="sec" id="marks"><div class="wrap">
+  <h2 class="rv"><span lang="ar">قائمة <b>قراءتك</b></span><span lang="en">Your <b>reading list</b></span></h2>
+  <p class="sub rv"><span lang="ar">قائمتك محفوظة هنا، وتنتظرك عند عودتك</span><span lang="en">Your list will be here when you're back</span></p>
+  <div class="listbar rv"><div class="meter" aria-hidden="true"><i id="meter"></i></div><span class="mt" id="mtxt"></span><button class="btn ghost" id="copy" type="button"><span lang="ar">نسخ القائمة</span><span lang="en">Copy the list</span></button></div>
+  <div class="ledger rv"><div class="lh"><span></span><span><span lang="ar">الكتاب</span><span lang="en">BOOK</span></span><span><span lang="ar">المؤلف</span><span lang="en">AUTHOR</span></span><span><span lang="ar">الحالة</span><span lang="en">STATUS</span></span><span></span></div><div id="marksGrid"></div></div>
+</div></section>
+
+<!-- 5 . libraries -->
+<section class="sec" id="libs"><div class="wrap">
+  <h2 class="rv"><span lang="ar">أين تجد <b>الكتاب رقميًا</b></span><span lang="en">Where to find <b>the book online</b></span></h2>
+  <p class="sub rv"><span lang="ar">ستة مصادر للكتب والمخطوطات</span><span lang="en">Six sources for books and manuscripts</span></p>
+  <div class="index rv" id="libGrid"></div>
+</div></section>
+
+<!-- 6 . the quote -->
+<section class="quote" id="quote"><div class="in">
+  <p class="verse" id="verse" dir="rtl"></p>
+  <p class="tr"><span lang="en">The noblest seat in the world is a swift horse's saddle; the best companion in any age is a book</span></p>
+  <div class="by"><span lang="ar">— أبو الطيب المتنبي (915–965)</span><span lang="en">— AL-MUTANABBI (915–965)</span></div>
+</div></section>
+
+<!-- 7 . the craft -->
+<section class="sec" id="crafts"><div class="wrap">
+  <h2 class="rv"><span lang="ar">من الورقة <b>إلى القارئ</b></span><span lang="en">From the sheet <b>to the reader</b></span></h2>
+  <p class="sub rv"><span lang="ar">مِنْ أَعْمَالِ الوِرَاقَةِ</span><span lang="en">The work of the warraq’s trade</span></p>
+  <div class="proc rv">
+    <div class="stp"><div class="no">01</div><h4><span lang="ar">النَّسْخُ</span><span lang="en">Copying</span></h4><p><span lang="ar">كتابة الكتاب بخط اليد</span><span lang="en">Writing the book out by hand</span></p></div>
+    <div class="stp"><div class="no">02</div><h4><span lang="ar">التَّصْحِيحُ</span><span lang="en">Correcting</span></h4><p><span lang="ar">مراجعة النسخة وتصحيح أخطائها</span><span lang="en">Reviewing the copy and correcting its errors</span></p></div>
+    <div class="stp"><div class="no">03</div><h4><span lang="ar">التَّذْهِيبُ</span><span lang="en">Gilding</span></h4><p><span lang="ar">تزيين الكتاب بالذهب</span><span lang="en">Decorating the book with gold</span></p></div>
+    <div class="stp"><div class="no">04</div><h4><span lang="ar">التَّجْلِيدُ</span><span lang="en">Binding</span></h4><p><span lang="ar">جمع أوراق الكتاب وتثبيتها داخل غلاف</span><span lang="en">Gathering the pages and fixing them in a cover</span></p></div>
+  </div>
+</div></section>
+
+<!-- 8 . questions -->
+<section class="sec" id="faq"><div class="wrap">
+  <h2 class="rv"><span lang="ar">أسئلة <b>القرّاء</b></span><span lang="en">Readers' <b>questions</b></span></h2>
+  <div class="acc rv" id="faqList"></div>
+</div></section>
+
+<!-- 9 . places -->
+<section class="sec" id="places"><div class="wrap">
+  <h2 class="rv"><span lang="ar">مكتبات وفعاليات <b>للكتاب</b></span><span lang="en">Libraries and events <b>for books</b></span></h2>
+  <p class="sub rv"><span lang="ar">في الرياض</span><span lang="en">In Riyadh</span></p>
+  <div class="cols rv">
+    <div class="col"><div class="ty"><span lang="ar">مكتبة وطنية · الرياض</span><span lang="en">NATIONAL LIBRARY · RIYADH</span></div><h4><span lang="ar">مكتبة الملك فهد الوطنية</span><span lang="en">King Fahd National Library</span></h4><p><span lang="ar">المكتبة الوطنية للمملكة</span><span lang="en">The Kingdom's national library</span></p><a href="https://kfnl.gov.sa" target="_blank" rel="noopener"><span lang="ar">زيارة الموقع الرسمي</span><span lang="en">Visit the official site</span></a></div>
+    <div class="col"><div class="ty"><span lang="ar">معرض سنوي · الرياض</span><span lang="en">ANNUAL FAIR · RIYADH</span></div><h4><span lang="ar">معرض الرياض الدولي للكتاب</span><span lang="en">Riyadh International Book Fair</span></h4><p><span lang="ar">معرض سنوي للكتاب في الرياض، تأكد من الموعد</span><span lang="en">An annual book fair in Riyadh, check the dates</span></p></div>
+    <div class="col"><div class="ty"><span lang="ar">مكتبة عامة · الرياض</span><span lang="en">PUBLIC LIBRARY · RIYADH</span></div><h4><span lang="ar">مكتبة الملك عبدالعزيز العامة</span><span lang="en">King Abdulaziz Public Library</span></h4><p><span lang="ar">مكتبة عامة في الرياض</span><span lang="en">A public library in Riyadh</span></p></div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  
+  
+  <h2><span lang="ar">والآن، <b>أي كتاب ستقرأ؟</b></span><span lang="en">And now, <b>which book will you read?</b></span></h2>
+  <a class="btn" href="#run"><span lang="ar">العودة للأعلى</span><span lang="en">Back to top</span></a>
+  <small><span lang="ar">عينة تصميم · 2026</span><span lang="en">Design sample · 2026</span></small>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,KEY='book-lang',MK='book-marks';
+  function setL(L,save){root.lang=L;root.dir=L==='ar'?'rtl':'ltr';document.title=L==='ar'?'الكتاب العربي':'The Arabic Book';if(save){try{localStorage.setItem(KEY,L)}catch(e){}}}
+  var q=(location.search.match(/[?&]lang=(ar|en)/)||[])[1],sv=null;try{sv=localStorage.getItem(KEY)}catch(e){}
+  setL(q||sv||'ar',false);
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  /* theme: every visit starts dark; light is a choice for that visit only (?theme=light for a direct link) */
+  var SUN='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>',MOON='<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/>',lightMode=false;
+  function setTheme(t,save){lightMode=t==='light';root.setAttribute('data-theme',t);var ic=document.getElementById('themeIc');if(ic)ic.innerHTML=lightMode?MOON:SUN;var m=document.querySelector('meta[name=theme-color]');if(m)m.content=lightMode?'#f6f1e6':'#000000';if(save){try{localStorage.setItem('book-theme',t)}catch(e){}}}
+  var qt=(location.search.match(/[?&]theme=(light|dark)/)||[])[1],st=null;try{st=localStorage.getItem('book-theme')}catch(e){}
+  setTheme(qt||'dark',false);try{localStorage.removeItem('book-theme')}catch(e){}
+  function bi(a,e){return '<span lang="ar">'+a+'</span><span lang="en">'+e+'</span>'}
+  function clamp(x){return Math.max(0,Math.min(1,x))}
+  function $(id){return document.getElementById(id)}
+
+  /* ---------- sections (tabs on desktop, menu on mobile) ---------- */
+  var SECS=[['run','الرحلة','Road'],['guide','من أين أبدأ','Start here'],['shelf','الرفّ','Shelf'],['marks','قائمتي','My list'],['libs','مكتبات رقمية','Free libraries'],['faq','أسئلة','Questions'],['places','زيارة','Visit']];
+  $('tabs').innerHTML=SECS.map(function(s,k){return '<a href="#'+s[0]+'" data-s="'+s[0]+'"><span class="lb">'+bi(s[1],s[2])+(s[0]==='marks'?'<span class="cnt" hidden></span>':'')+'</span><span class="n">0'+(k+1)+'</span></a>'}).join('');
+  $('mlist').innerHTML=SECS.map(function(s,k){return '<li><a href="#'+s[0]+'"><small>0'+(k+1)+'</small>'+bi(s[1],s[2])+(s[0]==='marks'?'<span class="cnt" hidden></span>':'')+'</a></li>'}).join('');
+  var menu=$('menu'),mb=$('menuBtn');
+  function openMenu(o){menu.classList.toggle('open',o);document.body.classList.toggle('lock',o);mb.setAttribute('aria-expanded',o);menu.setAttribute('aria-hidden',!o)}
+  mb.addEventListener('click',function(){openMenu(true)});$('menuX').addEventListener('click',function(){openMenu(false)});
+  [].forEach.call(menu.querySelectorAll('a'),function(a){a.addEventListener('click',function(){openMenu(false)})});
+  addEventListener('keydown',function(e){if(e.key==='Escape')openMenu(false)});
+
+  /* ---------- data ---------- */
+  var BOOKS=[
+   {ar:'كليلة ودمنة',en:'Kalila wa Dimna',aua:'ابن المقفّع (نقله)',aue:"Ibn al-Muqaffa' (translator)",ya:'القرن 8',ye:'8th c.',ta:'حكايات على ألسنة الحيوان، نقلها ابن المقفّع',te:"Animal fables, translated by Ibn al-Muqaffa'",h:300,w:62,tone:'#1b1408',
+    tipa:'ابدأ بباب قصير',tipe:'Start with a short chapter'},
+   {ar:'الجبر والمقابلة',en:'Al-Jabr',aua:'الخوارزمي',aue:'al-Khwarizmi',ya:'نحو 820',ye:'c. 820',ta:'من عنوانه انتقل مصطلح «الجبر» إلى اللغات الأوروبية',te:'Its title carried the term “algebra” into European languages',h:340,w:56,tone:'#160f0a',
+    tipa:'شرح مبسّط للمسائل الأولى',tipe:'A simple walkthrough of the first problems'},
+   {ar:'الحيوان',en:'Kitab al-Hayawan',aua:'الجاحظ',aue:'al-Jahiz',ya:'القرن 9',ye:'9th c.',ta:'موسوعة في الحيوان',te:'An encyclopaedia of animals',h:310,w:74,tone:'#1a1306',
+    tipa:'ابدأ بمقتطفات، فالكتاب طويل',tipe:'Start with excerpts, it is a long book'},
+   {ar:'القانون في الطب',en:'The Canon of Medicine',aua:'ابن سينا',aue:'Ibn Sina',ya:'1025',ye:'1025',ta:'من أهم المراجع الطبية لقرون في العالم الإسلامي وأوروبا',te:'One of the major medical references for centuries in the Islamic world and Europe',h:350,w:68,tone:'#12100b',
+    tipa:'ابدأ بدراسة تعريفية، فالنص طويل',tipe:'Begin with an introductory study, the text is long'},
+   {ar:'كتاب المناظر',en:'Book of Optics',aua:'ابن الهيثم',aue:'Ibn al-Haytham',ya:'القرن 11',ye:'11th c.',ta:'سبع مقالات في علم البصريات',te:'Seven books on optics',h:320,w:58,tone:'#191109',
+    tipa:'ابدأ بمقدمة عن سياق الكتاب',tipe:'Begin with an introduction to its context'},
+   {ar:'المقدّمة',en:'The Muqaddimah',aua:'ابن خلدون',aue:'Ibn Khaldun',ya:'1377',ye:'1377',ta:'مقدمة في التاريخ والاجتماع',te:'An introduction to history and sociology',h:336,w:66,tone:'#17100a',
+    tipa:'ابدأ بمباحث العمران',tipe:'Begin with the sections on human society'},
+   {ar:'ديوان المتنبي',en:'Diwan al-Mutanabbi',aua:'المتنبي',aue:'al-Mutanabbi',ya:'القرن 10',ye:'10th c.',ta:'شعر أبي الطيب المتنبي',te:'The poetry of al-Mutanabbi',h:304,w:60,tone:'#1b130a',
+    tipa:'قصائد مختارة بشرح',tipe:'Annotated selected poems'},
+   {ar:'المعلّقات',en:'The Mu‘allaqat',aua:'شعراء جاهليون',aue:'Pre-Islamic poets',ya:'قبل الإسلام',ye:'Pre-Islamic',ta:'قصائد طويلة من الشعر الجاهلي',te:'Long poems of pre-Islamic Arabia',h:290,w:58,tone:'#181008',
+    tipa:'معلّقة واحدة مع شرحها',tipe:'One ode with its commentary'},
+   {ar:'الأغاني',en:'Kitab al-Aghani',aua:'أبو الفرج الأصفهاني',aue:'Abu al-Faraj al-Isfahani',ya:'القرن 10',ye:'10th c.',ta:'موسوعة من الشعر والأغاني',te:'An encyclopaedia of poems and songs',h:326,w:70,tone:'#1a1207',
+    tipa:'أخبار شاعر تعرفه',tipe:'The pages on one poet you know'},
+   {ar:'مروج الذهب',en:'Muruj al-Dhahab',aua:'المسعودي',aue:'al-Mas‘udi',ya:'القرن 10',ye:'10th c.',ta:'تاريخ وجغرافيا وأخبار الأمم',te:'History, geography and the stories of nations',h:316,w:64,tone:'#150f09',
+    tipa:'الأخبار القصيرة أولًا',tipe:'The short reports first'},
+   {ar:'كتاب الفهرست',en:'Al-Fihrist',aua:'ابن النديم',aue:'Ibn al-Nadim',ya:'987',ye:'987',ta:'جامع لعلوم القرن العاشر الميلادي وآدابه',te:'A compendium of the knowledge and literature of tenth-century Islam',h:300,w:66,tone:'#17110a',tipa:'تصفّح فصلًا واحدًا منه',tipe:'Browse one chapter'},
+   {ar:'كتاب العين',en:'Kitab al-Ayn',aua:'الخليل بن أحمد الفراهيدي',aue:'al-Khalil ibn Ahmad al-Farahidi',ya:'القرن 8',ye:'8th c.',ta:'أول معجم للغة العربية',te:'The first Arabic dictionary',h:300,w:66,tone:'#1a1308',tipa:'ابحث فيه عن كلمة تعرفها',tipe:'Look up a word you know'},
+   {ar:'كتاب سيبويه',en:'Sibawayh’s Al-Kitab',aua:'سيبويه',aue:'Sibawayh',ya:'القرن 8',ye:'8th c.',ta:'أساس نحو اللغة العربية',te:'The foundational grammar of Arabic',h:300,w:66,tone:'#150f09',tipa:'ابدأ بشرح مبسّط لأبوابه الأولى',tipe:'Begin with a simple guide to its first chapters'},
+   {ar:'تاريخ الرسل والملوك',en:'History of the Prophets and Kings',aua:'الطبري',aue:'al-Tabari',ya:'915',ye:'915',ta:'تاريخ العالم المعروف من الخلق إلى العصر العباسي',te:'A history of the known world, from creation to the Abbasid era',h:300,w:66,tone:'#1b1408',tipa:'ابدأ بجزء واحد منه',tipe:'Start with a single part'},
+   {ar:'حي بن يقظان',en:'Hayy ibn Yaqzan',aua:'ابن طفيل',aue:'Ibn Tufayl',ya:'القرن 12',ye:'12th c.',ta:'رواية فلسفية رمزية',te:'An allegorical philosophical novel',h:300,w:66,tone:'#160f0a',tipa:'ابدأ بنسخة مشروحة',tipe:'Start with an annotated edition'},
+   {ar:'رسالة الغفران',en:'Risalat al-Ghufran',aua:'أبو العلاء المعري',aue:'Abu al-Ala al-Ma‘arri',ya:'نحو 1033',ye:'c. 1033',ta:'نثر ساخر',te:'A satirical work of Arabic prose',h:300,w:66,tone:'#191109',tipa:'ابدأ بمقتطفات مختارة',tipe:'Start with selected excerpts'}
+  ];
+  var marks=[];try{marks=JSON.parse(localStorage.getItem(MK)||'[]').filter(function(i){return i>=0&&i<BOOKS.length})}catch(e){marks=[]}
+  function saveMarks(){try{localStorage.setItem(MK,JSON.stringify(marks))}catch(e){}}
+  var ST={};try{ST=JSON.parse(localStorage.getItem('book-st')||'{}')}catch(e){ST={}}
+  function saveSt(){try{localStorage.setItem('book-st',JSON.stringify(ST))}catch(e){}}
+  var STAT=[['want','أريد قراءته','Want to read'],['reading','أقرؤه الآن','Reading'],['done','انتهيت منه','Finished']];
+  function stOf(i){return ST[i]||'want'}
+  function add(i){if(marks.indexOf(i)<0){marks.push(i);saveMarks()}syncBtn();renderMarks()}
+
+  /* ---------- shelf + detail ---------- */
+  var row=$('shelfRow'),cur=0,dEl=$('detail');   /* same width; the height follows the title */
+  var leanBox=document.createElement('div');leanBox.className='lean';
+  BOOKS.forEach(function(b,i){var s=document.createElement('button');s.type='button';s.className='spine';s.style.setProperty('--tone',b.tone);s.style.setProperty('--ltone',['#8a5a24','#5f4a2c','#9a7430','#6b4426','#7a6034'][i%5]);s.setAttribute('role','tab');
+    s.innerHTML='<span>'+bi(b.ar,b.en)+'</span>';s.addEventListener('click',function(){pick(i,true)});(i>=BOOKS.length-4?leanBox:row).appendChild(s)});
+  row.appendChild(leanBox);
+  function pick(i,anim){cur=i;var b=BOOKS[i];[].forEach.call(row.querySelectorAll('.spine'),function(c,k){c.classList.toggle('on',k===i)});
+    $('dcn').innerHTML=bi('رفّ · '+('0'+(i+1)).slice(-2)+' / '+BOOKS.length,'SHELF · '+('0'+(i+1)).slice(-2)+' / '+BOOKS.length);
+    $('dyr').innerHTML=bi('<span class="rt">'+b.ya+'</span>',b.ye);
+    $('dti').innerHTML=bi(b.ar,b.en);$('dau').innerHTML=bi(b.aua,b.aue);$('dtx').innerHTML=bi(b.ta,b.te);
+    $('dlinks').innerHTML=links(b);
+    syncBtn();if(anim&&!rm){dEl.classList.remove('swap');void dEl.offsetWidth;dEl.classList.add('swap')}}
+  function links(b){return '<a href="https://ar.wikisource.org/w/index.php?search='+encodeURIComponent(b.ar)+'" target="_blank" rel="noopener">'+bi('ابحث في ويكي مصدر','Search Wikisource')+'</a><a href="https://archive.org/search?query='+encodeURIComponent(b.ar)+'" target="_blank" rel="noopener">'+bi('ابحث في أرشيف الإنترنت','Search the Internet Archive')+'</a>'}
+  function syncBtn(){var on=marks.indexOf(cur)>-1,btn=$('dbm');btn.classList.toggle('on',on);btn.setAttribute('aria-pressed',on);
+    $('dbt').innerHTML=on?bi('في قائمتك','On your list'):bi('أضفه إلى قائمتي','Add to my list')}
+  $('dbm').addEventListener('click',function(){var k=marks.indexOf(cur);if(k>-1){marks.splice(k,1);delete ST[cur];saveSt()}else marks.push(cur);saveMarks();syncBtn();renderMarks();renderGuide()});
+
+  /* ---------- my list (ledger) ---------- */
+  function renderMarks(){var g=$('marksGrid');g.innerHTML='';
+    [].forEach.call(document.querySelectorAll('.cnt'),function(n){n.hidden=!marks.length;n.textContent=marks.length});
+    var dn=marks.filter(function(i){return stOf(i)==='done'}).length;
+    $('meter').style.width=(marks.length?dn/marks.length*100:0)+'%';
+    $('mtxt').innerHTML=marks.length?bi(dn+' من '+marks.length+' انتهيت منها',dn+' of '+marks.length+' finished'):bi('لا كتب بعد','No books yet');
+    $('copy').disabled=!marks.length;
+    if(!marks.length){g.innerHTML='<div class="empty"><span>'+bi('قائمتك فارغة','Your list is empty')+'</span><div class="acts"><a class="btn ghost" href="#shelf">'+bi('إلى الرفّ','To the shelf')+'</a><a class="btn" href="#guide">'+bi('من أين أبدأ؟','Where do I start?')+'</a></div></div>';return}
+    marks.slice().sort(function(a,b){return a-b}).forEach(function(i){var b=BOOKS[i],r=document.createElement('div'),sv=stOf(i),lab=STAT.filter(function(x){return x[0]===sv})[0];r.className='lrow';
+      r.innerHTML='<span class="mk"></span><h4>'+bi(b.ar,b.en)+'</h4><span class="a">'+bi(b.aua,b.aue)+'</span><button class="st '+sv+'" type="button">'+bi(lab[1],lab[2])+'</button><button class="x" type="button" aria-label="Remove">×</button>';
+      r.querySelector('.x').addEventListener('click',function(){marks.splice(marks.indexOf(i),1);delete ST[i];saveMarks();saveSt();syncBtn();renderMarks();renderGuide()});
+      r.querySelector('.st').addEventListener('click',function(){var k=['want','reading','done'];ST[i]=k[(k.indexOf(sv)+1)%3];saveSt();renderMarks()});g.appendChild(r)})}
+  /* toast: the result of an action, like the NEZL Notification Toast (4 s, close button) */
+  function toast(ar,en,err){var host=$('toasts'),t=document.createElement('div');t.className='toast'+(err?' err':'');t.setAttribute('role','status');
+    t.innerHTML='<span class="ic"><svg viewBox="0 0 24 24">'+(err?'<path d="M12 8v5M12 16.5v.01"/><circle cx="12" cy="12" r="9"/>':'<path d="M5 12.5l4.5 4.5L19 7.5"/>')+'</svg></span><span class="tm">'+bi(ar,en)+'</span><button class="tx" type="button" aria-label="Close">×</button>';
+    function bye(){t.classList.add('out');setTimeout(function(){t.remove()},300)}
+    t.querySelector('.tx').addEventListener('click',bye);host.appendChild(t);setTimeout(bye,4000)}
+  $('copy').addEventListener('click',function(){
+    var L=root.lang,txt=(L==='ar'?'قائمة قراءتي':'My reading list')+'\n'+marks.slice().sort(function(a,b){return a-b}).map(function(i){var b=BOOKS[i],lab=STAT.filter(function(x){return x[0]===stOf(i)})[0];return '- '+(L==='ar'?b.ar+' — '+b.aua+' ('+lab[1]+')':b.en+' — '+b.aue+' ('+lab[2]+')')}).join('\n');
+    function ok(){toast('نُسخت القائمة بنجاح','List copied successfully')}function bad(){toast('تعذّر نسخ القائمة','Could not copy the list',true)}
+    function legacy(){var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');t.style.cssText='position:fixed;top:0;opacity:0';document.body.appendChild(t);t.select();try{document.execCommand('copy')?ok():bad()}catch(e){bad()}document.body.removeChild(t)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,legacy)}else{legacy()}});
+
+  /* ---------- the guide: each question depends on the previous answer ---------- */
+  var INT=[
+    {ar:'حكايات وأخبار',en:'Tales and stories',
+     q2a:'ما مدى معرفتك بالحكايات القديمة؟',q2e:'How familiar are you with old tales?',
+     lv:[['لم أقرأ تراثًا من قبل','I have never read heritage texts'],['قرأت بعض الحكايات','I have read a few tales'],['أريد الأعمال الكبرى','I want the big works']],
+     path:[[0],[0,2],[2]]},
+    {ar:'شعر',en:'Poetry',
+     q2a:'ما مدى معرفتك بالشعر القديم؟',q2e:'How familiar are you with old poetry?',
+     lv:[['لا أحفظ منه شيئًا','I know none by heart'],['أحفظ بعض الأبيات','I know a few verses'],['أقرأ الدواوين','I read whole diwans']],
+     path:[[7],[6,7],[8,6]]},
+    {ar:'علوم وطب',en:'Science and medicine',
+     q2a:'ما مدى قربك من العلوم؟',q2e:'How close are you to science?',
+     lv:[['أحب العلوم، لكني لا أدرسها','I like science, but I do not study it'],['أدرسها','I study it'],['أبحث في تاريخ العلم','I research the history of science']],
+     path:[[4],[1,4],[3,1,4]]},
+    {ar:'تاريخ وفكر',en:'History and thought',
+     q2a:'ما مدى قربك من التاريخ؟',q2e:'How close are you to history?',
+     lv:[['أقرؤه للمتعة','I read it for pleasure'],['أدرسه','I study it'],['أبحث في الفكر والاجتماع','I research thought and society']],
+     path:[[9],[13,9],[5,13]]},
+    {ar:'لغة ونحو',en:'Language and grammar',
+     q2a:'ما مدى قربك من علوم اللغة؟',q2e:'How close are you to the study of language?',
+     lv:[['أحب اللغة ولا أدرسها','I like the language but do not study it'],['أدرسها','I study it'],['أبحث في علومها','I research its sciences']],
+     path:[[11],[11,12],[12,11]]},
+    {ar:'خيال وفكر',en:'Imagination and ideas',
+     q2a:'ما مدى معرفتك بالنثر القديم؟',q2e:'How familiar are you with old prose?',
+     lv:[['لم أقرأ نثرًا قديمًا','I have not read old prose'],['قرأت بعضه','I have read some'],['أقرأ الفلسفة والأدب القديم','I read old philosophy and literature']],
+     path:[[14],[14,15],[15,14]]}
+  ];
+  var HRS=[['ساعة أو أقل في الأسبوع','An hour a week or less','مقتطفات قصيرة','Short excerpts'],['نحو ثلاث ساعات','About three hours a week','فصول مختارة','Selected chapters'],['أكثر من ذلك','More than that','قراءة موسعة','Extended reading']];
+  var gs={i:null,l:null,h:null},wiz=$('wiz');
+  function dots(n){return '<div class="qn">'+bi('السؤال '+(n+1)+' من 3','Question '+(n+1)+' of 3')+'</div>'}
+  function renderGuide(){
+    var step=gs.i===null?0:gs.l===null?1:gs.h===null?2:3,h='';
+    if(step<3){
+      var title,ctx='',opts;
+      if(step===0){title=bi('ماذا تحب أن تقرأ؟','What do you like to read?');opts=INT.map(function(x){return bi(x.ar,x.en)})}
+      else if(step===1){var I=INT[gs.i];title=bi(I.q2a,I.q2e);ctx=bi('اخترت: '+I.ar,'You chose: '+I.en);opts=I.lv.map(function(x){return bi(x[0],x[1])})}
+      else{title=bi('كم تقرأ في الأسبوع؟','How much do you read a week?');ctx=bi(INT[gs.i].ar+' · '+INT[gs.i].lv[gs.l][0],INT[gs.i].en+' · '+INT[gs.i].lv[gs.l][1]);opts=HRS.map(function(x){return bi(x[0],x[1])})}
+      h='<div class="wiz"><div class="q">'+dots(step)+'<h3>'+title+'</h3>'+(ctx?'<p class="ctx">'+ctx+'</p>':'')+(step?'<button class="back" type="button" id="gback">'+bi('رجوع','Back')+'</button>':'')+'</div><div class="opts">'+opts.map(function(o,k){return '<button class="opt" type="button" data-k="'+k+'"><span>'+o+'</span></button>'}).join('')+'</div></div>';
+      wiz.innerHTML=h;
+      [].forEach.call(wiz.querySelectorAll('.opt'),function(b){b.addEventListener('click',function(){var k=+b.dataset.k;if(step===0)gs.i=k;else if(step===1)gs.l=k;else gs.h=k;renderGuide()})});
+      var bk=$('gback');if(bk)bk.addEventListener('click',function(){if(step===2)gs.l=null;else gs.i=null;renderGuide()});
+    }else{
+      var ids=INT[gs.i].path[gs.l],mode=HRS[gs.h];
+      h='<div class="wiz"><div class="q">'+dots(2)+'<h3>'+bi('مسارك','Your path')+'</h3><p class="ctx">'+bi(INT[gs.i].ar+' · '+INT[gs.i].lv[gs.l][0]+' · '+mode[0],INT[gs.i].en+' · '+INT[gs.i].lv[gs.l][1]+' · '+mode[1])+'</p><button class="back" type="button" id="gredo">'+bi('ابدأ من جديد','Start over')+'</button></div><ol class="path">'+
+        ids.map(function(i,k){var b=BOOKS[i],on=marks.indexOf(i)>-1;return '<li><div class="st1">'+bi('الخطوة '+(k+1),'STEP '+(k+1))+'</div><h4>'+bi(b.ar,b.en)+'</h4><div class="au">'+bi(b.aua+' · '+b.ya,b.aue+' · '+b.ye)+'</div><span class="md">'+bi('اقرأ: '+mode[2],'Read: '+mode[3])+'</span><p>'+bi(b.tipa,b.tipe)+'</p><div class="acts"><button type="button" class="add'+(on?' ok':'')+'" data-i="'+i+'">'+(on?bi('في قائمتك','On your list'):bi('أضفه إلى قائمتي','Add to my list'))+'</button><button type="button" class="open" data-i="'+i+'">'+bi('بطاقته على الرفّ','Its shelf card')+'</button><a href="https://ar.wikisource.org/w/index.php?search='+encodeURIComponent(b.ar)+'" target="_blank" rel="noopener">'+bi('ابحث عن نسخة','Find a copy')+'</a></div></li>'}).join('')+'</ol></div>';
+      wiz.innerHTML=h;
+      $('gredo').addEventListener('click',function(){gs={i:null,l:null,h:null};renderGuide()});
+      [].forEach.call(wiz.querySelectorAll('.add'),function(b){b.addEventListener('click',function(){add(+b.dataset.i);renderGuide()})});
+      [].forEach.call(wiz.querySelectorAll('.open'),function(b){b.addEventListener('click',function(){pick(+b.dataset.i,true);$('shelf').scrollIntoView({behavior:rm?'auto':'smooth'})})});
+    }}
+
+  /* ---------- free libraries (an index) ---------- */
+  var LIBS=[['هنداوي','Hindawi','كتب عربية مجانية','Free Arabic books','https://www.hindawi.org','hindawi.org'],
+            ['المكتبة الشاملة','Al-Maktaba al-Shamela','كتب التراث العربي والإسلامي بنصوص قابلة للبحث','Arabic and Islamic heritage texts, searchable','https://shamela.ws','shamela.ws'],
+            ['ويكي مصدر','Arabic Wikisource','مكتبة حرة للنصوص العربية','A free library of Arabic texts','https://ar.wikisource.org','ar.wikisource.org'],
+            ['مكتبة قطر الرقمية','Qatar Digital Library','مخطوطات ووثائق عن تاريخ الخليج','Manuscripts and records on Gulf history','https://www.qdl.qa','qdl.qa'],
+            ['المكتبة الرقمية السعودية','Saudi Digital Library','مصادر أكاديمية وبحثية','Academic and research resources','https://sdl.edu.sa','sdl.edu.sa'],
+            ['أرشيف الإنترنت','Internet Archive','نسخ ممسوحة لكتب قديمة، منها العربية','Scans of old books, Arabic among them','https://archive.org','archive.org']];
+  $('libGrid').innerHTML=LIBS.map(function(l,k){return '<div class="ix"><span class="no">0'+(k+1)+'</span><a class="dom" href="'+l[4]+'" target="_blank" rel="noopener">'+bi(l[0],l[1])+'</a><p>'+bi(l[2],l[3])+'</p><a class="go" href="'+l[4]+'" target="_blank" rel="noopener">'+bi('زيارة الموقع','Visit the site')+' <span aria-hidden="true">↗</span></a></div>'}).join('');
+
+  /* ---------- questions ---------- */
+  var QA=[['كيف أبدأ بقراءة كتب التراث؟','How do I start reading heritage books?','ابدأ بنص سردي قصير مثل كليلة ودمنة، واختر طبعة محققة بشرح','Start with a short narrative like Kalila wa Dimna, and pick an annotated critical edition'],
+          ['ما معنى «طبعة محققة»؟','What does “critical edition” mean?','طبعة راجع فيها المحقق النص اعتمادًا على مصادره ونسخه المتاحة','An edition in which a scholar reviewed the text against its sources and available copies'],
+          ['ما الفرق بين المخطوط والمطبوع؟','What is the difference between a manuscript and a printed book?','المخطوط يُكتب باليد فتختلف نسخه، أما المطبوع فتنتجه الطباعة بنسخ كثيرة متشابهة','A manuscript is written by hand, so copies differ; printing produces many similar copies'],
+          ['أين أجد نسخًا مجانية؟','Where do I find free copies?','في قسم المكتبات الرقمية','In the libraries section'],
+          ['هل أستطيع زيارة مكتبة وطنية؟','Can I visit a national library?','نعم، في قسم الزيارة. تأكد من مواعيد الدوام أولًا','Yes, see the visit section. Check opening hours first'],
+          ['هل كتب التراث مناسبة للمبتدئين؟','Are heritage books suitable for beginners?','تختلف صعوبتها، فابدأ بالنصوص القصيرة والطبعات المشروحة','They vary in difficulty, so begin with short texts and annotated editions'],
+          ['هل أختار النسخة المصوّرة أم النص الرقمي؟','Should I choose a scanned copy or digital text?','النص الرقمي أسهل في البحث، والمصوّرة تحفظ شكل الصفحة الأصلية','Digital text is easier to search, a scan keeps the original page']];
+  var fl=$('faqList');
+  QA.forEach(function(q){var d=document.createElement('div');d.className='dr';d.innerHTML='<button type="button" aria-expanded="false">'+bi(q[0],q[1])+'</button><div class="ans"><div><p>'+bi(q[2],q[3])+'</p></div></div>';
+    d.querySelector('button').addEventListener('click',function(){var on=!d.classList.contains('on');[].forEach.call(fl.children,function(x){x.classList.remove('on');x.firstChild.setAttribute('aria-expanded','false')});if(on){d.classList.add('on');this.setAttribute('aria-expanded','true')}});fl.appendChild(d)});
+
+  /* ---------- the quote, lit word by word ---------- */
+  var verse=$('verse'),LINES=['أَعَزُّ مَكَانٍ فِي الدُّنَى سَرْجُ سَابِحٍ','وَخَيْرُ جَلِيسٍ فِي الزَّمَانِ كِتَابُ'],words=[];
+  LINES.forEach(function(l){var d=document.createElement('span');d.className='ln';l.split(' ').forEach(function(w,k){if(k)d.appendChild(document.createTextNode(' '));var s=document.createElement('span');s.className='w';s.textContent=w;d.appendChild(s);words.push(s)});verse.appendChild(d)});
+  var quote=$('quote');
+
+  /* ---------- language switch ---------- */
+  $('themeBtn').addEventListener('click',function(){
+    var next=lightMode?'dark':'light',b=$('themeBtn').getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2;
+    var ic=$('themeIc');
+    function spin(){if(ic&&ic.animate&&!rm)ic.animate([{transform:'rotate(-120deg) scale(.4)',opacity:0},{transform:'none',opacity:1}],{duration:600,easing:'cubic-bezier(.22,1,.36,1)'})}
+    if(document.startViewTransition&&!rm){
+      var r=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+      var t=document.startViewTransition(function(){setTheme(next,true);spin()});
+      t.ready.then(function(){document.documentElement.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+r+'px at '+x+'px '+y+'px)']},{duration:1100,easing:'cubic-bezier(.22,1,.36,1)',pseudoElement:'::view-transition-new(root)'})}).catch(function(){});
+    }else{
+      root.classList.add('theming');setTheme(next,true);spin();setTimeout(function(){root.classList.remove('theming')},800);
+    }});
+  ['lang','lang2'].forEach(function(id){$(id).addEventListener('click',function(){setL(root.lang==='ar'?'en':'ar',true);pick(cur,false);renderMarks();renderGuide();layout()})});
+
+  /* ---------- gold dust through the one light ---------- */
+  var cv=$('dust'),beamEl=document.querySelector('.beam'),W=0,H=0,dust=[],bOp=1,th=0;
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function paint(){W=innerWidth;H=innerHeight;var d=Math.min(2,window.devicePixelRatio||1);cv.width=Math.round(W*d);cv.height=Math.round(H*d);cv.style.width=W+'px';cv.style.height=H+'px';cv.getContext('2d').setTransform(d,0,0,d,0,0);
+    var r=rng(9),n=Math.round(Math.min(340,W*H/4200));dust=[];for(var i=0;i<n;i++)dust.push({x:r()*W,y:r()*H,z:Math.pow(r(),2.2),vx:(r()-.5)*.12,vy:.04+r()*.16,ph:r()*6.28})}
+  function drawDust(t){var c=cv.getContext('2d');c.clearRect(0,0,W,H);c.globalCompositeOperation=lightMode?'source-over':'lighter';
+    for(var i=0;i<dust.length;i++){var p=dust[i];p.x+=p.vx*(.4+p.z*1.6)+Math.sin(t/1800+p.ph)*.08;p.y+=p.vy*(.4+p.z*1.6);
+      if(p.y>H+10){p.y=-10;p.x=Math.random()*W}if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+      var sx=W*.5,sy=-H*.08,dy=p.y-sy,axis=sx-dy*Math.tan(th*Math.PI/180),wd=30+dy*.34,f=Math.exp(-Math.pow((p.x-axis)/wd,2))*bOp;
+      var a=(.05+.9*f)*(.25+p.z*.75)*(.7+.3*Math.sin(t/900+p.ph)),rad=.5+p.z*2.4;
+      if(p.z>.82){var g=c.createRadialGradient(p.x,p.y,0,p.x,p.y,rad*5);g.addColorStop(0,(lightMode?'rgba(176,125,22,':'rgba(255,226,170,')+(a*.55)+')');g.addColorStop(1,lightMode?'rgba(176,125,22,0)':'rgba(255,200,110,0)');c.fillStyle=g;c.fillRect(p.x-rad*5,p.y-rad*5,rad*10,rad*10)}
+      c.fillStyle=(lightMode?'rgba(150,100,20,':'rgba(255,232,180,')+Math.min(1,a*(lightMode?.8:1))+')';c.beginPath();c.arc(p.x,p.y,rad,0,6.283);c.fill()}
+    c.globalCompositeOperation='source-over'}
+
+  /* ---------- scroll choreography ---------- */
+  var run=$('run'),stage=$('stage'),hero=$('hero'),tabs=[].slice.call(document.querySelectorAll('.tabs a')),
+      roads=[].slice.call(document.querySelectorAll('.road')),wds=[].slice.call(document.querySelectorAll('.word'));
+  var P=0,scrollP=0,auto=false,autoT=0,SH=0;
+  function layout(){SH=stage.clientHeight;roads.forEach(function(e){e.style.top=(SH*.3)+'px'})}
+  function readScroll(){var rr=run.getBoundingClientRect(),span=Math.max(1,rr.height-SH);scrollP=clamp(-rr.top/span)}
+  function frame(){
+    P=auto?(function(){autoT+=.0004;var k=autoT%2;return k<1?k:2-k})():scrollP;
+    /* the light belongs to the first screens and the road; later sections are plain black */
+    var endY=run.offsetTop+run.offsetHeight-SH,sy2=window.pageYOffset;
+    bOp=auto?1:clamp(1-(sy2-(endY-.35*SH))/(.7*SH));beamEl.style.opacity=bOp;
+    th=rm?0:5*Math.sin(performance.now()/4200);beamEl.style.transform='rotate('+th+'deg)';   /* the light drifts slowly from side to side */
+    drawDust(performance.now());
+    var he=clamp(1-P/.12);hero.style.opacity=he;hero.style.transform='translateY('+(-(1-he)*60)+'px) scale('+(1-(1-he)*.06)+')';hero.style.pointerEvents=he<.2?'none':'';
+    wds.forEach(function(e){var d=(P-(+e.dataset.at))/.12,op=clamp(1-Math.abs(d)*.95);e.style.opacity=op*.9;e.style.transform='translate(-50%,-50%) translate3d('+(-d*14)+'vw,0,0)';e.style.visibility=op<.01?'hidden':'visible'});
+    roads.forEach(function(e){var d=(P-(+e.dataset.at))/.08,op=clamp(1-Math.abs(d)*1.05);e.style.opacity=op;e.style.transform='translate3d(0,'+(-d*70)+'px,0)';e.style.visibility=op<.01?'hidden':'visible'});
+    var qr=quote.getBoundingClientRect(),qp=clamp(-qr.top/Math.max(1,qr.height-innerHeight)),lit=Math.round(qp*1.15*words.length);
+    for(var i=0;i<words.length;i++)words[i].classList.toggle('on',i<lit||rm);
+    var cur2=tabs[0];tabs.forEach(function(t){var e=$(t.dataset.s);if(e&&e.getBoundingClientRect().top<innerHeight*.45)cur2=t});tabs.forEach(function(t){t.classList.toggle('on',t===cur2)});
+    requestAnimationFrame(frame)}
+
+  /* reveal on scroll */
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08}):null;
+  [].forEach.call(document.querySelectorAll('.rv'),function(e){io?io.observe(e):e.classList.add('on')});
+
+  /* the pattern breathes: strongest in the middle of each section and fading over a wide stretch (700px) around every boundary, so neighbours blend instead of meeting in a hard line */
+  var patEl=document.querySelector('.pat'),BOUND=['guide','shelf','marks','libs','quote','crafts','faq','places'];
+  function patMask(){var H=document.documentElement.scrollHeight,b=BOUND.map(function(id){var e=$(id);return e?e.offsetTop:0}).concat([document.querySelector('footer').offsetTop]),st=[],SP=700,FLOOR=.22;
+    for(var y=0;y<=H;y+=100){var d=1e9;b.forEach(function(x){d=Math.min(d,Math.abs(y-x))});var t=Math.min(1,d/SP),a=FLOOR+(1-FLOOR)*(t*t*(3-2*t));st.push('rgba(0,0,0,'+a.toFixed(3)+') '+y+'px')}
+    var g='linear-gradient(180deg,'+st.join(',')+')';patEl.style.webkitMaskImage=g;patEl.style.maskImage=g}
+  var pmT;function patSoon(){clearTimeout(pmT);pmT=setTimeout(patMask,120)}
+  if('ResizeObserver' in window)new ResizeObserver(patSoon).observe(document.body);
+  pick(0,false);renderMarks();renderGuide();paint();layout();
+  addEventListener('resize',function(){paint();layout()});
+  addEventListener('scroll',readScroll,{passive:true});readScroll();
+  if(window.self!==window.top&&!rm)auto=true;           // inside a preview frame the road plays by itself
+  requestAnimationFrame(frame);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){layout();patMask()});
+  patMask();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الدرعية</title>
+<meta name="description" content="Diriyah, capital of the first Saudi state. A short guide in Arabic and English.">
+<meta name="theme-color" content="#0b0906">
+<link rel="icon" href="data:,">
+<link rel="preload" as="font" type="font/otf" crossorigin href="../../fonts/thmanyah-serif/thmanyah-serif-display-bold.otf">
+<link rel="preload" as="font" type="font/otf" crossorigin href="../../fonts/thmanyah-serif/thmanyah-serif-text-regular.otf">
+<script>if(/[?&]preview=1/.test(location.search))document.documentElement.classList.add('pv')</script>
+<style>
+  @font-face{font-family:'Thmanyah Serif Display';src:url('../../fonts/thmanyah-serif/thmanyah-serif-display-bold.otf') format('opentype');font-weight:700;font-display:swap}
+  @font-face{font-family:'Thmanyah Serif Text';src:url('../../fonts/thmanyah-serif/thmanyah-serif-text-regular.otf') format('opentype');font-weight:400;font-display:swap}
+  @font-face{font-family:'Thmanyah Serif Text';src:url('../../fonts/thmanyah-serif/thmanyah-serif-text-medium.otf') format('opentype');font-weight:500;font-display:swap}
+  @font-face{font-family:'Thmanyah Serif Text';src:url('../../fonts/thmanyah-serif/thmanyah-serif-text-bold.otf') format('opentype');font-weight:700;font-display:swap}
+  /* Type follows the NUZL design-system scale, set in Thmanyah Serif (Display for Display styles, Text for Text styles).
+     Display Md 36/44 · Sm 30/38 — Text Xl 20/30 · Lg 18/28 · Md 16/24 · Sm 14/20 · Xs 12/18
+     Weights: Regular 400 · Medium 500 · Bold 700. Display -2% tracking on Latin only. */
+  /* Layout follows the NUZL DS: container max 1440, side margin 32 (16 on phones), gutter 24 (16 on phones),
+     12-column grid, spacing from the DS scale (4 6 8 12 16 20 24 32 40 48 64 80 96 128). */
+  /* NEZL design-system typography: Display steps down by breakpoint (tablet <= 1023, mobile <= 767); Text keeps the component values at every width, as the app does */
+  :root{--d2xl:72px;--d2xl-l:90px;--dxl:60px;--dxl-l:72px;--dlg:48px;--dlg-l:60px;--dmd:36px;--dmd-l:44px;--dsm:30px;--dsm-l:38px;--dxs:24px;--dxs-l:32px;
+    --txl:20px;--txl-l:30px;--tlg:18px;--tlg-l:28px;--tmd:16px;--tmd-l:24px;--tsm:14px;--tsm-l:20px;--txs:12px;--txs-l:18px;--t2xs:10px;--t2xs-l:14px}
+  @media(max-width:1023px){:root{--d2xl:56px;--d2xl-l:72px;--dxl:48px;--dxl-l:64px;--dlg:36px;--dlg-l:48px;--dmd:30px;--dmd-l:40px;--dsm:24px;--dsm-l:32px;--dxs:20px;--dxs-l:28px}}
+  @media(max-width:767px){:root{--d2xl:48px;--d2xl-l:64px;--dxl:40px;--dxl-l:56px;--dlg:32px;--dlg-l:40px;--dmd:24px;--dmd-l:32px;--dsm:20px;--dsm-l:28px;--dxs:18px;--dxs-l:24px}}
+  :root{--m:32px;--g:24px;--max:1440px;
+    --sp-xs:4px;--sp-sm:6px;--sp-md:8px;--sp-lg:12px;--sp-xl:16px;--sp-2xl:20px;--sp-3xl:24px;--sp-4xl:32px;--sp-5xl:40px;--sp-6xl:48px;--sp-7xl:64px;--sp-8xl:80px;--sp-9xl:96px;--sp-10xl:128px}
+  @media(max-width:767px){:root{--m:16px;--g:16px}}
+  :root{--bg:#0b0906;--ink:#f3e8d2;--muted:#cdbf9f;--clay:#d6a85a;--card:#e6d3ae;--cardink:#2a1f15;--line:rgba(243,232,210,.18)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  html[lang="ar"] [lang="en"], html[lang="en"] [lang="ar"]{display:none !important}
+  body{background:var(--bg);color:var(--ink);font:400 16px/24px 'Thmanyah Serif Text',Georgia,serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+  .skip{position:absolute;inset-inline-start:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l)}
+  .skip:focus{top:12px}
+  html[lang="en"] h1,html[lang="en"] h2{letter-spacing:-0.02em}
+
+  /* floating pill nav + language switch */
+  .nav{position:fixed;z-index:50;top:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;padding:6px;background:var(--ink);color:var(--bg);border-radius:999px;font-size:var(--tsm);line-height:var(--tsm-l);font-weight:500;white-space:nowrap}
+  .nav a,.nav button{padding:8px 16px;border-radius:999px;text-decoration:none;background:none;border:0;color:inherit;font:inherit;cursor:pointer;min-height:36px;display:inline-flex;align-items:center}
+  .nav a:hover,.nav button:hover{background:rgba(11,9,6,.1)}
+  .nav .lang{background:var(--bg);color:var(--ink);font-weight:700;margin-inline-start:4px}
+  .nav .lang:hover{background:#2a1f15}
+
+  /* hero: one huge word over one landmark (display art, above the DS scale) */
+  .hero{position:relative;min-height:720px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:0 var(--m) var(--sp-7xl)}
+  .photo{position:absolute;inset:0;animation:zoom 2.8s cubic-bezier(.2,.7,.2,1) both}
+  .sky{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% 50%;transform:translate3d(0,calc(var(--p,0)*70px),0) scale(calc(1.02 + var(--p,0)*.06));will-change:transform}
+  .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,6,.5) 0%,rgba(11,9,6,.18) 38%,rgba(11,9,6,.78) 100%)}
+  .hero h1{position:relative;z-index:2;font-weight:700;font-size:min(300px,31vw);line-height:1;letter-spacing:0;text-align:center;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+  html[lang="en"] .hero h1{font-size:min(260px,22vw)}
+  .hero .tag{position:absolute;z-index:2;top:110px;left:0;right:0;text-align:center;color:var(--ink);font-size:var(--txl);line-height:var(--txl-l);padding:0 24px;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+
+  /* facts strip */
+  .facts{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);max-width:980px;margin:0 auto;padding:48px 5vw 0;gap:20px;text-align:center}
+  .facts b{display:block;font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l);color:var(--clay)}
+  .facts span{display:block;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);margin-top:4px}
+
+  /* story */
+  .story{max-width:var(--max);margin:0 auto;padding:var(--sp-9xl) var(--m) var(--sp-7xl);text-align:center;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+  .story>*{grid-column:3/11}
+  .story>.btn{justify-self:center}
+  .story p.k{color:var(--clay);font-weight:700;font-size:var(--tlg);line-height:var(--tlg-l);margin-bottom:var(--sp-xl)}
+  .story h2{font-weight:700;font-size:var(--d2xl);line-height:var(--d2xl-l);margin-bottom:var(--sp-3xl)}
+  .story p.b{color:var(--ink);font-size:var(--dxs);line-height:var(--dxs-l);max-width:900px;margin-inline:auto;opacity:.9}
+  .story>*{grid-column:2/12}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:40px;margin-top:var(--sp-4xl);padding:0 16px;background:var(--ink);color:var(--bg);border-radius:8px;font-weight:500;font-size:16px;line-height:24px;text-decoration:none}
+  .btn:hover{background:var(--clay)}
+
+  /* collectible album */
+  .album{max-width:var(--max);margin:0 auto;padding:var(--sp-3xl) var(--m) var(--sp-9xl)}
+  .album-head{display:flex;justify-content:space-between;align-items:end;gap:var(--g);margin-bottom:var(--sp-md);border-top:1px solid var(--line);padding-top:var(--sp-4xl)}
+  .album-head h2{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l)}
+  .count{font-weight:700;color:var(--clay);font-size:var(--tlg);line-height:var(--tlg-l);white-space:nowrap}
+  .count b{font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);color:var(--ink)}
+  .hint{color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);margin-bottom:24px}
+  .grid{list-style:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g)}
+  .grid>li{grid-column:span 4}
+  .card{display:block;width:100%;aspect-ratio:3/4;background:none;border:0;cursor:pointer;perspective:900px;color:inherit;font:inherit;text-align:center}
+  .inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform 560ms cubic-bezier(.2,.8,.2,1)}
+  .card[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-md);padding:var(--sp-3xl);border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  .back{background:#17110b;border:1px solid var(--line);background-image:repeating-linear-gradient(45deg,rgba(214,168,90,.14) 0 2px,transparent 2px 16px),repeating-linear-gradient(-45deg,rgba(214,168,90,.14) 0 2px,transparent 2px 16px)}
+  .num{font-weight:700;font-size:var(--dsm);line-height:var(--dsm-l);color:var(--clay);background:#17110b;padding:2px 16px;border-radius:8px}
+  .front{background:#17110b;color:var(--ink);transform:rotateY(180deg);padding:0;overflow:hidden;justify-content:flex-end;align-items:stretch;text-align:start;gap:0}
+  .front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%)}
+  .front .cap{position:relative;display:block;padding:var(--sp-7xl) var(--sp-xl) var(--sp-xl);background:linear-gradient(180deg,rgba(11,9,6,0),rgba(11,9,6,.9))}
+  .front strong{display:block;font-weight:700;font-size:var(--txl);line-height:var(--txl-l);color:var(--ink)}
+  .front em{display:block;font-style:normal;font-weight:400;font-size:var(--tsm);line-height:var(--tsm-l);color:#e6dcc4}
+  .card:hover .inner{transform:rotateY(8deg)}
+  .card[aria-pressed="true"]:hover .inner{transform:rotateY(180deg)}
+  .done{margin-top:var(--sp-4xl);text-align:center;min-height:56px;color:var(--clay);font-weight:700;font-size:var(--tlg);line-height:var(--tlg-l)}
+  .done button{margin-inline-start:var(--sp-lg);display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:40px;padding:0 16px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:8px;font:inherit;font-weight:500;font-size:16px;line-height:24px;cursor:pointer}
+  .done button:hover{background:var(--ink);color:var(--bg)}
+
+  /* plan your visit */
+  .visit{max-width:var(--max);margin:0 auto;padding:var(--sp-4xl) var(--m) var(--sp-9xl);text-align:center}
+  .visit h2{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l);margin-bottom:var(--sp-4xl)}
+  .tips{list-style:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);text-align:start}
+  .tips>li{grid-column:span 4}
+  .tips li{border:1px solid var(--line);border-radius:16px;padding:var(--sp-3xl)}
+  .tips strong{display:block;font-weight:700;font-size:var(--txl);line-height:var(--txl-l)}
+  .tips span{display:block;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);margin-top:4px}
+  .visit .btn{margin-top:32px;background:var(--clay);color:var(--cardink)}
+  .visit .btn:hover{background:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:var(--sp-5xl) var(--m);text-align:center;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l)}
+
+  @media(min-width:768px) and (max-width:1023px){.grid>li{grid-column:span 6}}
+  @media(max-width:767px){.grid>li{grid-column:span 6}.tips>li{grid-column:1/-1}.story>*{grid-column:1/-1}}
+  @media(max-width:560px){
+    .hero{min-height:560px;padding-bottom:var(--sp-6xl)} .hero .tag{top:92px;}
+    .nav{top:var(--sp-xl);gap:var(--sp-xs)} .nav a,.nav button{padding:var(--sp-md) var(--sp-lg)}
+    .facts{gap:10px;padding-top:36px} .facts b{} .facts span{}
+    .story{padding:var(--sp-7xl) var(--m) var(--sp-6xl)} .album-head h2,.visit h2{} .story h2{} .story p.k{} .story p.b{}
+    .face{padding:var(--sp-xl)} .front{padding:0} .front .cap{padding:var(--sp-6xl) var(--sp-xl) var(--sp-xl)} .front strong{} .front em{}
+    .album-head{flex-direction:column;align-items:flex-start}
+    .tips{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){.inner{transition:none}html{scroll-behavior:auto}}
+
+  /* DS Display styles use Thmanyah Serif Display; Text styles use Thmanyah Serif Text */
+  .hero h1,.story h2,.album-head h2,.visit h2,.facts b,.count b,.num{font-family:'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif}
+  .credits{margin-top:var(--sp-lg);font-size:var(--txs);line-height:var(--txs-l)}
+  .credits summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px;display:inline-block;min-height:24px}
+  .credits ul{list-style:none;margin-top:var(--sp-md);display:grid;gap:4px}
+  .credits a{text-decoration:underline;text-underline-offset:3px}
+  .credits p{margin-top:8px}
+
+  /* ===== motion ===== */
+  @keyframes zoom{from{transform:scale(1.16)}to{transform:scale(1)}}
+  @keyframes rise{from{opacity:0;transform:translateY(46px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+  @keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .hero h1{transform:translateY(calc(var(--p,0)*-46px));opacity:calc(1 - var(--p,0)*1.15)}
+  .hero h1 .w{display:inline-block;animation:rise 1.3s .35s cubic-bezier(.2,.8,.2,1) both}
+  .hero .tag{animation:fadeup 1s .15s both;opacity:calc(1 - var(--p,0)*1.6)}
+  @keyframes navin{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+  .nav{animation:navin .8s .6s both}
+  .scrim{opacity:calc(1 + var(--p,0)*.3)}
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .sprog{position:fixed;z-index:60;top:0;inset-inline:0;height:3px;background:var(--clay);transform-origin:left center;transform:scaleX(var(--sp,0))}
+  html[dir="rtl"] .sprog{transform-origin:right center}
+  .nav a.cur{background:rgba(11,9,6,.12)}
+
+  /* timeline: sticky photo that changes with the step you are reading */
+  .tl{max-width:var(--max);margin:0 auto;padding:var(--sp-7xl) var(--m) var(--sp-5xl)}
+  .tl-h{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l);text-align:center;margin-bottom:var(--sp-6xl)}
+  .tl-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:start}
+  .tl-photo{grid-column:1/6}
+  .tl-steps{grid-column:7/13}
+  .tl-photo{position:sticky;top:96px;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#17110b;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+  .tl-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .9s ease,transform 1.6s cubic-bezier(.2,.8,.2,1)}
+  .tl-photo img.on{opacity:1;transform:scale(1)}
+  .tl-steps{list-style:none;position:relative;padding-inline-start:var(--sp-4xl)}
+  .tl-steps::before,.tl-steps::after{content:'';position:absolute;inset-block-start:0;inset-inline-start:0;width:2px}
+  .tl-steps::before{inset-block-end:0;background:var(--line)}
+  .tl-steps::after{height:calc(var(--tp,0)*100%);background:var(--clay)}
+  .tl-steps li{min-height:384px;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .5s ease}
+  .tl-steps li.on{opacity:1}
+  .yr{font-family:'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif;font-weight:700;font-size:var(--dxl);line-height:var(--dxl-l);color:var(--clay);font-variant-numeric:tabular-nums}
+  .tl-steps h3{font-weight:700;font-size:var(--txl);line-height:var(--txl-l);margin-top:4px}
+  .tl-steps p{color:var(--muted);font-size:var(--tmd);line-height:var(--tmd-l);margin-top:4px}
+
+  /* album: cards lean toward the pointer */
+  .card:not([aria-pressed="true"]):hover .inner{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+  .card[aria-pressed="true"]:hover .inner{transform:rotateY(calc(180deg + var(--ry,0deg))) rotateX(var(--rx,0deg))}
+  .card .inner{transition:transform 560ms cubic-bezier(.2,.8,.2,1)}
+  body.swap main,body.swap .hero h1,body.swap .nav{opacity:.0;transition:opacity .15s}
+
+  @media(max-width:767px){
+    .tl{padding-top:var(--sp-4xl)}
+    .tl-h{margin-bottom:24px}
+    .tl-wrap{gap:0}
+    .tl-photo{top:72px;z-index:3;aspect-ratio:auto;height:224px;margin-bottom:var(--sp-md)}
+    .tl-steps li{min-height:260px}
+    .yr{}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .photo,.hero h1 .w,.hero .tag,.nav{animation:none}
+    .sky{transform:none}.hero h1{transform:none;opacity:1}.hero .tag{opacity:1}
+    .rv{opacity:1;transform:none;transition:none}
+    .tl-photo img{transition:none}
+  }
+
+  /* timeline columns (after the base rules so they win): tablet 6 + 6, phone stacked */
+  @media(min-width:768px) and (max-width:1023px){.tl-photo{grid-column:1/7}}
+  @media(max-width:767px){.tl-photo,.tl-steps{grid-column:1/-1}}
+
+  /* ===== more sections: architecture, culture, map ===== */
+  .sec-head{text-align:center;margin-bottom:var(--sp-5xl)}
+  .sec-head .k,.cult-card .k,.where-info .k{color:var(--clay);font-weight:700;font-size:var(--tsm);line-height:var(--tsm-l);margin-bottom:var(--sp-lg)}
+  .sec-head h2{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l)}
+  .sec-head .hint{margin:var(--sp-md) 0 0}
+
+  .arch{max-width:var(--max);margin:0 auto;padding:var(--sp-7xl) var(--m)}
+  .arch-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:start}
+  .arch-fig{grid-column:1/8;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/2;background:#17110b}
+  .arch-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hs{position:absolute;left:var(--x);top:var(--y);width:44px;height:44px;transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--ink);background:rgba(11,9,6,.62);color:var(--ink);font:700 16px/1 'Thmanyah Serif Text',Georgia,serif;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+  .hs::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--clay);opacity:0;transform:scale(.7)}
+  .hs.on{background:var(--clay);color:#0b0906;border-color:var(--clay)}
+  .hs.on::after{opacity:.9;transform:scale(1);transition:opacity .4s,transform .6s}
+  .hs:hover{transform:translate(-50%,-50%) scale(1.08)}
+  .arch-list{grid-column:8/13;list-style:none;display:grid;gap:var(--sp-md)}
+  .an{display:block;width:100%;text-align:start;background:none;border:0;border-inline-start:2px solid var(--line);color:inherit;font:inherit;padding:var(--sp-lg) var(--sp-xl);cursor:pointer;opacity:.74;transition:opacity .3s,border-color .3s,background .3s}
+  .an b{display:block;font-weight:700;font-size:var(--txl);line-height:var(--txl-l)}
+  .an span{display:block;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);margin-top:var(--sp-xs)}
+  .an.on{opacity:1;border-color:var(--clay);background:rgba(243,232,210,.06)}
+  .an:hover{opacity:1}
+
+  .cult{position:relative;margin:var(--sp-7xl) 0;min-height:560px;display:flex;align-items:flex-end;overflow:hidden;background:#0b0906}
+  .cult-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+  .cult::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,9,6,.92),rgba(11,9,6,.35) 60%,rgba(11,9,6,.1));z-index:1}
+  .cult-in{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:var(--sp-9xl) var(--m) var(--sp-6xl)}
+  .cult-card{max-width:520px}
+  .cult-card h2{font-weight:700;font-size:var(--dlg);line-height:var(--dlg-l);margin-bottom:var(--sp-md)}
+  html[lang="en"] .cult-card h2{letter-spacing:-0.02em}
+  .cult-card .b{font-size:var(--tlg);line-height:var(--tlg-l);color:var(--ink)}
+  .badge{display:inline-flex;margin-top:var(--sp-xl);padding:var(--sp-md) var(--sp-xl);border-radius:999px;background:var(--ink);color:var(--bg);font-weight:500;font-size:var(--tsm);line-height:var(--tsm-l)}
+
+  .where{max-width:var(--max);margin:0 auto;padding:var(--sp-7xl) var(--m)}
+  .where-wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);align-items:stretch}
+  .map{grid-column:1/9;border-radius:16px;overflow:hidden;border:1px solid var(--line);min-height:400px;background:#17110b}
+  .map iframe{display:block;width:100%;height:100%;min-height:400px;border:0}
+  .where-info{grid-column:9/13;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--sp-lg)}
+  .where-info h2{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l)}
+  .where-info .b{font-size:var(--txl);line-height:var(--txl-l)}
+  .where-info .coord{color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);font-variant-numeric:tabular-nums}
+  .where-info .btn{margin-top:var(--sp-md)}
+  .where-info .small{color:var(--muted);font-size:var(--txs);line-height:var(--txs-l)}
+
+  @media(min-width:768px) and (max-width:1023px){.arch-fig{grid-column:1/-1}.arch-list{grid-column:1/-1;grid-template-columns:repeat(2,1fr);margin-top:var(--sp-3xl)}.map{grid-column:1/-1}.where-info{grid-column:1/-1;margin-top:var(--sp-3xl)}}
+  @media(max-width:767px){
+    .sec-head h2,.where-info h2{}
+    .arch{padding:var(--sp-6xl) var(--m)}
+    .arch-fig,.arch-list,.map,.where-info{grid-column:1/-1}
+    .arch-list{margin-top:var(--sp-xl)} .hs{width:44px;height:44px}
+    .cult{min-height:480px} .cult-card h2{} .cult-in{padding:var(--sp-8xl) var(--m) var(--sp-4xl)}
+    .where{padding:var(--sp-6xl) var(--m)} .where-wrap{row-gap:var(--sp-3xl)} .map{height:320px;min-height:0;aspect-ratio:auto} .map iframe{height:100%;min-height:0}
+  }
+
+  /* ===== sand hero: the word is made of grains that scatter from the pointer and settle back ===== */
+  .sand{position:absolute;inset:0;width:100%;height:100%;z-index:2;touch-action:pan-y;transform:translateY(calc(var(--p,0)*-46px));opacity:calc(1 - var(--p,0)*1.15)}
+  .hero.sand-on h1{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media(prefers-reduced-motion:reduce){.sand{display:none}}
+
+  /* visit: a real photo beside the tips */
+  .visit-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:center;text-align:start}
+  .visit-fig{grid-column:1/6;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#17110b}
+  .visit-fig img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;display:block}
+  .visit-side{grid-column:7/13}
+  .visit-side .tips{grid-template-columns:1fr;gap:var(--sp-xl)}
+  .visit-side .tips>li{grid-column:auto}
+  .visit-side .btn{margin-top:var(--sp-4xl)}
+  @media(max-width:1023px){.visit-fig{grid-column:1/-1;aspect-ratio:3/2}.visit-side{grid-column:1/-1;margin-top:var(--sp-3xl)}}
+  @media(max-width:767px){.visit-fig{aspect-ratio:4/3}}
+
+  /* ===== polish ===== */
+  .cue{position:absolute;z-index:3;inset-inline:0;bottom:var(--sp-lg);display:flex;flex-direction:column;align-items:center;gap:var(--sp-xs);color:var(--ink);font-size:var(--txs);line-height:var(--txs-l);pointer-events:none;text-shadow:0 1px 10px rgba(0,0,0,.7);opacity:calc(1 - var(--p,0)*6);animation:fadeup 1s 2.6s both}
+  .cue i{display:block;width:2px;height:24px;background:linear-gradient(var(--ink),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%{transform:scaleY(0);opacity:0}40%{opacity:1}100%{transform:scaleY(1);opacity:0}}
+  .map iframe{filter:invert(.9) hue-rotate(180deg) saturate(.55) brightness(.92) contrast(1.05)}
+  .sand-rain{position:fixed;inset:0;width:100%;height:100%;z-index:70;pointer-events:none}
+  /* embedded preview (the card in the portfolio): static word, no heavy effects */
+  .pv .sand,.pv .cue{display:none}
+  .pv .hero h1 .w,.pv .hero .tag,.pv .nav,.pv .photo{animation:none}
+  @media(prefers-reduced-motion:reduce){.cue,.cue i{animation:none}.cue{opacity:1}}
+
+
+  /* ===== background pattern: only behind the story and the visit sections =====
+     The Najdi triangle motif from At-Turaif's walls; strongest at the edges, fading toward the text. */
+  .story,.visit{position:relative;isolation:isolate}
+  .visit::before{
+    content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%23d6a85a'%3E%3Cpath d='M8 17 12 8 16 17zM24 17 28 8 32 17zM40 17 44 8 48 17z'/%3E%3Cpath d='M0 41 4 32 8 41zM16 41 20 32 24 41zM32 41 36 32 40 41z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:64px 64px;opacity:.16;
+    -webkit-mask-image:radial-gradient(ellipse 62% 75% at 50% 50%,rgba(0,0,0,.1) 0%,#000 100%);
+            mask-image:radial-gradient(ellipse 62% 75% at 50% 50%,rgba(0,0,0,.1) 0%,#000 100%);
+  }
+  @media(max-width:767px){.visit::before{opacity:.11;background-size:56px 56px}}
+  .pv .visit::before{display:none}
+
+  /* ===== every section is one full screen tall (small viewport units so phone toolbars don't cut it) ===== */
+  .hero{height:100vh;height:100svh;min-height:560px}
+  .story,.arch,.album,.where,.visit{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+  .story{display:grid;align-content:center}
+  .cult{min-height:100vh;min-height:100svh}
+  .tl{min-height:100vh;min-height:100svh}
+  /* embedded preview: the page is rendered 2400px tall, so viewport units would explode; use fixed heights */
+  .pv .hero{height:720px;min-height:0}
+  .pv .story,.pv .arch,.pv .album,.pv .where,.pv .visit,.pv .cult,.pv .tl{min-height:0}
+
+/* ===== album: one row of panels, the hovered one opens ===== */
+.grid{display:flex;gap:var(--sp-md);height:min(72vh,680px);height:min(72svh,680px);min-height:420px}
+.grid>li{flex:1 1 0;min-width:0;grid-column:auto;transition:flex-grow 640ms cubic-bezier(.2,.8,.2,1)}
+.grid>li.open{flex-grow:5.5}
+.card{height:100%;aspect-ratio:auto;perspective:none}
+.card .inner,.card:hover .inner,.card:not([aria-pressed="true"]):hover .inner,.card[aria-pressed="true"] .inner,.card[aria-pressed="true"]:hover .inner{transform:none;transition:none}
+.back{display:none}
+.front{transform:none;border-radius:16px;backface-visibility:visible;-webkit-backface-visibility:visible}
+.front img{filter:grayscale(.55) brightness(.62);transform:scale(1.08);transition:filter 640ms,transform 900ms cubic-bezier(.2,.8,.2,1)}
+.grid>li.open .front img{filter:none;transform:scale(1)}
+.front .cap{opacity:0;transform:translateY(12px);transition:opacity 360ms,transform 520ms cubic-bezier(.2,.8,.2,1)}
+.grid>li.open .front .cap{opacity:1;transform:none;transition-delay:220ms}
+.pnum{position:absolute;inset-inline:0;top:var(--sp-xl);text-align:center;font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l);color:var(--ink);font-family:'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif;transition:opacity 300ms}
+.grid>li.open .pnum{opacity:0}
+.card:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:16px}
+@media(max-width:767px){
+  .grid{flex-direction:column;height:min(78svh,640px);min-height:480px;gap:var(--sp-sm,8px)}
+  .grid>li{flex-basis:0}
+  .grid>li.open{flex-grow:6}
+  .pnum{top:50%;transform:translateY(-50%)}
+}
+.pv .grid{height:520px;min-height:0}
+@media (prefers-reduced-motion:reduce){.grid>li,.front img,.front .cap{transition:none}}
+
+/* ===== story: big lines that light up under the pointer ===== */
+.story{text-align:start}
+.story h2.lit{font-size:var(--d2xl);line-height:var(--d2xl-l);margin-bottom:var(--sp-4xl);max-width:none}
+.story h2.lit .ln{display:block}
+.story .w{font-style:normal;color:var(--ink);opacity:calc(.5 + .5*var(--l,0));transition:opacity 320ms ease-out}
+.story p.b{font-size:var(--tlg);line-height:var(--tlg-l);max-width:440px;margin-inline:0;color:var(--muted);opacity:1;margin-bottom:var(--sp-3xl)}
+.story>.btn{justify-self:start}
+@media(max-width:767px){.story h2.lit{}.story p.b{margin-inline-start:0}}
+.pv .story .w{opacity:1}
+@media (prefers-reduced-motion:reduce){.story .w{opacity:1;transition:none}}
+
+/* ===== one rhythm: every section title → what sits under it = one DS space (32) ===== */
+:root{--tg:var(--sp-4xl)}
+.album-head{margin-bottom:var(--tg)}
+.sec-head{margin-bottom:var(--tg)}
+.sec-head h2,.sec-head .hint{margin-bottom:0}
+.sec-head .hint{margin-top:var(--sp-md)}
+.tl-h,.visit h2,.where-info h2,.cult-card h2,.story h2.lit{margin-bottom:var(--tg)}
+.sec-head h2{margin-top:0}
+.sec-head .k,.where-info .k,.cult-card .k,.story p.k{margin-bottom:var(--sp-lg)}
+.where-info{gap:0}
+.where-info .coord{margin-top:var(--sp-lg)}
+.where-info .btn{margin-top:var(--sp-3xl)}
+
+/* ===== location: the map card is the full height of its section ===== */
+.where{padding-block:0}
+.where-wrap{flex:1;min-height:100svh}
+.map,.map iframe{min-height:100svh;height:100%}
+.where-info .btn{margin-top:var(--sp-3xl)}
+.pv .where-wrap,.pv .map,.pv .map iframe{min-height:0}
+@media(max-width:767px){.where{padding-block:var(--sp-xl)}.where-wrap{min-height:0}.map{height:62svh;min-height:0}.map iframe{min-height:0}}
+
+/* hero bottom: fade into the page background instead of a hard edge */
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:min(38svh,340px);z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(11,9,6,0) 0%,rgba(11,9,6,.55) 45%,var(--bg,#0b0906) 100%)}
+.pv .hero::after{height:160px}
+
+/* ===== hero: three real photos in one row, the sand word across them ===== */
+.hero{background:var(--bg,#0b0906)}
+.photo{inset:auto;left:max(var(--m),calc((100% - var(--max))/2 + var(--m)));right:max(var(--m),calc((100% - var(--max))/2 + var(--m)));top:var(--sp-9xl);bottom:var(--sp-9xl);display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:var(--g);animation:none}
+.photo img{width:100%;height:100%;min-width:0;max-width:none;object-fit:cover;border-radius:16px;display:block;position:static;transform:none;will-change:auto}
+.photo img.sky{object-position:42% 50%}
+.scrim{display:none}
+@media(max-width:767px){.photo{top:var(--sp-9xl);bottom:var(--sp-10xl);grid-template-columns:1fr;left:var(--m);right:var(--m)}.photo img.side{display:none}}
+.pv .photo{top:72px;bottom:72px}
+
+/* timeline photo: equal space above and below while it sticks */
+@media(min-width:768px){.tl-photo{top:var(--sp-9xl);aspect-ratio:auto;height:calc(100vh - 2*var(--sp-9xl));height:calc(100svh - 2*var(--sp-9xl));min-height:360px}}
+
+/* tagline sits right above the big word */
+.hero{--hs:min(300px,31vw)}
+html[lang="en"] .hero{--hs:min(260px,22vw)}
+.hero .tag{top:auto;bottom:calc(var(--sp-7xl) + var(--hs)*1.1)}
+@media(max-width:560px){.hero .tag{top:auto;bottom:calc(var(--sp-7xl) + var(--hs)*1.1)}}
+.pv .hero .tag{bottom:calc(var(--sp-7xl) + var(--hs)*1.1)}
+.hero .tag{font-weight:500;text-shadow:0 1px 3px rgba(0,0,0,.75),0 2px 24px rgba(0,0,0,.8)}
+/* the word and its tagline sit in the middle of the hero */
+.hero .tag,.pv .hero .tag,.hero .tag{bottom:calc(50% + var(--hs)*.62)}
+@media(max-width:560px){.hero .tag{bottom:calc(50% + var(--hs)*.62)}}
+/* the photos sit a little darker so the cream word reads on any of them */
+.photo img{filter:brightness(.66) saturate(1.05)}
+/* phones keep all three photos (narrow side strips) and use the same space above and below */
+@media(max-width:767px){
+  .photo{grid-template-columns:1fr 2.4fr 1fr;gap:var(--sp-md);top:var(--sp-8xl);bottom:var(--sp-8xl);left:var(--m);right:var(--m)}
+  .photo img.side{display:block}
+  .photo img{border-radius:12px}
+}
+/* tagline → word gap = the same title-to-description space used everywhere (--tg) */
+.hero .tag,.pv .hero .tag{bottom:calc(50% + var(--hs)*.467 + var(--tg))}
+@media(max-width:560px){.hero .tag{bottom:calc(50% + var(--hs)*.467 + var(--tg))}}
+/* phones: the three photos stack one above the other */
+@media(max-width:767px){
+  .photo{grid-template-columns:1fr;grid-template-rows:1fr 1.7fr 1fr}
+  .photo img.side:first-child{grid-row:1}
+  .photo img.sky{grid-row:2}
+  .photo img.side:last-child{grid-row:3}
+}
+/* phones: three photos, same height, same radius, same gap */
+@media(max-width:767px){
+  .photo{grid-template-rows:repeat(3,minmax(0,1fr));gap:var(--g)}
+  .photo img{border-radius:16px;object-position:50% 50%}
+}
+/* phones: word + tagline must fit inside the middle photo */
+@media(max-width:560px){.hero{--hs:min(300px,26vw)} .hero .tag{}}
+
+/* typing intro for the story lines */
+.story h2.typing .w:not(.t){opacity:0;transition:none}
+.story .w.cur::after{content:'';display:inline-block;width:.05em;height:.85em;margin-inline-start:.1em;background:var(--clay);vertical-align:-.08em;animation:caret .7s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.story h2.typing .w:not(.t){opacity:1}.story .w.cur::after{display:none}}
+
+/* ===== phones: a full-width swipe strip; while it moves, the photos shrink into rounded cards ===== */
+@media(max-width:767px){
+  .photo{inset:0;display:flex;gap:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;padding:0;animation:none;pointer-events:auto;touch-action:pan-x pan-y}
+  .photo::-webkit-scrollbar{display:none}
+  .photo img{flex:0 0 100%;width:100%;height:100%;border-radius:0;scroll-snap-align:center;scroll-snap-stop:always;will-change:transform}
+  .sand{pointer-events:none}
+  .hero-dots{position:absolute;z-index:3;left:0;right:0;bottom:var(--sp-9xl);display:flex;justify-content:center;gap:var(--sp-md);pointer-events:none}
+  .hero-dots i{width:20px;height:3px;border-radius:2px;background:var(--ink);opacity:.35;transition:opacity .3s,width .3s}
+  .hero-dots i.on{opacity:1;width:32px}
+}
+@media(min-width:768px){.hero-dots{display:none}}
+
+/* hotspots: sizes from the DS space scale (40 desktop, 32 phones); a transparent halo keeps a 44px touch target */
+.hs{width:var(--sp-5xl);height:var(--sp-5xl);font-size:16px}
+.hs::before{content:'';position:absolute;inset:calc((44px - 100%)/-2);border-radius:50%}
+@media(max-width:767px){.hs{width:var(--sp-4xl);height:var(--sp-4xl);border-width:2px}.hs::after{inset:calc(var(--sp-md)*-1)}}
+
+/* ===== story: like the reference, the text stays pinned and the words fill in as you scroll ===== */
+.story{display:block!important;min-height:0!important;height:240vh;height:240svh;padding:0!important;margin:0 auto;max-width:none;position:relative}
+.story-in{position:sticky;top:0;height:100vh;height:100svh;max-width:var(--max);margin:0 auto;padding:0 var(--m);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-content:center;text-align:start}
+.story-in>*{grid-column:2/12}
+.story-in>.btn{justify-self:start}
+@media(max-width:767px){.story-in>*{grid-column:1/-1}}
+.story .w{opacity:1!important;transition:none;color:color-mix(in srgb,var(--ink) calc(var(--l,1)*100%),#282828)}
+.pv .story{height:auto!important}.pv .story-in{position:static;height:auto;padding-block:var(--sp-7xl)}
+
+/* ===== culture: stages pinned over one photo, the stage changes as you scroll (same pattern as the reference's places) ===== */
+.cult{display:block;margin:0;min-height:0;height:380vh;height:380svh;overflow:visible;background:var(--bg,#0b0906)}
+.cult::before{display:none}
+.cult-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.cult-pin::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(11,9,6,.94),rgba(11,9,6,.45) 55%,rgba(11,9,6,.25))}
+.cult-img{object-position:calc(30% + var(--i,0)*14%) 40%;transform:scale(calc(1.04 + var(--i,0)*.03));transition:object-position 1.2s cubic-bezier(.2,.8,.2,1),transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.cult-in{position:relative;z-index:2;height:100%;display:grid;grid-template-rows:auto 1fr;padding:var(--sp-9xl) var(--m) var(--sp-8xl)}
+.cult-card{align-self:start}
+.cult-card .b{color:var(--muted);font-size:var(--tlg);line-height:var(--tlg-l)}
+.stages{list-style:none;position:relative;align-self:end;min-height:300px}
+.stage{position:absolute;inset-inline:0;bottom:0;max-width:560px;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.stage.on{opacity:1;transform:none;pointer-events:auto}
+.stage .no{color:var(--clay);font-weight:700;font-size:var(--tsm);line-height:var(--tsm-l);margin-bottom:var(--sp-lg)}
+.stage h3{font-weight:700;font-size:var(--dlg);line-height:var(--dlg-l);margin-bottom:var(--tg)}
+.stage .t{font-size:var(--txl);line-height:var(--txl-l);color:var(--ink);margin-bottom:var(--sp-md)}
+.stage .d{font-size:var(--tmd);line-height:var(--tmd-l);color:var(--muted);margin-bottom:var(--sp-xl)}
+.stage .ln{font-size:var(--tsm);line-height:var(--tsm-l);color:var(--clay)}
+.stage-bar{position:absolute;inset-inline:var(--m);bottom:var(--sp-3xl);height:2px;background:var(--line)}
+.stage-bar i{display:block;height:100%;width:calc(var(--cp,0)*100%);background:var(--clay)}
+@media(max-width:767px){.stage h3{}.stage .t{}.cult-in{padding:var(--sp-8xl) var(--m) var(--sp-7xl)}.stages{min-height:320px}}
+@media (prefers-reduced-motion:reduce){.cult{height:auto}.cult-pin{position:relative;height:auto;min-height:100svh}.stages{min-height:0;display:grid;gap:var(--sp-3xl)}.stage{position:static;opacity:1;transform:none}.stage-bar{display:none}}
+.pv .cult{height:auto}.pv .cult-pin{position:relative;height:auto;min-height:520px}.pv .stages{min-height:0}.pv .stage{display:none}.pv .stage.on{display:block;position:static}.pv .stage-bar{display:none}
+
+/* culture: the photo is a card inside the page container, like the timeline photo (96 above and below, 16 radius) */
+.cult-pin{overflow:visible;display:grid;place-items:center;padding:0 var(--m)}
+.cult-pin::before{display:none}
+.cult-box{position:relative;width:100%;max-width:calc(var(--max) - 2*var(--m));height:calc(100vh - 2*var(--sp-9xl));height:calc(100svh - 2*var(--sp-9xl));min-height:420px;border-radius:16px;overflow:hidden;background:#17110b}
+.cult-box::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(11,9,6,.94),rgba(11,9,6,.45) 55%,rgba(11,9,6,.25))}
+.cult-in{padding:var(--sp-5xl) var(--sp-5xl) var(--sp-6xl)}
+.stage-bar{inset-inline:var(--sp-5xl);bottom:var(--sp-3xl)}
+@media(max-width:767px){.cult-in{padding:var(--sp-3xl) var(--sp-xl) var(--sp-5xl)}.stage-bar{inset-inline:var(--sp-xl)}}
+.pv .cult-box{min-height:520px;height:auto}
+
+/* each stage has two pieces of content: the name and one paragraph */
+.stage .d{font-size:var(--txl);line-height:var(--txl-l);color:var(--ink);margin-bottom:0}
+.stage h3{margin-bottom:var(--tg)}
+.stages{min-height:220px}
+@media(max-width:767px){.stage .d{}.stages{min-height:240px}}
+
+/* ===== album: pinned; the open panel follows the scroll (hover still opens one on desktop) ===== */
+.album{display:block;min-height:0;padding:0;max-width:none;margin:0;height:420vh;height:420svh}
+.album-pin{position:sticky;top:0;height:100vh;height:100svh;max-width:var(--max);margin:0 auto;padding:var(--sp-8xl) var(--m) var(--sp-6xl);display:flex;flex-direction:column}
+.album-pin .album-head{flex:none}
+.album-pin .grid{flex:1;height:auto;min-height:0}
+.pv .album{height:auto}.pv .album-pin{position:relative;height:auto}.pv .album-pin .grid{height:520px;flex:none}
+@media (prefers-reduced-motion:reduce){.album{height:auto}.album-pin{position:relative;height:auto}.album-pin .grid{height:min(72svh,680px);flex:none}}
+
+/* map: the page scrolls over it; the map only moves after a click or tap, and lets go when the pointer leaves */
+
+
+/* culture stage name uses the same title size as every other section title (36/44, 30/38 on phones) so title→text reads the same */
+.stage h3{font-size:var(--dmd);line-height:var(--dmd-l)}
+@media(max-width:560px){.stage h3{}}
+/* album header stays on one row on phones (title + counter), so title → panels is the same 32 as everywhere */
+@media(max-width:560px){.album-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+
+/* location: same frame as the timeline photo and the culture card (96 above and below, 16 radius, container width) */
+@media(min-width:768px){
+  .where{padding:var(--sp-9xl) var(--m);max-width:var(--max);margin:0 auto}
+  .where-wrap{flex:1;min-height:0}
+  .map,.map iframe{min-height:0;height:100%}
+  .where-info{align-self:center}
+}
+
+/* ===== location: a descent — country, city, oasis, district — pinned, one map step per scroll stage ===== */
+.where{display:block!important;min-height:0!important;padding:0!important;max-width:none!important;margin:0!important;height:380vh;height:380svh}
+.where-pin{position:sticky;top:0;height:100vh;height:100svh;padding:var(--sp-9xl) var(--m);display:grid;place-items:center}
+.where-box{width:100%;max-width:calc(var(--max) - 2*var(--m));height:100%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g)}
+.where-box .map{grid-column:5/13;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#17110b;min-height:0;height:100%;cursor:auto}
+.where-box .map iframe{position:absolute;inset:0;width:100%;height:100%;min-height:0;border:0;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.where-box .map iframe.on{opacity:1}
+.where-info{grid-column:1/5;display:flex!important;flex-direction:column;justify-content:space-between;align-items:flex-start;position:relative;padding-bottom:var(--sp-3xl);gap:0;align-self:stretch}
+.where-head h2{margin-bottom:0}
+.wstages{list-style:none;position:relative;flex:1;width:100%}
+.wstage{position:absolute;inset-inline:0;bottom:0;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.wstage.on{opacity:1;transform:none;pointer-events:auto}
+.wstage .no{color:var(--clay);font-weight:700;font-size:var(--tsm);line-height:var(--tsm-l);margin-bottom:var(--sp-lg)}
+.wstage h3{font-weight:700;font-size:var(--dmd);line-height:var(--dmd-l);margin-bottom:var(--tg)}
+.wstage .d{font-size:var(--txl);line-height:var(--txl-l);color:var(--ink)}
+.where-info .btn{margin-top:var(--sp-3xl)}
+.where-info .stage-bar{inset-inline:0;bottom:0}
+@media(max-width:767px){
+  .where-pin{padding:var(--sp-8xl) var(--m) var(--sp-5xl)}
+  .where-box{grid-template-columns:1fr;grid-template-rows:42% 1fr;row-gap:var(--sp-xl)}
+  .where-box .map{grid-column:1;grid-row:1}
+  .where-info{grid-column:1;grid-row:2;padding-bottom:var(--sp-xl)}
+  .wstage h3{}.wstage .d{}
+  .where-head h2{}
+}
+.pv .where{height:auto!important}.pv .where-pin{position:relative;height:auto;min-height:520px}.pv .wstage{display:none}.pv .wstage.on{display:block;position:static}.pv .where-info .stage-bar{display:none}
+@media (prefers-reduced-motion:reduce){.where{height:auto!important}.where-pin{position:relative;height:auto}.where-box{height:auto;min-height:70svh}.wstages{display:grid;gap:var(--sp-3xl);flex:none}.wstage{position:static;opacity:1;transform:none}.where-info .stage-bar{display:none}.where-box .map iframe:not(.on){display:none}}
+
+.where-info .stage-bar i{width:calc(var(--wp,0)*100%)}
+@media(min-width:768px){.where-box .map{grid-row:1}.where-info{grid-row:1}}
+/* stage counters read 01 / 04 in Arabic too (bidi was flipping them to 04 / 01) */
+.stage .no span,.wstage .no span{direction:ltr;unicode-bidi:isolate;display:inline-block}
+html[lang="ar"] .stage .no,html[lang="ar"] .wstage .no{text-align:start}
+
+
+/* ===== visit: three big lines; the one you point at opens with its photo and its detail ===== */
+.visit{display:flex!important;flex-direction:column;justify-content:center;min-height:100vh!important;min-height:100svh!important;padding:var(--sp-9xl) var(--m)!important;max-width:var(--max)!important;margin:0 auto!important;text-align:start}
+.visit::before{display:none!important}
+.visit-top{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--g);margin-bottom:var(--tg)}
+.visit-top h2{margin-bottom:0}
+.visit-top .btn{margin-top:0}
+.vlist{list-style:none;border-bottom:1px solid var(--line)}
+.vrow{border-top:1px solid var(--line)}
+.vrow>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-items:center;width:100%;padding:var(--sp-3xl) 0;cursor:pointer}
+.vrow>button:focus-visible{outline:2px solid var(--clay);outline-offset:4px}
+.vrow .no{grid-column:1/2;color:var(--clay);font-weight:700;font-size:var(--txl);line-height:var(--txl-l);direction:ltr;unicode-bidi:isolate;text-align:start}
+.vrow .tt{grid-column:2/9;min-width:0}
+.vrow h3{font-weight:700;font-size:var(--d2xl);line-height:var(--d2xl-l);color:var(--ink);opacity:.38;transition:opacity .4s}
+.vrow.open h3,.vrow>button:hover h3{opacity:1}
+.vrow .dd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1)}
+.vrow .dd>p{overflow:hidden;min-height:0;font-size:var(--txl);line-height:var(--txl-l);color:var(--muted)}
+.vrow.open .dd{grid-template-rows:1fr}
+.vrow.open .dd>p{padding-top:var(--tg)}
+.vrow .ph{grid-column:9/13;border-radius:16px;overflow:hidden;aspect-ratio:3/2;background:#17110b;opacity:0;transform:scale(.92);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.vrow.open .ph{opacity:1;transform:none}
+.vrow .ph img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:1023px){.vrow h3{}}
+@media(max-width:767px){
+  .visit-top{flex-direction:column;align-items:flex-start;gap:var(--sp-xl)}
+  .vrow>button{grid-template-columns:auto 1fr;row-gap:var(--sp-xl);column-gap:var(--sp-xl);padding:var(--sp-xl) 0}
+  .vrow .no{grid-column:1;}
+  .vrow .tt{grid-column:2}
+  .vrow h3{}
+  .vrow .dd>p{}
+  .vrow .ph{grid-column:1/-1;grid-row:2;display:none}
+  .vrow.open .ph{display:block}
+}
+.pv .visit{min-height:0!important}
+@media (prefers-reduced-motion:reduce){.vrow .dd,.vrow .ph,.vrow h3{transition:none}}
+/* the photo floats at the end of the row so closed rows stay slim */
+@media(min-width:768px){
+  .vrow>button{position:relative}
+  .vrow .ph{position:absolute;inset-inline-end:0;top:50%;grid-column:auto;width:22%;transform:translateY(-50%) scale(.92)}
+  .vrow.open .ph{transform:translateY(-50%)}
+}
+/* visit rows: the number sits on the title line, dim titles stay readable */
+.vrow>button{align-items:start}
+.vrow .no{padding-top:30px}
+.vrow h3{opacity:.5}
+@media(max-width:767px){.vrow .no{padding-top:7px}}
+
+.vsrc{margin-top:var(--sp-xl);font-size:var(--tsm);line-height:var(--tsm-l);color:var(--muted)}
+.vsrc a{color:var(--ink);text-underline-offset:3px}
+
+/* visit rows carry no photo: the line and its detail use the full width */
+.vrow .tt{grid-column:2/-1}
+@media(max-width:767px){.vrow .tt{grid-column:2}}
+.vrow .dd>p{max-width:760px}
+
+/* buttons: DS Button Lg (40 high) everywhere */
+.btn{min-height:40px}
+.visit-foot{display:flex;align-items:center;gap:var(--sp-3xl);margin-top:var(--tg);flex-wrap:wrap}
+.visit-foot .btn{margin-top:0}
+.visit-foot .vsrc{margin-top:0;flex:1;min-width:260px}
+.where-info .btn,.story-in>.btn{margin-top:var(--sp-3xl)}
+@media(max-width:767px){.visit-foot{flex-direction:column;align-items:flex-start;gap:var(--sp-xl)}}
+
+/* visit: the button sits on the title line */
+.visit-top{align-items:center}
+.visit-top .btn{margin-top:0}
+@media(max-width:767px){.visit-top{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between}}
+
+/* the official-site action is a plain text link with an arrow */
+.vlink{display:inline-flex;align-items:center;gap:var(--sp-md);min-height:var(--sp-5xl);color:var(--ink);font-weight:500;font-size:var(--tmd);line-height:var(--tmd-l);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;text-decoration-color:var(--clay)}
+.vlink:hover{color:var(--clay)}
+.vlink:focus-visible{outline:2px solid var(--clay);outline-offset:4px;border-radius:4px}
+.vlink svg{flex:none}
+html[lang="ar"] .vlink svg{transform:scaleX(-1)}
+
+/* ===== closing line + footer (plain, like the reference) ===== */
+.outro{min-height:56vh;min-height:56svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:var(--sp-9xl) var(--m)}
+.o-k{color:var(--clay);font-weight:700;font-size:var(--tlg);line-height:var(--tlg-l);margin-bottom:var(--tg)}
+.o-h{font-family:'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif;font-weight:700;font-size:var(--d2xl);line-height:var(--d2xl-l);margin-bottom:var(--tg)}
+.o-s{color:var(--muted);font-size:var(--txl);line-height:var(--txl-l)}
+footer.ft{display:block;padding:var(--sp-7xl) var(--m) var(--sp-3xl);text-align:start;font-size:var(--tmd);line-height:var(--tmd-l);color:var(--ink);border-top:1px solid var(--line);max-width:none;margin:0}
+.ft-grid{max-width:calc(var(--max) - 2*var(--m));margin:0 auto;display:flex;justify-content:space-between;gap:var(--sp-7xl);flex-wrap:wrap}
+.ft-logo{font-family:'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif;font-size:var(--dmd);line-height:var(--dmd-l);display:block;margin-bottom:var(--sp-xl)}
+.ft-brand p{max-width:420px;color:var(--muted)}
+.ft-nav{display:grid;grid-template-columns:repeat(2,auto);gap:var(--sp-xl) var(--sp-7xl);align-content:start}
+.ft-nav a{color:var(--ink);text-decoration:none;font-weight:500}.ft-nav a:hover{color:var(--clay)}
+.ft-bar{max-width:calc(var(--max) - 2*var(--m));margin:var(--sp-7xl) auto 0;padding-top:var(--sp-xl);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:var(--g);flex-wrap:wrap;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l)}
+.ft-bar a{color:var(--muted)}.ft-bar a:hover{color:var(--ink)}
+@media(max-width:767px){.ft-grid{flex-direction:column;gap:var(--sp-4xl)}.ft-nav{grid-template-columns:repeat(2,1fr)}.ft-bar{margin-top:var(--sp-5xl)}}
+.pv .outro{display:none}.pv footer.ft{display:none}
+
+/* pinned sections: the pinned panel starts at the top of its section (block containers honour align-content in current Chrome, which was centring it) */
+.story,.cult,.album,.where,.visit{align-content:start!important;justify-content:start!important}
+
+.where-info .vlink{margin-top:var(--sp-3xl);margin-bottom:0}
+
+/* timeline: steps you are not on stay readable */
+.tl-steps li{opacity:.55}
+.tl-steps li.on{opacity:1}
+</style></head><body>
+<a class="skip" href="#story"><span lang="ar">تخطَّ إلى المحتوى</span><span lang="en">Skip to content</span></a>
+<div class="sprog" aria-hidden="true"></div>
+
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Main">
+    <a href="#story"><span lang="ar">الحكاية</span><span lang="en">Story</span></a><a href="#album"><span lang="ar">الألبوم</span><span lang="en">Album</span></a><a href="#visit"><span lang="ar">الزيارة</span><span lang="en">Visit</span></a>
+    <button type="button" class="lang" id="lang" aria-label="Switch language"><span lang="ar">EN</span><span lang="en">عربي</span></button>
+  </nav>
+  <div class="photo"><img class="side" src="img/card-1-turaif.jpg" alt="" loading="eager"><img class="sky" src="img/hero-golden.jpg" alt="" width="1920" height="700" fetchpriority="high"><img class="side" src="img/bujairi-dusk.jpg" alt="" loading="eager"></div>
+  <div class="scrim"></div>
+  <canvas class="sand" aria-hidden="true"></canvas>
+  <p class="tag"><span lang="ar">أول عاصمة للدولة السعودية</span><span lang="en">Capital of the first Saudi state</span></p>
+  <h1><span class="w"><span lang="ar">الدرعية</span><span lang="en">Diriyah</span></span></h1>
+  <div class="cue" aria-hidden="true"><span><span lang="ar">مرّر</span><span lang="en">Scroll</span></span><i></i></div>
+</header>
+
+<main>
+  <section class="story" id="story">
+    <div class="story-in">
+      <p class="k"><span lang="ar">الحكاية</span><span lang="en">The story</span></p>
+      <h2 class="lit"><span class="ln"><span lang="ar"><i class="w">من</i> <i class="w">الدرعية</i> <i class="w">بدأت</i> <i class="w">الحكاية،</i> </span><span lang="en"><i class="w">Diriyah</i> <i class="w">is</i> <i class="w">where</i> <i class="w">the</i> <i class="w">story</i> <i class="w">began,</i> </span></span><span class="ln"><span lang="ar"><i class="w">ومن</i> <i class="w">الطين</i> <i class="w">قامت</i> <i class="w">دولة</i> </span><span lang="en"><i class="w">and</i> <i class="w">a</i> <i class="w">state</i> <i class="w">rose</i> <i class="w">from</i> <i class="w">mud</i> </span></span><span class="ln"><span lang="ar"><i class="w">كانت</i> <i class="w">عاصمتها</i> <i class="w">بين</i> <i class="w">1727</i> <i class="w">و1818،</i> </span><span lang="en"><i class="w">From</i> <i class="w">1727</i> <i class="w">to</i> <i class="w">1818</i> <i class="w">it</i> <i class="w">was</i> <i class="w">the</i> <i class="w">capital,</i> </span></span><span class="ln"><span lang="ar"><i class="w">وما</i> <i class="w">زالت</i> <i class="w">أسوارها</i> <i class="w">قائمة</i> </span><span lang="en"><i class="w">and</i> <i class="w">its</i> <i class="w">walls</i> <i class="w">still</i> <i class="w">stand</i> </span></span></h2>
+      <p class="b"><span lang="ar">أُدرج حيّ الطريف في قائمة التراث العالمي عام 2010، واستقبل زوّاره عام 2022</span><span lang="en">At-Turaif has been a UNESCO World Heritage site since 2010, and has welcomed visitors since 2022</span></p>
+      <a class="btn" href="#visit"><span lang="ar">خطّط لزيارتك</span><span lang="en">Plan your visit</span></a>
+    </div>
+  </section>
+
+  <section class="tl" id="timeline" aria-labelledby="tl-h">
+    <h2 class="tl-h rv" id="tl-h"><span lang="ar">من 1727 إلى اليوم</span><span lang="en">From 1727 to today</span></h2>
+    <div class="tl-wrap">
+      <div class="tl-photo" aria-hidden="true"><img src="img/card-1-turaif.jpg" alt="" loading="lazy" data-step="0"><img src="img/card-2-salwa.jpg" alt="" loading="lazy" data-step="1"><img src="img/hero-golden.jpg" alt="" loading="lazy" data-step="2"><img src="img/card-5-lanes.jpg" alt="" loading="lazy" data-step="3"></div>
+      <ol class="tl-steps"><li data-step="0"><b class="yr" data-to="1727">1727</b><h3><span lang="ar">تأسيس الدولة السعودية الأولى</span><span lang="en">First Saudi State founded</span></h3><p><span lang="ar">وعاصمتها الدرعية</span><span lang="en">Diriyah is its capital</span></p></li><li data-step="1"><b class="yr" data-to="1818">1818</b><h3><span lang="ar">نهاية عهد الدولة الأولى</span><span lang="en">The first state's era ends</span></h3><p><span lang="ar">بعد أكثر من 90 عامًا على تأسيسها</span><span lang="en">After more than 90 years</span></p></li><li data-step="2"><b class="yr" data-to="2010">2010</b><h3><span lang="ar">الطريف في قائمة اليونسكو</span><span lang="en">At-Turaif joins UNESCO's list</span></h3><p><span lang="ar">حيّ الطريف في قائمة التراث العالمي</span><span lang="en">The historic district</span></p></li><li data-step="3"><b class="yr" data-to="2022">2022</b><h3><span lang="ar">افتتاح الطريف للزوّار</span><span lang="en">At-Turaif opens to visitors</span></h3><p><span lang="ar">يستقبل الزوّار اليوم</span><span lang="en">Welcoming visitors today</span></p></li></ol>
+    </div>
+  </section>
+
+  <section class="arch" id="architecture" aria-labelledby="arch-h">
+    <header class="sec-head rv"><p class="k"><span lang="ar">العمارة</span><span lang="en">Architecture</span></p><h2 id="arch-h"><span lang="ar">العمارة النجدية، بالتفصيل</span><span lang="en">Najdi architecture, up close</span></h2></header>
+    <div class="arch-wrap">
+      <figure class="arch-fig"><img src="img/card-2-salwa.jpg" alt="" loading="lazy"><button type="button" class="hs" style="--x:26%;--y:36%" data-ar="فتحات مثلثة" data-en="Triangular openings" aria-pressed="false">1</button><button type="button" class="hs" style="--x:73%;--y:46%" data-ar="بناء بالطين" data-en="Mud-brick masonry" aria-pressed="false">2</button><button type="button" class="hs" style="--x:64%;--y:72%" data-ar="جدران سميكة" data-en="Thick walls" aria-pressed="false">3</button><button type="button" class="hs" style="--x:91%;--y:78%" data-ar="أساسات حجرية" data-en="Stone foundations" aria-pressed="false">4</button></figure>
+      <ul class="arch-list"><li><button type="button" class="an" data-i="0"><b><span lang="ar">فتحات مثلثة</span><span lang="en">Triangular openings</span></b><span><span lang="ar">نقوش تزيّن الجدران</span><span lang="en">Triangle motifs and openings line the walls</span></span></button></li><li><button type="button" class="an" data-i="1"><b><span lang="ar">بناء بالطين</span><span lang="en">Mud-brick masonry</span></b><span><span lang="ar">جدران من الطوب الطيني والحجر الجيري وسعف النخيل</span><span lang="en">UNESCO highlights the quality of the palaces' mud-brick masonry</span></span></button></li><li><button type="button" class="an" data-i="2"><b><span lang="ar">جدران سميكة</span><span lang="en">Thick walls</span></b><span><span lang="ar">تساعد على تلطيف الحرارة طبيعيًا</span><span lang="en">They moderate heat naturally</span></span></button></li><li><button type="button" class="an" data-i="3"><b><span lang="ar">أساسات حجرية</span><span lang="en">Stone foundations</span></b><span><span lang="ar">تقوم على الحجر الجيري</span><span lang="en">Buildings rest on limestone foundations</span></span></button></li></ul>
+    </div>
+  </section>
+
+  <section class="cult" id="culture" aria-labelledby="cult-h">
+    <div class="cult-pin"><div class="cult-box">
+      <img class="cult-img" src="img/culture-ardah.jpg" alt="" loading="lazy">
+      <div class="cult-in">
+        <div class="cult-card">
+          <p class="k"><span lang="ar">الثقافة الحية</span><span lang="en">Living culture</span></p>
+          <h2 id="cult-h"><span lang="ar">العرضة النجدية</span><span lang="en">Al-Ardah Al-Najdiyah</span></h2>
+        </div>
+        <ol class="stages">
+          <li class="stage on"><p class="no"><span lang="ar">01 / 04</span><span lang="en">01 / 04</span></p><h3><span lang="ar">النداء</span><span lang="en">The call</span></h3><p class="d"><span lang="ar">تبدأ العرضة بنداء جماعي يُعرف بالهوربة</span><span lang="en">A group call named al-hawrabah announces the start</span></p></li>
+          <li class="stage"><p class="no"><span lang="ar">02 / 04</span><span lang="en">02 / 04</span></p><h3><span lang="ar">الصفّان</span><span lang="en">The two rows</span></h3><p class="d"><span lang="ar">يقف الرجال في صفّين متقابلين، ويؤدّون العرضة بالسيوف أو العصي أو دونها</span><span lang="en">The men stand in two facing rows and perform with a sword, a cane, or neither</span></p></li>
+          <li class="stage"><p class="no"><span lang="ar">03 / 04</span><span lang="en">03 / 04</span></p><h3><span lang="ar">الطبول والشعر</span><span lang="en">Drums and poetry</span></h3><p class="d"><span lang="ar">تضبط الطبول الصغيرة والكبيرة الإيقاع، وتُنشَد القصيدة جماعيًا</span><span lang="en">Small and large drums keep the beat, and the poem is chanted together</span></p></li>
+          <li class="stage"><p class="no"><span lang="ar">04 / 04</span><span lang="en">04 / 04</span></p><h3><span lang="ar">المناسبات</span><span lang="en">The occasions</span></h3><p class="d"><span lang="ar">تُؤدّى العرضة في الأعياد والأفراح والمناسبات الوطنية، وأُدرجت في قائمة اليونسكو عام 2015</span><span lang="en">Performed at holidays, weddings and national occasions, and inscribed on the UNESCO list in 2015</span></p></li>
+        </ol>
+        <div class="stage-bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="album" id="album" aria-labelledby="album-h"><div class="album-pin">
+    <div class="album-head">
+      <h2 id="album-h"><span lang="ar">ألبوم المعالم</span><span lang="en">Landmark album</span></h2>
+      <p class="count" aria-live="polite"><span lang="ar"><b class="n">0</b> من 6</span><span lang="en"><b class="n">0</b> of 6</span></p>
+    </div>
+    <ul class="grid">
+      <li><button class="card" type="button" aria-pressed="false" data-i="1" data-ar="وادي حنيفة" data-en="Wadi Hanifah">
+        <span class="inner">
+          <span class="face front"><span class="pnum">01</span><img src="img/card-4-wadi.jpg" alt="" loading="lazy" style="--pos:50% 50%"><span class="cap"><strong><span lang="ar">وادي حنيفة</span><span lang="en">Wadi Hanifah</span></strong><em><span lang="ar">على ضفافه نشأت الدرعية</span><span lang="en">The valley Diriyah grew along</span></em></span></span>
+        </span>
+      </button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-i="2" data-ar="العمارة النجدية" data-en="Najdi architecture">
+        <span class="inner">
+          <span class="face front"><span class="pnum">02</span><img src="img/card-3-najdi.jpg" alt="" loading="lazy" style="--pos:50% 50%"><span class="cap"><strong><span lang="ar">العمارة النجدية</span><span lang="en">Najdi architecture</span></strong><em><span lang="ar">بناء من الطين</span><span lang="en">Built in mud brick</span></em></span></span>
+        </span>
+      </button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-i="3" data-ar="أزقة الطريف" data-en="At-Turaif lanes">
+        <span class="inner">
+          <span class="face front"><span class="pnum">03</span><img src="img/card-5-lanes.jpg" alt="" loading="lazy" style="--pos:50% 45%"><span class="cap"><strong><span lang="ar">أزقة الطريف</span><span lang="en">At-Turaif lanes</span></strong><em><span lang="ar">ممرات ضيقة بين الجدران الطينية</span><span lang="en">Narrow lanes between mud-brick walls</span></em></span></span>
+        </span>
+      </button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-i="4" data-ar="قصر سلوى" data-en="Salwa Palace">
+        <span class="inner">
+          <span class="face front"><span class="pnum">04</span><img src="img/card-2-salwa.jpg" alt="" loading="lazy" style="--pos:38% 50%"><span class="cap"><strong><span lang="ar">قصر سلوى</span><span lang="en">Salwa Palace</span></strong><em><span lang="ar">أبرز مباني الطريف</span><span lang="en">At-Turaif's landmark palace</span></em></span></span>
+        </span>
+      </button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-i="5" data-ar="حي الطريف" data-en="At-Turaif">
+        <span class="inner">
+          <span class="face front"><span class="pnum">05</span><img src="img/card-1-turaif.jpg" alt="" loading="lazy" style="--pos:50% 62%"><span class="cap"><strong><span lang="ar">حي الطريف</span><span lang="en">At-Turaif</span></strong><em><span lang="ar">مدرج في قائمة التراث العالمي عام 2010</span><span lang="en">UNESCO World Heritage site since 2010</span></em></span></span>
+        </span>
+      </button></li>
+      <li><button class="card" type="button" aria-pressed="false" data-i="6" data-ar="ساحة البجيري" data-en="Bujairi Terrace">
+        <span class="inner">
+          <span class="face front"><span class="pnum">06</span><img src="img/bujairi-dusk.jpg" alt="" loading="lazy" style="--pos:58% 55%"><span class="cap"><strong><span lang="ar">ساحة البجيري</span><span lang="en">Bujairi Terrace</span></strong><em><span lang="ar">مطاعم ومقاهٍ شرق وادي حنيفة</span><span lang="en">Dining east of Wadi Hanifah</span></em></span></span>
+        </span>
+      </button></li>
+    </ul>
+  </div></section>
+
+  <section class="where" id="where" aria-labelledby="where-h">
+    <div class="where-pin"><div class="where-box">
+      <div class="map" aria-hidden="true"><iframe class="mp on" title="Map 1" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" data-src="https://www.openstreetmap.org/export/embed.html?bbox=34.5%2C16.0%2C55.7%2C32.2&amp;layer=mapnik&amp;marker=24.7341%2C46.5725"></iframe><iframe class="mp" title="Map 2" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" data-src="https://www.openstreetmap.org/export/embed.html?bbox=46.20%2C24.40%2C47.20%2C25.00&amp;layer=mapnik&amp;marker=24.7341%2C46.5725"></iframe><iframe class="mp" title="Map 3" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" data-src="https://www.openstreetmap.org/export/embed.html?bbox=46.5575%2C24.7241%2C46.5875%2C24.7441&amp;layer=mapnik&amp;marker=24.7341%2C46.5725"></iframe><iframe class="mp" title="Map 4" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" data-src="https://www.openstreetmap.org/export/embed.html?bbox=46.5655%2C24.7305%2C46.5785%2C24.7385&amp;layer=mapnik&amp;marker=24.7341%2C46.5725"></iframe></div>
+      <div class="where-info">
+        <div class="where-head">
+          <p class="k"><span lang="ar">الموقع</span><span lang="en">Location</span></p>
+          <h2 id="where-h"><span lang="ar">أين الدرعية؟</span><span lang="en">Where is Diriyah?</span></h2>
+        </div>
+        <ol class="wstages">
+          <li class="wstage on"><p class="no"><span lang="ar">01 / 04</span><span lang="en">01 / 04</span></p><h3><span lang="ar">المملكة العربية السعودية</span><span lang="en">Saudi Arabia</span></h3><p class="d"><span lang="ar">تقع الدرعية في نجد، وسط المملكة</span><span lang="en">Diriyah lies in Najd, in the centre of the kingdom</span></p></li>
+          <li class="wstage"><p class="no"><span lang="ar">02 / 04</span><span lang="en">02 / 04</span></p><h3><span lang="ar">الرياض</span><span lang="en">Riyadh</span></h3><p class="d"><span lang="ar">تقع الدرعية شمال غرب الرياض</span><span lang="en">Diriyah sits on the north-western edge of Riyadh</span></p></li>
+          <li class="wstage"><p class="no"><span lang="ar">03 / 04</span><span lang="en">03 / 04</span></p><h3><span lang="ar">الدرعية</span><span lang="en">Diriyah</span></h3><p class="d"><span lang="ar">واحة نشأت على ضفاف وادي حنيفة</span><span lang="en">An oasis that grew along Wadi Hanifah</span></p></li>
+          <li class="wstage"><p class="no"><span lang="ar">04 / 04</span><span lang="en">04 / 04</span></p><h3><span lang="ar">حي الطريف</span><span lang="en">At-Turaif</span></h3><p class="d"><span lang="ar">موقع التراث العالمي في الدرعية، مدرج منذ 2010</span><span lang="en">Diriyah's World Heritage site, inscribed in 2010</span></p></li>
+        </ol>
+        <a class="vlink" href="https://www.openstreetmap.org/?mlat=24.7341&amp;mlon=46.5725#map=15/24.7341/46.5725" target="_blank" rel="noopener"><span lang="ar">افتح الخريطة</span><span lang="en">Open the map</span><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="stage-bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="visit-top">
+      <h2 id="visit-h"><span lang="ar">خطّط لزيارتك</span><span lang="en">Plan your visit</span></h2>
+      <a class="vlink" href="https://www.diriyah.sa/plan-your-visit" target="_blank" rel="noopener"><span lang="ar">زيارة الموقع الرسمي</span><span lang="en">Visit the official site</span><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <ul class="vlist">
+      <li class="vrow"><button type="button" aria-expanded="false"><span class="no">01</span><span class="tt"><h3><span lang="ar">ما أفضل وقت لزيارة الدرعية؟</span><span lang="en">When is the best time to visit Diriyah?</span></h3><span class="dd"><p><span lang="ar">المساء، إذ يفتح حي الطريف يوميًا من 5 مساءً حتى منتصف الليل، وآخر دخول عند 11 مساءً</span><span lang="en">The evening: At-Turaif opens daily from 5 pm to midnight, with last entry at 11 pm</span></p></span></span></button></li>
+      <li class="vrow"><button type="button" aria-expanded="false"><span class="no">02</span><span class="tt"><h3><span lang="ar">ما أفضل الشهور للزيارة؟</span><span lang="en">Which months are best for a visit?</span></h3><span class="dd"><p><span lang="ar">من نوفمبر إلى فبراير، حيث يكون الجوّ ملائمًا للتجوّل، بينما تشتد الحرارة من يونيو إلى أكتوبر</span><span lang="en">November to February, when it is comfortable to walk; the heat peaks from June to October</span></p></span></span></button></li>
+      <li class="vrow"><button type="button" aria-expanded="false"><span class="no">03</span><span class="tt"><h3><span lang="ar">ما خيارات الإقامة المتاحة في الدرعية؟</span><span lang="en">What stay options are there in Diriyah?</span></h3><span class="dd"><p><span lang="ar">فندق باب سمحان، أول فنادق الدرعية، افتُتح في ديسمبر 2024 بجوار حي الطريف</span><span lang="en">Bab Samhan, the first hotel to open in Diriyah, in December 2024, beside At-Turaif</span></p></span></span></button></li>
+      <li class="vrow"><button type="button" aria-expanded="false"><span class="no">04</span><span class="tt"><h3><span lang="ar">ما أفضل الأماكن لتناول الطعام؟</span><span lang="en">Where are the best places to eat?</span></h3><span class="dd"><p><span lang="ar">تضم ساحة البجيري مطاعم ومقاهي تفتح من 9 صباحًا حتى منتصف الليل، وتمتد ساعات عملها حتى 1 فجرًا من الأربعاء إلى الجمعة</span><span lang="en">Bujairi Terrace: dining from 9 am to midnight, and until 1 am from Wednesday to Friday</span></p></span></span></button></li>
+    </ul>
+  </section>
+  <section class="outro" aria-labelledby="outro-h">
+    <p class="o-k"><span lang="ar">إلى اللقاء في الطريف</span><span lang="en">See you in At-Turaif</span></p>
+    <h2 class="o-h" id="outro-h"><span lang="ar">ولا تزال الحكاية تُروى</span><span lang="en">And the story is still told</span></h2>
+    <p class="o-s"><span lang="ar">طين وحجر وواحة، وذاكرة دولة</span><span lang="en">Mud, stone, an oasis, and the memory of a state</span></p>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="ft-grid">
+    <div class="ft-brand"><strong class="ft-logo"><span lang="ar">الدرعية</span><span lang="en">Diriyah</span></strong><p><span lang="ar">دليل قصير عن أول عاصمة للدولة السعودية، بالعربية والإنجليزية</span><span lang="en">A short guide to the first capital of the Saudi state, in Arabic and English</span></p></div>
+    <nav class="ft-nav" aria-label="Footer"><a href="#story"><span lang="ar">الحكاية</span><span lang="en">Story</span></a><a href="#timeline"><span lang="ar">من 1727 إلى اليوم</span><span lang="en">1727 to today</span></a><a href="#album"><span lang="ar">الألبوم</span><span lang="en">Album</span></a><a href="#visit"><span lang="ar">الزيارة</span><span lang="en">Visit</span></a></nav>
+  </div>
+  <div class="ft-bar"><span><span lang="ar">عينة تصميم · 2026</span><span lang="en">Design sample · 2026</span></span><a href="#top"><span lang="ar">العودة لأعلى الصفحة</span><span lang="en">Back to top</span></a></div>
+</footer>
+<!-- PHOTO CREDITS (kept in the source; see img/CREDITS.txt): At-Turaif: Radosław Botev, CC BY 3.0 PL | Salwa Palace: Heritage Commission, CC BY-SA 4.0 | Najdi architecture: Radosław Botev, CC BY 3.0 PL | Wadi Hanifah: Ahmedpictures12, CC BY-SA 4.0 | At-Turaif lanes: Saudi Press Agency, CC BY-SA 4.0 | Al-Ardah: Ahad.F, CC BY-SA 4.0 -->
+
+<script>
+(function(){
+  var root=document.documentElement,KEY='diriyah-lang';
+  var T={ar:{title:'الدرعية',again:'ابدأ من جديد',done:'اكتمل الألبوم',cardOff:function(i,t){return 'بطاقة '+i+' من 6، اضغط لكشفها'},cardOn:function(i,t){return t+'، بطاقة '+i+' من 6'},sw:'التبديل إلى الإنجليزية'},
+         en:{title:'Diriyah',again:'Start again',done:'Album complete',cardOff:function(i,t){return 'Card '+i+' of 6, tap to reveal'},cardOn:function(i,t){return t+', card '+i+' of 6'},sw:'Switch to Arabic'}};
+  var cards=[].slice.call(document.querySelectorAll('.card')),ns=document.querySelectorAll('.n'),done=document.getElementById('done'),btn=document.getElementById('lang'),total=cards.length;
+  function lang(){return root.getAttribute('lang')}
+  function label(c){var L=lang(),on=c.getAttribute('aria-pressed')==='true',i=+c.dataset.i,t=c.getAttribute('data-'+L);c.setAttribute('aria-label',on?T[L].cardOn(i,t):T[L].cardOff(i,t))}
+  var seen={};
+  function update(){
+    var k=Object.keys(seen).length,L=lang();
+    [].forEach.call(ns,function(n){n.textContent=k});
+    cards.forEach(label);
+  }
+  function openCard(c,quiet){cards.forEach(function(x){var on=x===c;x.parentNode.classList.toggle('open',on);x.setAttribute('aria-pressed',on?'true':'false')});if(!quiet){seen[c.dataset.i]=1;update()}else cards.forEach(label)}
+  function setLang(L,save){
+    root.setAttribute('lang',L);root.setAttribute('dir',L==='ar'?'rtl':'ltr');
+    document.title=T[L].title;btn.setAttribute('aria-label',T[L].sw);
+    if(save){try{localStorage.setItem(KEY,L)}catch(e){}}
+    update();
+  }
+  btn.addEventListener('click',function(){setLang(lang()==='ar'?'en':'ar',true)});
+  cards.forEach(function(c){c.addEventListener('click',function(){openCard(c)});c.addEventListener('focus',function(){openCard(c)});c.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch')openCard(c)})});
+  openCard(cards[0],true);
+  /* scroll drives which panel is open: the section is pinned and panels open one after another */
+  (function(){
+    var sec=document.getElementById('album');
+    if(!sec||window.matchMedia('(prefers-reduced-motion:reduce)').matches||root.classList.contains('pv'))return;
+    var last=0,raf=0;
+    function draw(){raf=0;var r=sec.getBoundingClientRect(),span=Math.max(1,r.height-innerHeight);if(r.top>0||r.bottom<innerHeight)return;var p=Math.max(0,Math.min(1,-r.top/span)),i=Math.min(total-1,Math.floor(p*total));if(i!==last){last=i;openCard(cards[i])}}
+    addEventListener('scroll',function(){if(!raf)raf=requestAnimationFrame(draw)},{passive:true});
+  })();
+  var q=(location.search.match(/[?&]lang=(ar|en)/)||[])[1],saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
+  setLang(q||saved||'ar',false);
+})();
+
+(function(){
+  var root=document.documentElement,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('top'),tl=document.querySelector('.tl-steps');
+  var steps=[].slice.call(document.querySelectorAll('.tl-steps li')),imgs=[].slice.call(document.querySelectorAll('.tl-photo img'));
+  var ticking=false;
+  function frame(){
+    ticking=false;
+    var y=window.pageYOffset||0,h=hero.offsetHeight||1,max=document.documentElement.scrollHeight-window.innerHeight;
+    root.style.setProperty('--sp',(max>0?Math.min(1,y/max):0).toFixed(4));
+    if(!rm) root.style.setProperty('--p',Math.min(1,y/h).toFixed(3));
+    if(tl){var r=tl.getBoundingClientRect();root.style.setProperty('--tp',Math.max(0,Math.min(1,(window.innerHeight*.5-r.top)/r.height)).toFixed(3))}
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req,{passive:true});frame();
+
+  /* reveal on scroll */
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if(rm||!('IntersectionObserver' in window)){rv.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});rv.forEach(function(e){io.observe(e)})}
+
+  /* timeline: active step drives the photo + a one-time count-up of the year */
+  var counted={};
+  function countUp(el){
+    var to=+el.dataset.to;if(rm){el.textContent=to;return}
+    var t0=null,dur=1100;
+    function tick(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e);if(k<1)requestAnimationFrame(tick);else el.textContent=to}
+    requestAnimationFrame(tick);
+  }
+  function activate(i){
+    steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    imgs.forEach(function(m,k){m.classList.toggle('on',k===i)});
+    if(!counted[i]){counted[i]=1;var y=steps[i].querySelector('.yr');if(y)countUp(y)}
+  }
+  if(steps.length){
+    activate(0);
+    if('IntersectionObserver' in window){
+      var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)activate(+e.target.dataset.step)})},{rootMargin:'-42% 0px -42% 0px'});
+      steps.forEach(function(s){so.observe(s)});
+    }
+  }
+
+  /* nav: highlight the section being read */
+  var links=[].slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+  if('IntersectionObserver' in window){
+    var no=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    ['story','album','visit'].forEach(function(id){var s=document.getElementById(id);if(s)no.observe(s)});
+  }
+
+  /* album: cards lean toward the pointer */
+  if(!rm){[].forEach.call(document.querySelectorAll('.card'),function(c){
+    c.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*14).toFixed(1)+'deg');c.style.setProperty('--rx',(-y*12).toFixed(1)+'deg')});
+    c.addEventListener('pointerleave',function(){c.style.removeProperty('--ry');c.style.removeProperty('--rx')});
+  })}
+
+  /* language switch: quick cross-fade */
+  var lb=document.getElementById('lang');
+  if(lb&&!rm)lb.addEventListener('click',function(){document.body.classList.add('swap');setTimeout(function(){document.body.classList.remove('swap')},180)});
+})();
+
+(function(){
+  var hs=[].slice.call(document.querySelectorAll('.hs')),an=[].slice.call(document.querySelectorAll('.an'));
+  if(!hs.length)return;
+  function pick(i){hs.forEach(function(h,k){h.classList.toggle('on',k===i);h.setAttribute('aria-pressed',k===i?'true':'false')});an.forEach(function(b,k){b.classList.toggle('on',k===i)})}
+  hs.forEach(function(h,k){h.addEventListener('click',function(){pick(k)})});
+  an.forEach(function(b,k){b.addEventListener('click',function(){pick(k)});b.addEventListener('mouseenter',function(){pick(k)})});
+  function labels(){var L=document.documentElement.getAttribute('lang');hs.forEach(function(h,k){h.setAttribute('aria-label',(k+1)+'. '+h.getAttribute('data-'+L))})}
+  labels();
+  new MutationObserver(labels).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  pick(0);
+})();
+
+/* ===== sand hero =====
+   Grains behave like sand, not rubber: a touch kicks them up, they drift and fall under gravity with air drag,
+   then each one is carried back to its place by a short eased, curved path (no spring, no overshoot, no bounce). */
+(function(){
+  var hero=document.getElementById('top'),cv=hero&&hero.querySelector('.sand'),h1=hero&&hero.querySelector('h1');
+  if(!cv||!h1||window.matchMedia('(prefers-reduced-motion: reduce)').matches||!cv.getContext||document.documentElement.classList.contains('pv'))return;
+  var ctx=cv.getContext('2d'),root=document.documentElement;
+  var W=0,H=0,dpr=1,N=0,px,py,vx,vy,hx,hy,sz,tn,ph,spark,st,sx,sy,tt,dur,arc,wait,age,buckets=[[],[],[],[]];
+  var TONES=['#f3e8d2','#e9d7b4','#dcc28d','#cfa86a'];
+  var mx=-9999,my=-9999,mvx=0,mvy=0,active=false;
+  var running=false,visible=true,raf=0,built=false,interacted=false,last=0,settled=false,dirty=true;
+  var coarse=window.matchMedia('(hover: none)').matches;
+  var DRAG=.955,GRAV=.085;
+  function lang(){return root.getAttribute('lang')||'ar'}
+  function ease(t){return t*t*(3-2*t)}
+
+  function build(scatter){
+    var r=hero.getBoundingClientRect();
+    W=Math.round(r.width);H=Math.round(r.height);dpr=Math.min(2,window.devicePixelRatio||1);
+    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    var text=(h1.querySelector('span[lang="'+lang()+'"]')||h1).textContent.trim();
+    var size=parseFloat(getComputedStyle(h1).fontSize)||200;
+    var off=document.createElement('canvas');off.width=W;off.height=H;var o=off.getContext('2d',{willReadFrequently:true});
+    o.font='700 '+size+"px 'Thmanyah Serif Display','Thmanyah Serif Text',Georgia,serif";
+    o.textAlign='center';o.textBaseline='middle';o.fillStyle='#000';var kx=1;
+    if(lang()==='ar'){
+      /* stretch the word with kashida (after ع and ي, the only joining spots) until it fills the content width and stops at the margins */
+      var mm=parseFloat(getComputedStyle(hero).paddingLeft)||16,lb=Math.max(mm,(W-1440)/2+mm),target=W-2*lb;
+      var mk=function(n){return text.replace('\u0639','\u0639'+'\u0640'.repeat(Math.ceil(n/2))).replace('\u064A','\u064A'+'\u0640'.repeat(Math.floor(n/2)))},n=0;
+      while(n<120&&o.measureText(mk(n+1)).width<=target)n++;
+      text=mk(n);kx=target/o.measureText(text).width;
+    }
+    var cy=H/2;o.save();o.translate(W/2,cy);o.scale(kx,1);o.fillText(text,0,0);o.restore();
+    var m=o.measureText(text),bw=Math.min(W,Math.ceil(m.width*kx)+40),x0=Math.max(0,Math.floor(W/2-bw/2)),y0=Math.max(0,Math.floor(cy-size*0.75)),bh=Math.min(H-y0,Math.ceil(size*1.5));
+    var d=o.getImageData(x0,y0,bw,bh).data;
+    var step=Math.max(1.4,Math.min(2.6,size/130)),list=[];
+    for(var y=0;y<bh;y+=step){for(var x=0;x<bw;x+=step){
+      var ix=Math.floor(x),iy=Math.floor(y);
+      if(d[(iy*bw+ix)*4+3]>140)list.push(x0+x+(Math.random()-.5)*step*.8,y0+y+(Math.random()-.5)*step*.8);
+    }}
+    N=list.length/2;
+    px=new Float32Array(N);py=new Float32Array(N);vx=new Float32Array(N);vy=new Float32Array(N);hx=new Float32Array(N);hy=new Float32Array(N);sz=new Float32Array(N);tn=new Uint8Array(N);ph=new Float32Array(N);spark=new Uint8Array(N);
+    st=new Uint8Array(N);sx=new Float32Array(N);sy=new Float32Array(N);tt=new Float32Array(N);dur=new Float32Array(N);arc=new Float32Array(N);wait=new Float32Array(N);age=new Float32Array(N);
+    buckets=[[],[],[],[]];
+    for(var i=0;i<N;i++){
+      hx[i]=list[i*2];hy[i]=list[i*2+1];
+      if(scatter){
+        /* blown in from one side, like a gust laying the sand down */
+        var a=Math.random()*6.283,rad=120+Math.random()*420;
+        px[i]=hx[i]+(Math.random()<.5?-1:1)*(160+Math.random()*520)+Math.cos(a)*rad*.2;py[i]=hy[i]-40-Math.random()*260;
+        st[i]=2;sx[i]=px[i];sy[i]=py[i];tt[i]=-Math.random()*.12;dur[i]=32+Math.random()*32;arc[i]=(Math.random()-.5)*80;
+      }else{px[i]=hx[i];py[i]=hy[i];st[i]=0}
+      var rr=Math.random();tn[i]=rr<.55?0:rr<.8?1:rr<.94?2:3;
+      sz[i]=step*(.72+Math.random()*.5);ph[i]=Math.random()*6.283;spark[i]=Math.random()<.018?1:0;
+      buckets[tn[i]].push(i);
+    }
+    built=true;dirty=true;settled=false;
+  }
+
+  function gust(){
+    var y=H-64-parseFloat(getComputedStyle(h1).fontSize)*0.5,from=W*.12,to=W*.88,t=0,dir=Math.random()<.5?1:-1;
+    if(dir<0){var s=from;from=to;to=s}
+    (function step(){
+      if(interacted)return;
+      t+=1/60/1.7;if(t>1){active=false;mx=my=-9999;return}
+      var e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2,nx=from+(to-from)*e,ny=y+Math.sin(t*Math.PI*2)*28;
+      mvx=nx-mx;mvy=ny-my;if(mx<-1000){mvx=0;mvy=0}
+      mx=nx;my=ny;active=true;requestAnimationFrame(step);
+    })();
+  }
+
+  function frame(now){
+    raf=0;if(!running||!built)return;
+    if(settled&&!active&&!dirty){raf=requestAnimationFrame(frame);return}
+    var dt=Math.min(2.2,(now-last)/16.667||1);last=now;
+    var R=Math.max(60,Math.min(120,W*.08)),R2=R*R,spd=Math.min(40,Math.sqrt(mvx*mvx+mvy*mvy));
+    var drag=Math.pow(DRAG,dt),g=GRAV*dt;
+    ctx.clearRect(0,0,W,H);
+    var tm=now*.0016;
+    var moving=0;
+    for(var i=0;i<N;i++){
+      var s=st[i],x=px[i],y=py[i];
+      /* the pointer kicks grains up and away, in the direction it is travelling */
+      if(active){
+        var dx=x-mx,dy=y-my,d2=dx*dx+dy*dy;
+        if(d2<R2){
+          var dd=Math.sqrt(d2)||1,f=1-dd/R;f=f*f*(.35+Math.random()*.9);
+          vx[i]=vx[i]*.5+(dx/dd)*f*(1.4+spd*.18)+mvx*f*.28+(Math.random()-.5)*f*2.2;
+          vy[i]=vy[i]*.5+(dy/dd)*f*(1.4+spd*.18)+mvy*f*.28-f*(1+spd*.05)+(Math.random()-.5)*f*2.2;
+          if(s!==1){st[i]=1;s=1}
+          age[i]=0;wait[i]=28+Math.random()*80;
+        }
+      }
+      if(s===1){
+        vx[i]*=drag;vy[i]=vy[i]*drag+g;
+        x+=vx[i]*dt;y+=vy[i]*dt;age[i]+=dt;
+        if(age[i]>wait[i]){st[i]=2;sx[i]=x;sy[i]=y;tt[i]=0;var dist=Math.sqrt((hx[i]-x)*(hx[i]-x)+(hy[i]-y)*(hy[i]-y));dur[i]=55+Math.min(120,dist*.55)+Math.random()*50;arc[i]=(Math.random()-.5)*Math.min(90,dist*.5+20);vx[i]=vy[i]=0}
+        px[i]=x;py[i]=y;
+      }else if(s===2){
+        tt[i]+=dt/dur[i];
+        if(tt[i]>=1){st[i]=0;px[i]=hx[i];py[i]=hy[i]}
+        else if(tt[i]>0){
+          var e=ease(tt[i]),ddx=hx[i]-sx[i],ddy=hy[i]-sy[i],len=Math.sqrt(ddx*ddx+ddy*ddy)||1,c=Math.sin(Math.PI*e)*arc[i];
+          px[i]=sx[i]+ddx*e+(-ddy/len)*c;py[i]=sy[i]+ddy*e+(ddx/len)*c;
+        }
+      }
+      if(st[i]!==0)moving++;
+    }
+    settled=moving===0;dirty=false;
+    for(var b=0;b<4;b++){
+      ctx.fillStyle=TONES[b];var arr=buckets[b];
+      for(var k=0;k<arr.length;k++){
+        var j=arr[k],q=sz[j];
+        ctx.fillRect(px[j],py[j],q,q);
+      }
+    }
+    mvx*=Math.pow(.88,dt);mvy*=Math.pow(.88,dt);
+    raf=requestAnimationFrame(frame);
+  }
+  function start(){if(running||!visible||document.hidden)return;running=true;last=performance.now();raf=requestAnimationFrame(frame)}
+  function stop(){running=false;if(raf){cancelAnimationFrame(raf);raf=0}}
+
+  function rel(e){var r=cv.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+  function move(e){var p=rel(e);interacted=true;settled=false;if(mx>-1000){mvx=p[0]-mx;mvy=p[1]-my}else{mvx=0;mvy=0}mx=p[0];my=p[1];active=true}
+  hero.addEventListener('pointermove',move,{passive:true});
+  hero.addEventListener('pointerdown',function(e){move(e);mvx=0;mvy=0},{passive:true});
+  hero.addEventListener('pointerleave',function(){active=false;mx=my=-9999});
+  hero.addEventListener('pointerup',function(e){if(e.pointerType!=='mouse'){setTimeout(function(){active=false;mx=my=-9999},240)}});
+  hero.addEventListener('pointercancel',function(){active=false;mx=my=-9999});
+
+  function init(scatter){
+    var go=function(){build(scatter);hero.classList.add('sand-on');start()};
+    if(document.fonts&&document.fonts.load){document.fonts.load("700 100px 'Thmanyah Serif Display'",(h1.textContent||'x')).then(go,go)}else go();
+  }
+  window.__sand=function(){return {N:N,running:running,built:built,visible:visible,px0:px&&px[0],py0:py&&py[0],hx0:hx&&hx[0],sz0:sz&&sz[0],st0:st&&st[0],tt0:tt&&tt[0],dur0:dur&&dur[0],W:W,H:H}};
+  init(true);
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build(false)},180)},{passive:true});
+  new MutationObserver(function(){setTimeout(function(){build(true);interacted=false},60)}).observe(root,{attributes:true,attributeFilter:['lang']});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;if(visible)start();else stop()}).observe(hero)}
+  document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start()});
+})();
+
+/* ===== embedded preview: skip the live map; album finish: a short fall of sand ===== */
+(function(){
+  var root=document.documentElement,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(root.classList.contains('pv')){var f=document.querySelector('.map iframe');if(f)f.remove()}
+
+  function rain(){
+    if(rm||root.classList.contains('pv'))return;
+    var c=document.createElement('canvas');c.className='sand-rain';c.setAttribute('aria-hidden','true');
+    var dpr=Math.min(2,window.devicePixelRatio||1),W=innerWidth,H=innerHeight;c.width=W*dpr;c.height=H*dpr;document.body.appendChild(c);
+    var x=c.getContext('2d');x.scale(dpr,dpr);
+    var CW=3,NC=Math.ceil(W/CW),hh=new Array(NC).fill(0),P=[],T=['#e9d7b4','#dcc28d','#cfa86a','#bf9457','#f0e2c4'],t0=performance.now(),spawned=0,TOTAL=Math.min(2600,Math.round(W*1.8));
+    function land(p){
+      var i=Math.max(0,Math.min(NC-1,(p.x/CW)|0));
+      /* angle of repose: slide to the lower neighbour while the slope is too steep */
+      for(var g=0;g<40;g++){
+        var l=i>0?hh[i-1]:1e9,r=i<NC-1?hh[i+1]:1e9,h=hh[i];
+        if(l+6<h&&l<=r)i--;else if(r+6<h)i++;else break;
+      }
+      hh[i]+=5;
+    }
+    (function step(now){
+      var t=(now-t0)/1000;x.clearRect(0,0,W,H);
+      /* a curtain of grains pours from the top for about 1.6s */
+      if(t<1.6){var n=Math.round(TOTAL/96);for(var q=0;q<n&&spawned<TOTAL;q++,spawned++)P.push({x:Math.random()*W,y:-10-Math.random()*40,vx:(Math.random()-.5)*.25,vy:5+Math.random()*5,s:1.6+Math.random()*1.4,c:T[(Math.random()*T.length)|0]})}
+      for(var k=P.length-1;k>=0;k--){var p=P[k];p.vy+=.28;p.x+=p.vx;p.y+=p.vy;
+        var col=Math.max(0,Math.min(NC-1,(p.x/CW)|0));
+        if(p.y>=H-hh[col]){land(p);P.splice(k,1);continue}
+        x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s*1.5)}
+      /* the heap, then a wind that sweeps it away along the floor */
+      if(t>2.8){var w=(t-2.8)*1.4*NC;for(var i=0;i<NC;i++){var d=(root.getAttribute('dir')==='rtl')?(NC-1-i):i;if(d<w)hh[i]=Math.max(0,hh[i]-3.5)}}
+      for(var i=0;i<NC;i++){if(hh[i]>0){x.fillStyle=T[i%3];x.fillRect(i*CW,H-hh[i],CW+.5,hh[i])}}
+      if(t<5.2)requestAnimationFrame(step);else c.remove();
+    })(t0);
+  }
+  var done=document.getElementById('done');
+  if(done&&'MutationObserver' in window)new MutationObserver(function(){}).observe(done,{childList:true,characterData:true,subtree:true});
+})();
+
+/* story: the text stays pinned while the words fill from dim to bright as you scroll (same behaviour as the reference) */
+(function(){
+  var sec=document.getElementById('story');if(!sec)return;
+  var root=document.documentElement;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches||root.classList.contains('pv'))return;
+  var raf=0;
+  function draw(){
+    raf=0;
+    var ws=[].slice.call(sec.querySelectorAll('.w')).filter(function(w){return w.getClientRects().length}),n=ws.length;
+    var r=sec.getBoundingClientRect(),span=Math.max(1,r.height-innerHeight),p=Math.max(0,Math.min(1,-r.top/(span*.9)));
+    ws.forEach(function(w,i){var l=Math.max(0,Math.min(1,p*(n+1)-i));w.style.setProperty('--l',l.toFixed(3))});
+  }
+  function q(){if(!raf)raf=requestAnimationFrame(draw)}
+  addEventListener('scroll',q,{passive:true});addEventListener('resize',q);
+  new MutationObserver(q).observe(root,{attributes:true,attributeFilter:['lang']});
+  draw();
+})();
+
+/* culture: the stage follows the scroll progress through the pinned section */
+(function(){
+  var sec=document.getElementById('culture');if(!sec)return;
+  var root=document.documentElement;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches||root.classList.contains('pv'))return;
+  var st=[].slice.call(sec.querySelectorAll('.stage')),raf=0,cur=-1;
+  function draw(){
+    raf=0;var r=sec.getBoundingClientRect(),span=Math.max(1,r.height-innerHeight),p=Math.max(0,Math.min(1,-r.top/span));
+    var i=Math.min(st.length-1,Math.floor(p*st.length));
+    sec.style.setProperty('--cp',p.toFixed(3));
+    if(i!==cur){cur=i;sec.style.setProperty('--i',i);st.forEach(function(s,k){s.classList.toggle('on',k===i)})}
+  }
+  function q(){if(!raf)raf=requestAnimationFrame(draw)}
+  addEventListener('scroll',q,{passive:true});addEventListener('resize',q);draw();
+})();
+
+/* hero photos on phones: swipe strip, photos shrink to rounded cards while moving, dots show the position */
+(function(){
+  var strip=document.querySelector('.hero .photo'),hero=document.querySelector('.hero');
+  if(!strip||!hero)return;
+  var imgs=[].slice.call(strip.querySelectorAll('img'));
+  var dots=document.createElement('div');dots.className='hero-dots';dots.setAttribute('aria-hidden','true');
+  imgs.forEach(function(){dots.appendChild(document.createElement('i'))});hero.appendChild(dots);
+  var raf=0;
+  function upd(){
+    raf=0;if(strip.scrollWidth<=strip.clientWidth+2){imgs.forEach(function(i){i.style.transform='';i.style.borderRadius=''});return}
+    var sr=strip.getBoundingClientRect(),cx=sr.left+sr.width/2,best=0,bd=9;
+    imgs.forEach(function(im,k){
+      var r=im.getBoundingClientRect(),d=(r.left+r.width/2-cx)/sr.width,a=Math.min(1,Math.abs(d));
+      im.style.transform='scale('+(1-.1*a).toFixed(3)+')';im.style.borderRadius=Math.min(16,a*40).toFixed(1)+'px';
+      if(Math.abs(d)<bd){bd=Math.abs(d);best=k}
+    });
+    var ds=dots.children;for(var i=0;i<ds.length;i++)ds[i].classList.toggle('on',i===best);
+  }
+  function q(){if(!raf)raf=requestAnimationFrame(upd)}
+  strip.addEventListener('scroll',q,{passive:true});addEventListener('resize',q);q();
+  /* auto-advance every few seconds; stops while the finger is on it, when the hero is off screen, or with reduced motion */
+  var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches,hold=0,cur=0;
+  ['pointerdown','touchstart','wheel'].forEach(function(ev){strip.addEventListener(ev,function(){hold=Date.now()+7000},{passive:true})});
+  if(!rm)setInterval(function(){
+    if(document.hidden||Date.now()<hold||strip.scrollWidth<=strip.clientWidth+2||document.documentElement.classList.contains('pv'))return;
+    var hr=hero.getBoundingClientRect();if(hr.bottom<innerHeight*.4||hr.top>innerHeight*.6)return;
+    var sr=strip.getBoundingClientRect(),cx=sr.left+sr.width/2,best=0,bd=1e9;
+    imgs.forEach(function(im,k){var r=im.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-cx);if(d<bd){bd=d;best=k}});
+    var nx=imgs[(best+1)%imgs.length].getBoundingClientRect();
+    strip.scrollBy({left:nx.left+nx.width/2-cx,behavior:'smooth'});
+  },4200);
+})();
+
+/* location: scroll descends from the country to the district; maps load when the section is near */
+(function(){
+  var sec=document.getElementById('where');if(!sec)return;
+  var maps=[].slice.call(sec.querySelectorAll('.mp')),st=[].slice.call(sec.querySelectorAll('.wstage')),loaded=false,cur=-1,raf=0;
+  function load(){if(loaded)return;loaded=true;maps.forEach(function(m){if(!m.src)m.src=m.getAttribute('data-src')})}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load();io.disconnect()}})},{rootMargin:'800px 0px'});io.observe(sec)}else load();
+  var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches,pv=document.documentElement.classList.contains('pv');
+  if(pv){load();return}
+  if(rm){load();return}
+  function draw(){
+    raf=0;var r=sec.getBoundingClientRect(),span=Math.max(1,r.height-innerHeight),p=Math.max(0,Math.min(1,-r.top/span));
+    var i=Math.min(st.length-1,Math.floor(p*st.length));
+    sec.style.setProperty('--wp',p.toFixed(3));
+    if(i!==cur){cur=i;maps.forEach(function(m,k){m.classList.toggle('on',k===i)});st.forEach(function(s,k){s.classList.toggle('on',k===i)})}
+  }
+  addEventListener('scroll',function(){if(!raf)raf=requestAnimationFrame(draw)},{passive:true});addEventListener('resize',draw);draw();
+})();
+
+/* visit: the row you point at (or tap) opens; the first one is open */
+(function(){
+  var rows=[].slice.call(document.querySelectorAll('.vrow'));if(!rows.length)return;
+  function open(r){rows.forEach(function(x){var on=x===r;x.classList.toggle('open',on);x.firstElementChild.setAttribute('aria-expanded',on?'true':'false')})}
+  rows.forEach(function(r){var b=r.firstElementChild;
+    b.addEventListener('pointerenter',function(e){if(e.pointerType!=='touch')open(r)});
+    b.addEventListener('focus',function(){open(r)});
+    b.addEventListener('click',function(){open(r)});
+  });
+  open(rows[0]);
+})();
+</script>
+</body></html>

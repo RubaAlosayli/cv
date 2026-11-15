@@ -1,0 +1,41 @@
+Photo credits for samples/sample-1 (all from Wikimedia Commons; the credit must stay visible on the page).
+
+hero-at-turaif.jpg
+  Radosław Botev, CC BY 3.0 PL (https://creativecommons.org/licenses/by/3.0/pl/deed.en)
+  https://commons.wikimedia.org/wiki/File:At-Turaif_District_in_ad-Dir%27iyah_(6).jpg
+
+card-1-turaif.jpg
+  Radosław Botev, CC BY 3.0 pl (https://creativecommons.org/licenses/by/3.0/pl/deed.en)
+  https://commons.wikimedia.org/wiki/File:At-Turaif_District_in_ad-Dir%27iyah_(8).jpg
+
+card-2-salwa.jpg
+  Heritage Commission, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  https://commons.wikimedia.org/wiki/File:%D9%82%D8%B5%D8%B1_%D8%B3%D9%84%D9%88%D9%89.jpg
+
+card-3-najdi.jpg
+  Radosław Botev, CC BY 3.0 pl (https://creativecommons.org/licenses/by/3.0/pl/deed.en)
+  https://commons.wikimedia.org/wiki/File:At-Turaif_District_in_ad-Dir%27iyah_(3).jpg
+
+card-4-wadi.jpg
+  Ahmedpictures12, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  https://commons.wikimedia.org/wiki/File:Wadi_Hanifa.jpg
+
+card-5-lanes.jpg
+  وكالة الأنباء السعودية, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  https://commons.wikimedia.org/wiki/File:%D8%A3%D8%AD%D8%AF_%D8%A7%D9%84%D9%85%D9%85%D8%B1%D8%A7%D8%AA_%D8%A8%D8%AD%D9%8A_%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%81_%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A_%D8%A8%D8%A7%D9%84%D8%AF%D8%B1%D8%B9%D9%8A%D8%A9.jpg
+
+card-6-overview.jpg
+  Saudi press Agency (SPA), CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  https://commons.wikimedia.org/wiki/File:Diriyah_Gate_(2021).jpg
+
+
+All files are Wikimedia's own resized copies (960 px wide; the hero is 1920 px). No other edits. CC BY-SA files: share-alike applies to the image itself.
+
+culture-ardah.jpg
+  Ahad.F, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  https://commons.wikimedia.org/wiki/File:Saudi_Ardha_(Najdi_Sword_Dance)_in_At-Turaif_district,_Diriyah,_Saudi_Arabia.jpg
+
+NOTE (Nov 2026): hero-golden.jpg, bujairi-dusk.jpg and bujairi-coffee.jpg were downloaded by the site owner and are NOT from Wikimedia Commons.
+  Their source and licence are unconfirmed — they look like official Diriyah media. Get written permission / a licence from the owner of the photos
+  before publishing this page publicly, then replace the generic credit line in the footer with the proper credit.
+  hero-at-turaif.jpg (Botev) and card-6-overview.jpg (SPA) are no longer used (moved to img/unused/).
