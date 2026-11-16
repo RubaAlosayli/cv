@@ -663,7 +663,7 @@ function initChar(){var front=$('walk'),back=$('walkB'),hero=$('top'),bagEl=$('b
   Bref=B;
   function setFrame(o,f){o.fr=f;if(!VEC)o.el.firstChild.style.backgroundPositionX=(f*33.3333)+'%'}
   function draw(o){var s=sc(o.y),h=H0*s,w=h*R;o.el.style.setProperty('--h',h.toFixed(1)+'px');o.el.style.zIndex=Math.round(o.y);o.el.style.transform='translate('+(o.x-w/2).toFixed(1)+'px,'+(o.y-h).toFixed(1)+'px) scaleX('+o.dir+') rotate('+((o.rot||0)).toFixed(1)+'deg) scale('+(1+(o.sq||0)*.18).toFixed(3)+','+(1-(o.sq||0)*.3).toFixed(3)+')';o.h=h;o.w=w;
-    var wk=(o.st==='walk');if(o.wl!==wk){o.wl=wk;o.el.classList.toggle('walking',wk)}
+    var wk=(o.st==='walk'||o.st==='flee');if(o.wl!==wk){o.wl=wk;o.el.classList.toggle('walking',wk)}
     var lay=o.y<bagBase?'b':'f';if(lay!==o.layer){o.layer=lay;(lay==='b'?back:front).appendChild(o.el)}}
   B.forEach(function(o){setFrame(o,1);draw(o)});
   window.__mirrorCrowd=function(){rects();B.forEach(function(o){o.x=W-o.x;o.tx=W-o.tx;o.dir=-o.dir;o.layer=null;draw(o)})};
@@ -674,6 +674,8 @@ function initChar(){var front=$('walk'),back=$('walkB'),hero=$('top'),bagEl=$('b
   document.addEventListener('pointerleave',function(){has=false});
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(hero);
   addEventListener('resize',layout);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);setTimeout(layout,600);if('ResizeObserver' in window)new ResizeObserver(function(){layout()}).observe(hero);setInterval(function(){var hh=hero.getBoundingClientRect().height;if(Math.abs(hh-Hh)>2)layout()},1000);
+  /* the crowd runs away from the pointer: pick a free spot on the far side of the bean, away from the cursor */
+  function fleeSpot(o){var best=null,bd=-1,s0=sc(o.y),cur=Math.hypot(o.x-mx,(o.y-my)*1.4);for(var k=0;k<24;k++){var a=Math.atan2(o.y-my,o.x-mx)+(rand()-.5)*2.2,L=(220+rand()*260)*(.6+s0*.6),x=o.x+Math.cos(a)*L,y=o.y+Math.sin(a)*L*.55;if(!free(x,y)||!clear(o.x,o.y,x,y))continue;var d=Math.hypot(x-mx,(y-my)*1.4);if(d>bd){bd=d;best=[x,y]}}return best&&bd>cur+20?best:null}
   var escT=2.2,bw=$('bagw');
   function escape(){var cx=(BG[0]+BG[2])/2,best=null,bd=-1;B.forEach(function(o){if(o.st==='esc')return;var d=Math.hypot(o.x-cx,o.y-BG[1]);if(d>bd){bd=d;best=o}});if(!best)return;
     var o=best,y0=BG[1]+(bagBase-BG[1])*.05,x0=cx+rnd(-.22,.22)*(BG[2]-BG[0]),hh=H0*sc(y0),side=rand()<.5?-1:1,tgt=null;
@@ -690,13 +692,13 @@ function initChar(){var front=$('walk'),back=$('walkB'),hero=$('top'),bagEl=$('b
         if(u<P1){var v=u/P1,ev=1-Math.pow(1-v,3);o.x=e.x0+Math.sin(v*14)*(1-v)*3;o.y=e.y0+e.h*.8*(1-ev)-e.h*.12*ev;o.rot=Math.sin(v*14)*(1-v)*4;setFrame(o,1)}
         else{var w=(u-P1)/(1-P1),ya=e.y0-e.h*.12;o.x=e.x0+(e.x1-e.x0)*w;o.y=ya+(e.y1-ya)*w-4*e.A*w*(1-w);o.dir=e.x1<e.x0?-1:1;o.rot=(w-.5)*22*o.dir;setFrame(o,2)}
         if(u>=1){o.x=e.x1;o.y=e.y1;o.rot=0;o.sq=1.2;o.st='idle';o.t=.6+o.r()*1.5;setFrame(o,1)}draw(o);return}
-      var h=o.h||H0,near=has&&Math.hypot(mx-o.x,my-(o.y-h*.5))<(small?60:100)*sc(o.y);
-      if(near&&o.st!=='look'){o.st='look';o.t=1.2}
+      var h=o.h||H0,near=has&&Math.hypot(mx-o.x,my-(o.y-h*.5))<(small?90:140)*sc(o.y);
+      if(near&&o.st!=='flee'){var fp=fleeSpot(o);if(fp){o.tx=fp[0];o.ty=fp[1];o.st='flee'}else if(o.st!=='look'){o.st='look';o.t=1.2}}
       if(o.st==='look'){o.dir=mx<o.x?-1:1;setFrame(o,1);o.t-=dt;if(!near&&o.t<=0){o.st='idle';o.t=.4}}
       else if(o.st==='idle'){setFrame(o,1);o.t-=dt;if(o.t<=0){var p=null;for(var k=0;k<8&&!p;k++){var c=spot(o);if(c&&clear(o.x,o.y,c[0],c[1]))p=c}if(p){o.tx=p[0];o.ty=p[1];o.st='walk'}else o.t=.6}}
       else{var dx=o.tx-o.x,dy=o.ty-o.y,d=Math.hypot(dx,dy);
         if(d<4){o.st='idle';o.t=.4+o.r()*2.6}
-        else{var v=o.spd*sc(o.y)*dt,nx=o.x+dx/d*Math.min(v,d),ny=o.y+dy/d*Math.min(v,d);if(free(nx,ny)){o.x=nx;o.y=ny;if(Math.abs(dx)>3)o.dir=dx<0?-1:1;o.ft+=dt;if(o.ft>.14){o.ft=0;setFrame(o,(o.fr+1)%4)}}else{o.st='idle';o.t=.3}}}
+        else{var v=o.spd*(o.st==='flee'?5.5:1)*sc(o.y)*dt,nx=o.x+dx/d*Math.min(v,d),ny=o.y+dy/d*Math.min(v,d);if(free(nx,ny)){o.x=nx;o.y=ny;if(Math.abs(dx)>3)o.dir=dx<0?-1:1;o.ft+=dt;if(o.ft>(o.st==='flee'?.05:.14)){o.ft=0;setFrame(o,(o.fr+1)%4)}}else{o.st='idle';o.t=.3}}}
       draw(o)});
     requestAnimationFrame(loop)})(performance.now())}
 function drawOrigins(){$('origins').innerHTML=ORIG.map(function(o){var on=S.sel.indexOf(o.id)>=0;return '<button type="button" class="og'+(on?' on':'')+'" data-id="'+o.id+'" aria-pressed="'+on+'" style="--c:'+o.c+'"><i class="ck" aria-hidden="true">✓</i><b><i></i>'+bi(o.en,o.ar)+'</b><span class="nt">'+o.n.map(function(n){return '<span class="tag">'+bi(n[0],n[1])+'</span>'}).join('')+'</span></button>'}).join('')}
