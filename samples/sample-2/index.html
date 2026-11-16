@@ -73,7 +73,8 @@
   main,footer{position:relative;z-index:1}
 
   /* ---- header, edge tabs (desktop), full menu (mobile) ---- */
-  .top::before{content:'';position:absolute;inset:0 0 -18px;z-index:-1;background:linear-gradient(180deg,var(--bg) 55%,transparent);pointer-events:none}
+  .top::before{content:'';position:absolute;inset:0 0 -18px;z-index:-1;background:linear-gradient(180deg,var(--bg) 55%,transparent);pointer-events:none;opacity:0;transition:opacity .3s}
+  .top.sc::before{opacity:1}
   .top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px clamp(18px,3vw,40px);pointer-events:none}
   .top>*{pointer-events:auto}
   .brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-disp);font-weight:700;font-size:var(--dxs);line-height:var(--dxs-l);text-decoration:none;text-shadow:var(--tshadow)}
@@ -666,6 +667,7 @@
     c.globalCompositeOperation='source-over'}
 
   /* ---------- scroll choreography ---------- */
+  (function(){var tp=document.querySelector('.top');function f(){tp.classList.toggle('sc',scrollY>8)}addEventListener('scroll',f,{passive:true});f()})();
   var run=$('run'),stage=$('stage'),hero=$('hero'),tabs=[].slice.call(document.querySelectorAll('.tabs a')),
       roads=[].slice.call(document.querySelectorAll('.road')),wds=[].slice.call(document.querySelectorAll('.word'));
   var P=0,scrollP=0,auto=false,autoT=0,SH=0;
