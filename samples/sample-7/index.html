@@ -56,6 +56,9 @@
   .round{display:inline-grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:var(--tmd);line-height:1;flex:none;cursor:pointer}
   .round:hover{border-color:var(--ink)}
   .acts{display:flex;gap:var(--s2);flex-wrap:wrap}
+  .acts{flex-direction:row-reverse;justify-content:flex-end}
+  @media(max-width:767px){.acts{width:100%}.acts>.btn{flex:1 1 0;min-width:0;padding-inline:var(--s3)}}
+  @media(max-width:400px){.acts>.btn{padding-inline:var(--s2);font-size:var(--tsm);white-space:nowrap}}
   .tag{display:inline-flex;align-items:center;gap:var(--s1);height:24px;padding:0 var(--s2);border:1px solid var(--line);border-radius:999px;background:#fff;font-size:var(--txs);line-height:var(--txs-l);white-space:nowrap}
   .tag.lg{height:32px;padding:0 var(--s3);font-size:var(--tmd);line-height:var(--tmd-l)}
   .tag.y{background:var(--yellow);border-color:var(--yellow)}
@@ -509,7 +512,7 @@
     <div class="rs"><span class="lab"><span lang="en">Turn the roast</span><span lang="ar">اضبط درجة التحميص</span></span><div class="seg" id="heroSeg" role="tablist"></div></div>
   </div>
   <div class="hact">
-    <div class="acts"><a class="btn pri" href="#builder"><span lang="en">Build my blend</span><span lang="ar">ابدأ التحضير</span></a><a class="btn" href="#brew"><span lang="en">How to brew it</span><span lang="ar">كيف تحضّر قهوتك؟</span></a></div>
+    <div class="acts"><a class="btn pri" href="#builder"><span lang="en">Build my blend</span><span lang="ar">ابدأ التحضير</span></a><a class="btn" href="#brew"><span lang="en">How to brew it</span><span lang="ar">طرق التحضير</span></a></div>
     <ol class="how3"><li><b>1</b><span lang="en">Pick origins</span><span lang="ar">اختر المناشئ</span></li><li><b>2</b><span lang="en">Set the roast</span><span lang="ar">اضبط التحميص</span></li><li><b>3</b><span lang="en">Choose delivery</span><span lang="ar">اختر التوصيل</span></li></ol>
   </div>
 </div>  <div class="walk bk" id="walkB" aria-hidden="true"></div>
@@ -604,7 +607,7 @@
   <div class="wrap">
     <div class="big">KAAF</div>
     <p class="line"><span lang="en">Your cup, your roast</span><span lang="ar">فنجانك على ذوقك</span></p>
-    <div class="acts"><a class="btn yel" href="#builder"><span lang="en">Build my blend</span><span lang="ar">ابدأ التحضير</span></a><a class="btn" href="#plan"><span lang="en">Set up deliveries</span><span lang="ar">حدّد موعد وصول قهوتك</span></a></div>
+    <div class="acts"><a class="btn yel" href="#builder"><span lang="en">Build my blend</span><span lang="ar">ابدأ التحضير</span></a></div>
     <div class="parade" aria-hidden="true" id="parade"></div>
     <p class="fine"><span lang="en">A concept. Example prices</span><span lang="ar">فكرة تصميمية بأسعار افتراضية</span></p>
   </div>

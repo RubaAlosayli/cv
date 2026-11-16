@@ -40,8 +40,11 @@
   .nav{position:fixed;z-index:50;top:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;padding:6px;background:var(--ink);color:var(--bg);border-radius:999px;font-size:var(--tsm);line-height:var(--tsm-l);font-weight:500;white-space:nowrap}
   .nav a,.nav button{padding:8px 16px;border-radius:999px;text-decoration:none;background:none;border:0;color:inherit;font:inherit;cursor:pointer;min-height:36px;display:inline-flex;align-items:center}
   .nav a:hover,.nav button:hover{background:rgba(11,9,6,.1)}
-  .nav .lang{background:var(--bg);color:var(--ink);font-weight:700;margin-inline-start:4px}
-  .nav .lang:hover{background:#2a1f15}
+  .langw{position:fixed;z-index:50;top:28px;inset-inline-end:var(--m);width:40px;height:40px;border:1px solid var(--ink);border-radius:50%;background:rgba(11,9,6,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--ink);animation:langin .8s .6s both;transition:background .2s,color .2s}
+  .langw:hover{background:var(--ink);color:var(--bg)}
+  .langw .lang{width:100%;height:100%;padding:0;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;display:grid;place-items:center}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @keyframes langin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
   /* hero: one huge word over one landmark (display art, above the DS scale) */
   .hero{position:relative;min-height:720px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:0 var(--m) var(--sp-7xl)}
@@ -104,6 +107,7 @@
   .tips span{display:block;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l);margin-top:4px}
   .visit .btn{margin-top:32px;background:var(--clay);color:var(--cardink)}
   .visit .btn:hover{background:var(--ink)}
+  @media(max-width:360px){.nav a{padding:8px 12px!important}.langw{inset-inline-end:10px!important;top:20px!important}}
   footer{border-top:1px solid var(--line);padding:var(--sp-5xl) var(--m);text-align:center;color:var(--muted);font-size:var(--tsm);line-height:var(--tsm-l)}
 
   @media(min-width:768px) and (max-width:1023px){.grid>li{grid-column:span 6}}
@@ -111,6 +115,7 @@
   @media(max-width:560px){
     .hero{min-height:560px;padding-bottom:var(--sp-6xl)} .hero .tag{top:92px;}
     .nav{top:var(--sp-xl);gap:var(--sp-xs)} .nav a,.nav button{padding:var(--sp-md) var(--sp-lg)}
+    .langw{top:calc(var(--sp-xl) + 4px);inset-inline-end:var(--sp-lg)}
     .facts{gap:10px;padding-top:36px} .facts b{} .facts span{}
     .story{padding:var(--sp-7xl) var(--m) var(--sp-6xl)} .album-head h2,.visit h2{} .story h2{} .story p.k{} .story p.b{}
     .face{padding:var(--sp-xl)} .front{padding:0} .front .cap{padding:var(--sp-6xl) var(--sp-xl) var(--sp-xl)} .front strong{} .front em{}
@@ -166,7 +171,7 @@
   .card:not([aria-pressed="true"]):hover .inner{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
   .card[aria-pressed="true"]:hover .inner{transform:rotateY(calc(180deg + var(--ry,0deg))) rotateX(var(--rx,0deg))}
   .card .inner{transition:transform 560ms cubic-bezier(.2,.8,.2,1)}
-  body.swap main,body.swap .hero h1,body.swap .nav{opacity:.0;transition:opacity .15s}
+  body.swap main,body.swap .hero h1,body.swap .nav,body.swap .langw{opacity:.0;transition:opacity .15s}
 
   @media(max-width:767px){
     .tl{padding-top:var(--sp-4xl)}
@@ -177,7 +182,7 @@
     .yr{}
   }
   @media(prefers-reduced-motion:reduce){
-    .photo,.hero h1 .w,.hero .tag,.nav{animation:none}
+    .photo,.hero h1 .w,.hero .tag,.nav,.langw{animation:none}
     .sky{transform:none}.hero h1{transform:none;opacity:1}.hero .tag{opacity:1}
     .rv{opacity:1;transform:none;transition:none}
     .tl-photo img{transition:none}
@@ -264,7 +269,7 @@
   .sand-rain{position:fixed;inset:0;width:100%;height:100%;z-index:70;pointer-events:none}
   /* embedded preview (the card in the portfolio): static word, no heavy effects */
   .pv .sand,.pv .cue{display:none}
-  .pv .hero h1 .w,.pv .hero .tag,.pv .nav,.pv .photo{animation:none}
+  .pv .hero h1 .w,.pv .hero .tag,.pv .nav,.pv .langw,.pv .photo{animation:none}
   @media(prefers-reduced-motion:reduce){.cue,.cue i{animation:none}.cue{opacity:1}}
 
 
@@ -635,8 +640,8 @@ footer.ft{display:block;padding:var(--sp-7xl) var(--m) var(--sp-3xl);text-align:
 <header class="hero" id="top">
   <nav class="nav" aria-label="Main">
     <a href="#story"><span lang="ar">الحكاية</span><span lang="en">Story</span></a><a href="#album"><span lang="ar">الألبوم</span><span lang="en">Album</span></a><a href="#visit"><span lang="ar">الزيارة</span><span lang="en">Visit</span></a>
-    <button type="button" class="lang" id="lang" aria-label="Switch language"><span lang="ar">EN</span><span lang="en">عربي</span></button>
   </nav>
+  <div class="langw"><button type="button" class="lang" id="lang"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h10M8 3v2M5 5c.6 3.2 2.8 5.8 6 7.5M11 5c-.6 3.2-3 6-7 8"/><path d="M12.5 20l4-9 4 9M13.8 17h5.4"/></svg><span class="vh"><span lang="ar">English</span><span lang="en">العربية</span></span></button></div>
   <div class="photo"><img class="side" src="img/card-1-turaif.jpg" alt="" loading="eager"><img class="sky" src="img/hero-golden.jpg" alt="" width="1920" height="700" fetchpriority="high"><img class="side" src="img/bujairi-dusk.jpg" alt="" loading="eager"></div>
   <div class="scrim"></div>
   <canvas class="sand" aria-hidden="true"></canvas>
