@@ -24,7 +24,7 @@
   :root{--shadow-xs:0 4px 8px 0 rgba(77,87,97,.04);--shadow-md:0 4px 8px -2px rgba(16,24,40,.10),0 2px 4px -2px rgba(16,24,40,.06);--cream:#fff6e4;--blue:#2236f0;--blue-d:#1626b8;--yellow:#ffd92e;--mint:#cdefe3;--pink:#ff8fb1;--orange:#ff7a2f;--lime:#c6f432;--ink:#0b0b14;--mute:rgba(11,11,20,.68);--line:rgba(11,11,20,.12);--ok:#1f9d6b;--warn:#c2410c;
     --f:'Somar Rounded',system-ui,sans-serif;--fd:'Oddly Display','Somar Rounded',system-ui,sans-serif;--coffee:#8a5230;
     --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;--s12:48px;--s16:64px}
-  :root{--dxl:60px;--dxl-l:72px;--dlg:48px;--dlg-l:60px;--dmd:36px;--dmd-l:44px;--dsm:30px;--dsm-l:38px;--dxs:24px;--dxs-l:32px;--txl:20px;--txl-l:30px;--tlg:18px;--tlg-l:28px;--tmd:16px;--tmd-l:24px;--tsm:14px;--tsm-l:20px;--txs:12px;--txs-l:18px}
+  :root{--dxl:60px;--dxl-l:72px;--dlg:48px;--dlg-l:60px;--dmd:36px;--dmd-l:44px;--dsm:30px;--dsm-l:38px;--dxs:24px;--dxs-l:32px;--txl:20px;--txl-l:30px;--tlg:18px;--tlg-l:28px;--tmd:16px;--tmd-l:24px;--tsm:14px;--tsm-l:20px;--txs:14px;--txs-l:20px}
   @media(max-width:1023px){:root{--dxl:48px;--dxl-l:64px;--dlg:36px;--dlg-l:48px;--dmd:30px;--dmd-l:40px;--dsm:24px;--dsm-l:32px;--dxs:20px;--dxs-l:28px}}
   @media(max-width:767px){#builder{padding-top:calc(var(--s12) + 56px)}:root{--dxl:40px;--dxl-l:56px;--dlg:32px;--dlg-l:40px;--dmd:24px;--dmd-l:32px;--dsm:20px;--dsm-l:28px;--dxs:18px;--dxs-l:24px}}
   *{box-sizing:border-box;margin:0}
@@ -36,7 +36,7 @@
   button{cursor:pointer;background:none;border:0;text-align:start}
   a{color:inherit}
   ::selection{background:var(--yellow)}
-  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:12px}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
   .wrap{width:min(1240px,100% - 40px);margin-inline:auto}
   h1,h2,h3,.fd{font-family:var(--fd);font-weight:700}
   h1{font-size:var(--dxl);line-height:var(--dxl-l)}
@@ -411,6 +411,15 @@
     .plan .pcol .acts{order:3}
   }
   .toast{position:fixed;top:84px;left:50%;transform:translate(-50%,-20px);z-index:60;background:var(--ink);color:#fff;border-radius:999px;padding:var(--s2) var(--s5);font-weight:700;font-size:var(--tmd);line-height:var(--tmd-l);opacity:0;transition:opacity .3s,transform .4s;pointer-events:none;width:max-content;max-width:calc(100% - 32px);text-align:center}
+  .skip{position:fixed;inset-inline-start:12px;top:-80px;z-index:100;background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;transition:top .2s}
+  .skip:focus{top:12px}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  #calmBtn .ic{display:none}html.calm #calmBtn .ip{display:none}html.calm #calmBtn .ic{display:block}
+  html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important}
+  html.calm{scroll-behavior:auto}html.calm .drip .gd{scale:.8;translate:0 6px}
+  .toast.err{pointer-events:auto;display:flex;align-items:center;gap:var(--s3)}
+  .toast .tx{flex:none;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:20px;line-height:1;display:grid;place-items:center}
+  .toast .tx:hover{background:rgba(255,255,255,.35)}
   .toast.ok{background:#0e7a4a}
   .toast.err{background:#b42318}
   .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -439,19 +448,22 @@
 <body>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><symbol id="bn" viewBox="0 0 513 700"><image href="img/bean.png" width="513" height="700"/></symbol><symbol id="sar" viewBox="0 0 48 48"><path fill="currentColor" d="M26.7326 11.2669C28.0829 9.75116 28.9127 9.07068 30.5425 8.21036V33.4496L26.7326 34.2369V11.2669Z"/><path fill="currentColor" d="M38.9057 23.9559C39.6956 22.2888 39.7885 21.5478 40 19.8375L10.796 26.1788C10.1035 27.7215 9.88059 28.5838 9.77387 30.1152L38.9057 23.9559Z"/><path fill="currentColor" d="M38.9057 31.6866C39.6956 30.0194 39.7885 29.2785 40 27.5682L26.872 30.3468C26.7791 31.875 26.8858 32.6591 26.7791 34.1906L38.9057 31.6866Z"/><path fill="currentColor" d="M38.9057 39.4162C39.6956 37.749 39.7885 37.008 40 35.2977L28.0335 37.8954C27.4295 38.729 27.0578 40.1183 26.7791 41.9201L38.9057 39.4162Z"/><path fill="currentColor" d="M19.9027 36.784C21.0642 35.3483 22.2722 33.5422 23.1085 32.0603L9.02212 35.1136C8.32958 36.6562 8.10666 37.5185 7.99994 39.05L19.9027 36.784Z"/><path fill="currentColor" d="M19.2986 9.13657C20.6489 7.62087 21.4787 6.94039 23.1085 6.08008V32.1529L19.2986 32.9402V9.13657Z"/></symbol></svg>
 
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ar">انتقل إلى المحتوى</span></a>
 <header class="top" id="topbar">
   <a class="logo" href="#top"><i></i>KAAF</a>
   <nav class="nav" id="nav" aria-label="Main"></nav>
   <div class="tools">
     <a class="btn pri" href="#builder"><span lang="en">Build my blend</span><span lang="ar">ابدأ التحضير</span></a>
+    <button class="round" id="calmBtn" type="button" aria-pressed="false"><svg class="ip" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg><svg class="ic" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg><span class="vh" lang="en">Pause motion</span><span class="vh" lang="ar">إيقاف الحركة</span></button>
     <button class="round" id="langBtn" type="button" aria-label="Switch language"><span lang="en">ع</span><span lang="ar">EN</span></button>
     <button class="round burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Menu"><i></i></button>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-label="Menu"></nav>
 <div class="toast" id="toast" role="status"></div>
+<div class="vh" id="srStatus" role="status" aria-live="polite"></div>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- HERO -->
 <section class="hero" id="top" data-r="1"><div class="wrap hg">
   <div class="hcopy">
@@ -570,7 +582,7 @@
 </div></section>
 </main>
 
-<div class="obar" id="obar" aria-live="polite"><div class="ot"><b id="obName"></b><span id="obPrice"></span></div><a class="btn pri" href="#plan"><span lang="en">Order</span><span lang="ar">اطلب</span></a></div>
+<div class="obar" id="obar"><div class="ot"><b id="obName"></b><span id="obPrice"></span></div><a class="btn pri" href="#plan"><span lang="en">Order</span><span lang="ar">اطلب</span></a></div>
 <footer>
   <div class="wrap">
     <div class="big">KAAF</div>
@@ -626,7 +638,11 @@ function prof(){var sh=shares(),r=S.roast,o={acid:0,body:0,sweet:0,fruit:0,choc:
   o.acid*=1.3-.8*r;o.fruit*=1.3-.9*r;o.body*=.8+.5*r;o.choc*=.7+.7*r;o.sweet*=1-.25*Math.abs(2*r-1);
   ATTR.forEach(function(a){o[a[0]]=S.sel.length?Math.round(clamp(o[a[0]]/5/1.3*100,3,100)):0});return o}
 function blendName(){if(!S.sel.length)return T('Pick an origin','اختر منشأً');var sh=shares(),nm=S.sel.map(function(k){var og=ORIG.filter(function(x){return x.id===k})[0];return L()==='ar'?og.ar:og.en});return nm.join(' + ')}
-function toast(h,k){var t=$('toast');t.classList.toggle('ok',k===true||k==='ok');t.classList.toggle('err',k==='err');t.innerHTML=h;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('show')},2600)}
+(function(){var h=document.documentElement,b=document.getElementById('calmBtn');if(!b)return;function set(v,save){h.classList.toggle('calm',v);b.setAttribute('aria-pressed',v);if(save)try{localStorage.setItem('kaaf-calm',v?'1':'0')}catch(e){}}
+  var st=null;try{st=localStorage.getItem('kaaf-calm')}catch(e){}
+  set(st==='1'||(st===null&&matchMedia('(prefers-reduced-motion:reduce)').matches),false);b.addEventListener('click',function(){set(!h.classList.contains('calm'),true)})})();
+function toast(h,k){var t=$('toast'),er=k==='err';t.classList.toggle('ok',k===true||k==='ok');t.classList.toggle('err',er);t.setAttribute('role',er?'alert':'status');t.innerHTML=h+(er?'<button type="button" class="tx" aria-label="'+T('Close','إغلاق')+'">×</button>':'');t.classList.add('show');clearTimeout(toast.t);if(er){t.querySelector('.tx').onclick=function(){t.classList.remove('show')}}else toast.t=setTimeout(function(){t.classList.remove('show')},4000)}
+addEventListener('keydown',function(e){if(e.key==='Escape')$('toast').classList.remove('show')});
 
 /* ---------- render ---------- */
 function drawHero(){var r=S.roast,lv=r<.28?0:r<.62?1:2,c=mix3(r),h=$('top');h.dataset.r=lv;document.body.dataset.hr=lv;h.style.setProperty('--bean',c);h.style.setProperty('--bf',lv===0?'brightness(1.18) saturate(.85)':lv===2?'brightness(.66) saturate(1.05)':'none');
@@ -670,7 +686,7 @@ function initChar(){var front=$('walk'),back=$('walkB'),hero=$('top'),bagEl=$('b
   if(reduce)return;
   var mx=0,my=0,has=false,vis=true,scT=0,ox=0,oy=0,last=performance.now();
   addEventListener('scroll',function(){scT=performance.now()},{passive:true});
-  document.addEventListener('pointermove',function(e){if(performance.now()-scT<300)return;var r=hero.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;has=true});
+  document.addEventListener('pointermove',function(e){if(e.pointerType==='touch'){has=false;return}if(performance.now()-scT<300)return;var r=hero.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;has=true});
   document.addEventListener('pointerleave',function(){has=false});
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(hero);
   addEventListener('resize',layout);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);setTimeout(layout,600);if('ResizeObserver' in window)new ResizeObserver(function(){layout()}).observe(hero);setInterval(function(){var hh=hero.getBoundingClientRect().height;if(Math.abs(hh-Hh)>2)layout()},1000);
@@ -683,7 +699,7 @@ function initChar(){var front=$('walk'),back=$('walkB'),hero=$('top'),bagEl=$('b
      if(!tgt)return;o.st='esc';o.el.style.transition='opacity .2s';o.el.style.opacity=0;var dist=Math.hypot(tgt[0]-x0,tgt[1]-y0);o.ex={t:-.25,T:1.2+dist/520,x0:x0,y0:y0,h:hh,A:Math.max(hh*1.4,Math.min(dist*.3,hh*4)),x1:tgt[0],y1:tgt[1]};
     if(bw){setTimeout(function(){bw.classList.remove('pop');void bw.offsetWidth;bw.classList.add('pop')},250)}}
   (function loop(now){
-    var dt=Math.min(.05,(now-last)/1000);last=now;if(!vis){requestAnimationFrame(loop);return}
+    var dt=Math.min(.05,(now-last)/1000);last=now;if(!vis||document.documentElement.classList.contains('calm')){requestAnimationFrame(loop);return}
     var hr=hero.getBoundingClientRect();if(has){mx=ox;my=oy}
     /* bag escape motion switched off */
     B.forEach(function(o){
@@ -741,7 +757,7 @@ function flowBean(o){var now=performance.now();if(now-flowLast<2200)return;flowL
   var b=addBean(o,slot,(flowLast|0)%4);b.flow=true;clearTimeout(b.t);b.g.style.opacity=0;b.t=setTimeout(function(){arrive(b)},900);
   b.life=setTimeout(function(){var ix=DB.indexOf(b);if(ix>=0){DB.splice(ix,1);killBean(b,0)}},900+950+4200)}
 (function(){var last=new WeakMap();setInterval(function(){document.querySelectorAll('#rawBeans .hb').forEach(function(el){var o=el.dataset.o;if(!o||!el.getAnimations)return;var a=el.getAnimations()[0];if(!a)return;var t=+a.currentTime||0,del=parseFloat(el.style.animationDelay)*1000||0,ph=t-del;if(ph<0)return;ph=ph%8000;var p=last.get(el);if(p!==undefined&&p<5760&&ph>=5760)flowBean(o);last.set(el,ph)})},80)})();
-function drawRoaster(){var r=S.roast,c=mix3(r),dr=$('drumBeans');if(!dr)return;if($('roLbl'))$('roLbl').textContent=T('KAAF ROASTER','محمصة كاف');if($('bagSize'))$('bagSize').textContent=U(S.size===1000?1:S.size,S.size===1000?'kg':'g')+' · '+T('WHOLE BEAN','حبوب كاملة');
+function drawRoaster(){var r=S.roast,c=mix3(r),dr=$('drumBeans');if(!dr)return;var sr=$('srStatus');if(sr){var sh0=shares();sr.textContent=(r<.28?T('Light roast','تحميص فاتح'):r<.62?T('Medium roast','تحميص متوسط'):T('Dark roast','تحميص داكن'))+': '+S.sel.map(function(k){var o=ORIG.filter(function(x){return x.id===k})[0];return (L()==='ar'?o.ar:o.en)+' '+sh0[k]+'%'}).join(T(', ','، '))}if($('roLbl'))$('roLbl').textContent=T('KAAF ROASTER','محمصة كاف');if($('bagSize'))$('bagSize').textContent=U(S.size===1000?1:S.size,S.size===1000?'kg':'g')+' · '+T('WHOLE BEAN','حبوب كاملة');
   var sh=shares(),ids=S.sel.slice(),seq=[];
   function pick(n){var out=[],acc={},k;ids.forEach(function(x){acc[x]=0});for(var q=0;q<n;q++){var best=null,bv=-1;ids.forEach(function(x){var v=sh[x]/100*(q+1)-acc[x];if(v>bv){bv=v;best=x}});if(best){acc[best]++;out.push(best)}}return out}
   var oc=function(id){var o=ORIG.filter(function(x){return x.id===id})[0];return o?o.c:'#b5c87a'};
@@ -869,7 +885,7 @@ function footGame(){
     else if(!p.g&&(b.x<p.x0||b.x>p.x1)){if(Math.random()<.45){b.dir*=-1;b.x=Math.max(p.x0,Math.min(p.x1,b.x))}else{b.air=true;b.vy=0;b.vx=b.dir*70;b.plat=null;b.el.classList.add('air')}}
     b.wait-=dt;if(b.wait<=0){b.wait=rnd(1.4,3.6);jump(b)}}
   function draw(b){b.sq*=.88;var sx=1+b.sq*.35,sy=1-b.sq*.35;b.el.style.transform='translate3d('+(b.x-sz*.375).toFixed(1)+'px,'+(b.y-sz*.86).toFixed(1)+'px,0) scale('+(b.dir*sx).toFixed(3)+','+sy.toFixed(3)+')'}
-  function loop(t){if(!on)return;var dt=Math.min(.05,(t-last)/1000||0);last=t;var ft=foot.getBoundingClientRect().top;P.forEach(function(p){if(p.sp)p.y=p.y0+(p.sp.getBoundingClientRect().top-ft-p.r0)});B.forEach(function(b){if(!b.air&&b.plat&&!b.plat.g)b.y=b.plat.y});B.forEach(function(b){step(b,dt);draw(b)});requestAnimationFrame(loop)}
+  function loop(t){if(!on)return;if(document.documentElement.classList.contains('calm')){last=t;requestAnimationFrame(loop);return}var dt=Math.min(.05,(t-last)/1000||0);last=t;var ft=foot.getBoundingClientRect().top;P.forEach(function(p){if(p.sp)p.y=p.y0+(p.sp.getBoundingClientRect().top-ft-p.r0)});B.forEach(function(b){if(!b.air&&b.plat&&!b.plat.g)b.y=b.plat.y});B.forEach(function(b){step(b,dt);draw(b)});requestAnimationFrame(loop)}
   function init(){layout();B.forEach(function(b,i){b.x=W*(.12+.76*i/Math.max(1,B.length-1));b.y=ground;b.plat=P[P.length-1];b.el.style.setProperty('--w',sz*.75);b.el.style.setProperty('--h',sz);draw(b)})}
   (document.fonts&&document.fonts.ready||Promise.resolve()).then(function(){init();
     new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!on){on=true;last=performance.now();requestAnimationFrame(loop)}else if(!v)on=false},{threshold:0}).observe(foot);
