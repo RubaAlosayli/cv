@@ -75,6 +75,12 @@
   .burger i{position:relative;display:block;width:18px;height:12px;border-block:2px solid var(--ink)}
   .burger i::after{content:'';position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--ink)}
   .sheet{position:fixed;top:76px;left:50%;transform:translateX(-50%);width:min(1240px,100% - 40px);z-index:39;background:#fff;border-radius:var(--s6);box-shadow:var(--shadow-md);padding:var(--s3);display:none;gap:var(--s1);flex-direction:column}
+  .stools{display:none}
+  .sbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);height:48px;padding:0 var(--s3);white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:var(--tsm);font-weight:500;cursor:pointer}
+  .sbtn:hover{background:var(--cream)}
+  .sbtn .ic,.sbtn .tc{display:none}html.calm .sbtn .ip,html.calm .sbtn .tp{display:none}html.calm .sbtn .ic{display:block}html.calm .sbtn .tc{display:inline}
+  html[lang="ar"] .sbtn .tc[lang="en"],html[lang="en"] .sbtn .tc[lang="ar"]{display:none!important}
+  @media(max-width:767px){.tools #langBtn,.tools #calmBtn{display:none}.stools{display:flex;gap:var(--s2);margin-top:var(--s2);padding-top:var(--s3);border-top:1px dashed var(--line)}}
   .sheet.open{display:flex}
   .sheet a{display:flex;align-items:center;height:48px;padding:0 var(--s4);border-radius:999px;text-decoration:none;font-size:var(--tlg)}
   .sheet a:hover{background:var(--cream)}
@@ -395,10 +401,21 @@
   .obar{display:none}
   @media(max-width:767px){
     body{padding-bottom:84px}
-    .obar{position:fixed;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s2) var(--s2) var(--s2) var(--s5);background:#fff;border:3px solid var(--ink);border-radius:999px;box-shadow:0 4px 0 var(--ink);transform:translateY(160%);transition:transform .45s cubic-bezier(.34,1.3,.64,1)}
-    html[dir="rtl"] .obar{padding:var(--s2) var(--s5) var(--s2) var(--s2)}
+    .obar{position:fixed;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;display:flex;flex-direction:column;background:#fff;border:3px solid var(--ink);border-radius:32px;box-shadow:0 4px 0 var(--ink);transform:translateY(160%);transition:transform .45s cubic-bezier(.34,1.3,.64,1)}
+    .obar .orow{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s2) var(--s2) var(--s2) var(--s5)}
+    html[dir="rtl"] .obar .orow{padding:var(--s2) var(--s5) var(--s2) var(--s2)}
+    .obar .od{display:none;padding:var(--s4) var(--s5) var(--s1);border-bottom:2px dashed var(--line)}
+    .obar.open .od{display:block}
+    .obar .od div{display:flex;justify-content:space-between;gap:var(--s3);padding:var(--s2) 0;font-size:var(--tsm);line-height:var(--tsm-l)}
+    .obar .od div+div{border-top:1px dashed var(--line)}
+    .obar .od span{color:var(--mute)}.obar .od b{font-weight:700;text-align:end}.obar .od .tot b{font-family:var(--fd);color:var(--blue)}
+    .obar .ot{flex:1;display:flex;align-items:center;gap:var(--s2);min-width:0;min-height:44px;background:none;border:0;padding:0;text-align:start;font:inherit;color:inherit;cursor:pointer}
+    .obar .otx{display:grid;min-width:0;flex:1}
+    .obar .nrow{display:flex;align-items:center;gap:var(--s2);min-width:0}
+    .obar .nrow b{min-width:0}
+    .obar .chev{flex:none;transition:transform .3s;color:var(--ink)}.obar.open .chev{transform:rotate(180deg)}
+    .obar.open .ot b{white-space:normal}
     .obar.on{transform:none}
-    .obar .ot{display:grid;min-width:0;line-height:1.25}
     .obar .ot b{font-family:var(--fd);font-size:var(--tsm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .obar .ot span{font-size:var(--txs);color:var(--mute);white-space:nowrap}
     .obar .btn{flex:none;height:44px}
@@ -459,7 +476,7 @@
     <button class="round burger" id="menuBtn" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Menu"><i></i></button>
   </div>
 </header>
-<nav class="sheet" id="sheet" aria-label="Menu"></nav>
+<nav class="sheet" id="sheet" aria-label="Menu"><div id="sheetLinks"></div><div class="stools"><button class="sbtn" id="langBtn2" type="button"><span lang="en">العربية</span><span lang="ar">English</span></button><button class="sbtn" id="calmBtn2" type="button" aria-pressed="false"><svg class="ip" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg><svg class="ic" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg><span class="tp" lang="en">Pause motion</span><span class="tp" lang="ar">إيقاف الحركة</span><span class="tc" lang="en">Resume motion</span><span class="tc" lang="ar">استئناف الحركة</span></button></div></nav>
 <div class="toast" id="toast" role="status"></div>
 <div class="vh" id="srStatus" role="status" aria-live="polite"></div>
 
@@ -582,7 +599,7 @@
 </div></section>
 </main>
 
-<div class="obar" id="obar"><div class="ot"><b id="obName"></b><span id="obPrice"></span></div><a class="btn pri" href="#plan"><span lang="en">Order</span><span lang="ar">اطلب</span></a></div>
+<div class="obar" id="obar"><div class="od" id="obDet"></div><div class="orow"><button type="button" class="ot" id="obTog" aria-expanded="false" aria-controls="obDet"><span class="otx"><span class="nrow"><b id="obName"></b><svg class="chev" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span id="obPrice"></span></span><span class="vh" lang="en">Order details</span><span class="vh" lang="ar">تفاصيل الطلب</span></button><a class="btn pri" href="#plan"><span lang="en">Order</span><span lang="ar">اطلب</span></a></div></div>
 <footer>
   <div class="wrap">
     <div class="big">KAAF</div>
@@ -638,9 +655,9 @@ function prof(){var sh=shares(),r=S.roast,o={acid:0,body:0,sweet:0,fruit:0,choc:
   o.acid*=1.3-.8*r;o.fruit*=1.3-.9*r;o.body*=.8+.5*r;o.choc*=.7+.7*r;o.sweet*=1-.25*Math.abs(2*r-1);
   ATTR.forEach(function(a){o[a[0]]=S.sel.length?Math.round(clamp(o[a[0]]/5/1.3*100,3,100)):0});return o}
 function blendName(){if(!S.sel.length)return T('Pick an origin','اختر منشأً');var sh=shares(),nm=S.sel.map(function(k){var og=ORIG.filter(function(x){return x.id===k})[0];return L()==='ar'?og.ar:og.en});return nm.join(' + ')}
-(function(){var h=document.documentElement,b=document.getElementById('calmBtn');if(!b)return;function set(v,save){h.classList.toggle('calm',v);b.setAttribute('aria-pressed',v);if(save)try{localStorage.setItem('kaaf-calm',v?'1':'0')}catch(e){}}
+(function(){var h=document.documentElement,bs=[].slice.call(document.querySelectorAll('#calmBtn,#calmBtn2'));if(!bs.length)return;function set(v,save){h.classList.toggle('calm',v);bs.forEach(function(b){b.setAttribute('aria-pressed',v)});if(save)try{localStorage.setItem('kaaf-calm',v?'1':'0')}catch(e){}}
   var st=null;try{st=localStorage.getItem('kaaf-calm')}catch(e){}
-  set(st==='1'||(st===null&&matchMedia('(prefers-reduced-motion:reduce)').matches),false);b.addEventListener('click',function(){set(!h.classList.contains('calm'),true)})})();
+  set(st==='1'||(st===null&&matchMedia('(prefers-reduced-motion:reduce)').matches),false);bs.forEach(function(b){b.addEventListener('click',function(){set(!h.classList.contains('calm'),true)})})})();
 function toast(h,k){var t=$('toast'),er=k==='err';t.classList.toggle('ok',k===true||k==='ok');t.classList.toggle('err',er);t.setAttribute('role',er?'alert':'status');t.innerHTML=h+(er?'<button type="button" class="tx" aria-label="'+T('Close','إغلاق')+'">×</button>':'');t.classList.add('show');clearTimeout(toast.t);if(er){t.querySelector('.tx').onclick=function(){t.classList.remove('show')}}else toast.t=setTimeout(function(){t.classList.remove('show')},4000)}
 addEventListener('keydown',function(e){if(e.key==='Escape')$('toast').classList.remove('show')});
 
@@ -825,7 +842,7 @@ function drawCal(){var f=FREQ[S.freq],gap=28/f[0],on={},i,h='',m=METH.filter(fun
   $('cal').innerHTML='<div class="cl"><span>'+bi('Your first 4 weeks','أسابيعك الـ4 الأولى')+'</span></div><div class="cg">'+h+'</div>';
   var cups=Math.floor(S.size/m.dose)*f[0];
   $('pst').innerHTML='<div><span class="lab">'+bi('Deliveries','مرات الوصول')+'</span><b>'+f[0]+'</b></div><div><span class="lab">'+bi('Coffee a month','البن شهريًا')+'</span><b>'+(S.size*f[0]>=1000?U(fmt(S.size*f[0]/1000),'kg'):U(S.size*f[0],'g'))+'</b></div><div><span class="lab">'+bi('Cups a month','أكواب شهريًا')+'</span><b>'+cups+'</b></div>'}
-function drawBar(){var p=plan();$('obName').textContent=blendName()+' · '+roastText(S.roast);$('obPrice').innerHTML=fmt(p.mo)+RY+' '+T('/ month','/ شهريًا')}
+function drawBar(){var p=plan(),sh=shares(),det=$('obDet');$('obName').textContent=blendName()+' · '+roastText(S.roast);if(det){var nm=S.sel.map(function(k){var o=ORIG.filter(function(x){return x.id===k})[0];return (L()==='ar'?o.ar:o.en)+' \u2066'+sh[k]+'%\u2069'}).join(' · ');det.innerHTML='<div><span>'+T('Blend','الخلطة')+'</span><b>'+nm+'</b></div><div><span>'+T('Roast','التحميص')+'</span><b>'+roastText(S.roast)+'</b></div><div><span>'+T('Method','طريقة التحضير')+'</span><b>'+(L()==='ar'?p.m.ar:p.m.en)+'</b></div><div><span>'+T('Bag','الكيس')+'</span><b class="ltr">'+U(S.size,'g')+'</b></div><div><span>'+T('Delivery cycle','دورة التوصيل')+'</span><b>'+(L()==='ar'?p.f[2]:p.f[1])+'</b></div><div><span>'+T('Per delivery','لكل توصيلة')+'</span><b class="ltr">'+fmt(p.per)+RY+'</b></div><div class="tot"><span>'+T('Estimated per month','التقدير الشهري')+'</span><b class="ltr">'+fmt(p.mo)+RY+'</b></div>'}$('obPrice').innerHTML=fmt(p.mo)+RY+' '+T('/ month','/ شهريًا')}
 function drawPlan(){
   $('size').innerHTML=SIZES.map(function(s){return '<button type="button" class="'+(s===S.size?'on':'')+'" data-s="'+s+'">'+(s===1000?U(1,'kg'):U(s,'g'))+'</button>'}).join('');
   $('freq').innerHTML=FREQ.map(function(f,i){return '<button type="button" class="'+(i===S.freq?'on':'')+'" data-f="'+i+'">'+bi(f[1],f[2])+'</button>'}).join('');
@@ -856,7 +873,7 @@ function drawDrip(){var host=$('drip'),svg=$('dripSvg');if(!host||!svg)return;va
            tear(x,base+rad*.5,rad,'--L:'+L.toFixed(1)+'px;--F:'+(H-(base+rad*.5)).toFixed(1)+'px;--d:'+D.toFixed(2)+'s;--dl:'+dl.toFixed(2)+'s')}
     return '<g class="'+cls+'" filter="url(#kaafGoo)">'+out+'</g>'}
   svg.innerHTML='<defs><filter id="kaafGoo" filterUnits="userSpaceOnUse" x="-40" y="-60" width="'+(W+80)+'" height="'+(H+200)+'" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="6.5" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8"/></filter></defs>'+layer(9191,'g2',1.35,1.25)+layer(4242,'g1',1,1)}
-function drawNav(){$('nav').innerHTML=SECS.map(function(s){return '<a class="btn" href="#'+s[0]+'">'+bi(s[1],s[2])+'</a>'}).join('');$('sheet').innerHTML=SECS.map(function(s){return '<a href="#'+s[0]+'">'+bi(s[1],s[2])+'</a>'}).join('')+'<a href="#builder">'+bi('Build my blend','ابدأ التحضير')+'</a>'}
+function drawNav(){$('nav').innerHTML=SECS.map(function(s){return '<a class="btn" href="#'+s[0]+'">'+bi(s[1],s[2])+'</a>'}).join('');$('sheetLinks').innerHTML=SECS.map(function(s){return '<a href="#'+s[0]+'">'+bi(s[1],s[2])+'</a>'}).join('')+'<a href="#builder">'+bi('Build my blend','ابدأ التحضير')+'</a>'}
 function footGame(){
   var foot=document.querySelector('footer'),big=foot&&foot.querySelector('.big'),pa=$('parade');if(!big||!pa||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var ar=document.createElement('div');ar.className='arena';ar.setAttribute('aria-hidden','true');foot.appendChild(ar);
@@ -909,7 +926,8 @@ $('size').addEventListener('click',function(e){var b=e.target.closest('button');
 $('freq').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;S.freq=+b.dataset.f;drawPlan()});
 $('send').addEventListener('click',function(){toast(bi('We got your order. This is a design concept, nothing was sent','وصلنا طلبك. هذه فكرة تصميمية ولم يُرسل شيء'),true)});
 $('copy').addEventListener('click',function(){var t=plain();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast(bi('Order copied. Nothing was sent','نُسخ الطلب، ولم يُرسل أي شيء'),'ok')},function(){toast(bi('Copy was blocked by the browser','منع المتصفح عملية النسخ'),'err')})}else toast(bi('Copy is not available here','النسخ غير متاح هنا'),'err')});
-$('langBtn').addEventListener('click',function(){setL(L()==='ar'?'en':'ar',true);renderAll();if(window.__mirrorCrowd)window.__mirrorCrowd()});
+['langBtn','langBtn2'].forEach(function(id){$(id).addEventListener('click',function(){setL(L()==='ar'?'en':'ar',true);renderAll();if(window.__mirrorCrowd)window.__mirrorCrowd()})});
+(function(){var ob=$('obar'),tg=$('obTog');if(!ob||!tg)return;function o(v){ob.classList.toggle('open',v);tg.setAttribute('aria-expanded',v)}tg.addEventListener('click',function(){o(!ob.classList.contains('open'))});document.addEventListener('keydown',function(e){if(e.key==='Escape')o(false)});ob.querySelector('.btn').addEventListener('click',function(){o(false)})})();
 var mb=$('menuBtn'),sh=$('sheet');function openMenu(o){sh.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)}
 mb.addEventListener('click',function(){openMenu(!sh.classList.contains('open'))});
 sh.addEventListener('click',function(e){if(e.target.closest('a'))openMenu(false)});
