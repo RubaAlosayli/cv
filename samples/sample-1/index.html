@@ -429,10 +429,14 @@ html[lang="en"] .hero{--hs:min(260px,22vw)}
 
 /* ===== story: like the reference, the text stays pinned and the words fill in as you scroll ===== */
 .story{display:block!important;min-height:0!important;height:240vh;height:240svh;padding:0!important;margin:0 auto;max-width:none;position:relative}
-.story-in{position:sticky;top:0;height:100vh;height:100svh;max-width:var(--max);margin:0 auto;padding:0 var(--m);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-content:center;text-align:start}
+.story-in{position:sticky;top:0;height:100vh;height:100svh;max-width:var(--max);margin:0 auto;padding:112px var(--m) 32px;box-sizing:border-box;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);align-content:center;text-align:start}
 .story-in>*{grid-column:2/12}
 .story-in>.btn{justify-self:start}
-@media(max-width:767px){.story-in>*{grid-column:1/-1}}
+@media(max-width:767px){.story-in>*{grid-column:1/-1}.story h2.lit{font-size:var(--dlg);line-height:var(--dlg-l);margin-bottom:var(--sp-xl)}.story p.b{margin-bottom:var(--sp-xl)}}
+@media(min-width:768px) and (max-height:900px){.story h2.lit{font-size:var(--dxl);line-height:var(--dxl-l)}}
+@media(min-width:768px) and (max-height:780px){.story h2.lit{font-size:var(--dlg);line-height:var(--dlg-l)}}
+@media(min-width:768px) and (max-height:640px){.story-in{padding-top:96px}.story h2.lit{font-size:var(--dmd);line-height:var(--dmd-l)}}
+@media(max-width:767px) and (max-height:700px){.story-in{padding-top:96px}.story h2.lit{font-size:var(--dmd);line-height:var(--dmd-l)}.story p.b{font-size:var(--tmd);line-height:var(--tmd-l)}}
 .story .w{opacity:1!important;transition:none;color:color-mix(in srgb,var(--ink) calc(var(--l,1)*100%),#282828)}
 .pv .story{height:auto!important}.pv .story-in{position:static;height:auto;padding-block:var(--sp-7xl)}
 
